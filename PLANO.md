@@ -48,3 +48,17 @@ Somas à mão: melhor caminho direto 2+2+2+2 = 8; pelo desvio 1+1+2+2+2 = 8 (nã
 - Cada aula termina o `resumo` com uma linha "Régua de 2026" quando o tema tem moda (llms.txt, FAQ, 40–60 palavras, Bing/ChatGPT).
 - Glossário `i18n/glossario.json` deste repo serve de base para os 5 seguintes.
 - Vídeo só no curso 1 (EN/ES tocam o áudio PT; pendente motor aceitar `mp4_en`/`vtt_en`).
+
+## Resultado do piloto (19/10/2026)
+- Publicado: https://inematds.github.io/formacao-inemaseo-fundacao-v72/ (+ `en/`, `es/`), todos 200.
+- Portão: `validar.py` OK em PT/EN/ES (único link falho: curso 2, ainda não publicado); `conferir-tela.cjs` 27 páginas × 2 larguras OK, simconversa percorrida (máx. 8).
+- Imagens: 10/10 pelo Codex na 1ª tentativa (script sequencial em segundo plano enquanto o conteúdo era escrito); nenhuma reserva flux.
+- Motor 7.5.6: `validar.py` acusava "sobra TODO" em links para `METODO.md`; agora só palavra inteira.
+
+## Lições para os cursos 2–6
+- Rode o script de imagens em segundo plano logo depois do PLANO.md: 10 imagens levam ~40 min e não bloqueiam a escrita.
+- `i18n/glossario.json`: copie este e acrescente os termos do curso. "alicerce" = groundwork (foundation já é "Fundação" e repetia no título EN).
+- Varredura de sobras PT no ES: "página" e "buscador" são espanhol válido; procure "você", "não", "aula", "também".
+- Ao citar ferramenta/fonte com caso do INEMA: número no texto só da lista "Casos reais"; saída capturada de script fica dentro de `saida` (selo real, com data).
+- Templates do inemaseo-metodo divergentes da régua (robots.txt com ClaudeBot em "busca", llms.txt como etapa, "40–60 palavras" como técnica de IA): mostre adaptado e diga por quê, sem alterar o repo de origem.
+- `<details>` e outros nomes de tag em texto de quiz/passos viram tag; escreva por extenso ou `&lt;details&gt;` só dentro de `saida.html`.
