@@ -1,0 +1,128 @@
+{
+  "slug": "raio-x",
+  "num": 2,
+  "menu": "Raio-x",
+  "titulo": "Raio-x só de leitura: o HTML que o servidor entrega",
+  "titulo_curto": "Raio-x do site",
+  "minutos": 16,
+  "lead": "O buscador não vê o seu site como você vê no navegador: ele lê o HTML que o servidor entrega, quase sempre sem rodar JavaScript. Um script de 40 linhas faz essa leitura por você, sem mudar nada no site, e mostra em minutos o que nenhum painel bonito mostra.",
+  "objetivo": "rodar o auditoria.sh no seu site e ler cada linha da saída como o buscador lê.",
+  "competencias": ["rodar-auditoria-tecnica", "ler-html-do-servidor", "achar-pagina-sem-link"],
+  "aprende": [
+    {"t": "Baixar o método inemaSEO e rodar a auditoria"},
+    {"t": "Ler redirecionamentos, robots.txt, sitemaps e páginas"},
+    {"t": "Achar página sem link interno no HTML"},
+    {"t": "Transformar a saída em uma lista de achados"}
+  ],
+  "hero_alt": "Técnico examina uma radiografia contra um painel de luz branca.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "O que o raio-x olha",
+      "sub": "Só leitura: o script usa curl e não altera nada. Clique em cada bloco.",
+      "nos": [
+        {"icone": "nuvem", "titulo": "Seu site", "sub": "o endereço principal",
+         "detalhe": "Você passa o endereço principal e, se quiser, algumas páginas. Comece pela home e por duas páginas que importam para o negócio."},
+        {"icone": "terminal", "titulo": "curl", "sub": "sem rodar JavaScript",
+         "detalhe": "O script baixa cada endereço como um robô baixaria: o HTML que o servidor entrega. Se um link só aparece depois que o JavaScript roda, ele não aparece aqui, e o buscador pode não vê-lo."},
+        {"icone": "seta", "titulo": "Redirecionamentos", "sub": "http, com e sem www",
+         "detalhe": "Testa as três variações do endereço. O certo é todas levarem à mesma versão (aula 4)."},
+        {"icone": "arquivo", "titulo": "robots.txt e sitemaps", "sub": "e o llms.txt",
+         "detalhe": "Mostra o robots.txt inteiro, conta as URLs de cada sitemap listado nele e quantas têm hreflang, e diz se existe llms.txt (opcional, aula 6)."},
+        {"icone": "lista", "titulo": "Cada página", "sub": "7 linhas", "forte": true,
+         "itens": [{"icone": "check", "t": "status, title, canonical"}, {"icone": "check", "t": "hreflang, robots, JSON-LD"}, {"icone": "check", "t": "links internos no HTML"}],
+         "detalhe": "Para cada página: código HTTP, título, canônico, idiomas declarados, meta robots, tipos de JSON-LD e quantos links internos existem no HTML. A última linha é a que mais pega problema escondido."}
+      ],
+      "legenda": "Rodou, salvou, leu. Nada muda no site; o raio-x é o retrato antes de mexer."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Do download à lista de achados",
+      "sub": "Clique em cada etapa.",
+      "passos": [
+        {"titulo": "Baixar", "sub": "o método é aberto",
+         "texto": ["O inemaSEO é público, com licença MIT. Você precisa de um terminal com bash e curl: Mac e Linux já têm; no Windows, use o WSL ou o Git Bash.", "Clone o repositório e entre na pasta."],
+         "exemplo": {"rot": "Onde está", "texto": "github.com/inematds/inemaseo-metodo, pasta tools/."}},
+        {"titulo": "Rodar", "sub": "home + 2 páginas",
+         "texto": ["Passe o endereço principal e os caminhos das páginas, separados por espaço. Salve a saída num arquivo para comparar depois.", "Leva menos de um minuto num site pequeno."],
+         "exemplo": {"rot": "Dica", "texto": "Escolha uma página de produto ou serviço e uma página nova, que você ainda não viu no Google."}},
+        {"titulo": "Ler", "sub": "linha por linha",
+         "texto": ["Canônico vazio ou diferente do endereço? Links internos perto de zero? Meta robots com noindex numa página importante? Cada um vira um achado.", "Não corrija nada ainda: só anote."],
+         "exemplo": {"rot": "Achado típico", "texto": "Página de catálogo que virou \"só busca\" no navegador e deixou centenas de páginas sem nenhum link no HTML."}},
+        {"titulo": "Anotar", "sub": "achado + linha + aula",
+         "texto": ["Para cada achado, copie a linha da saída que o mostra e a aula deste curso que trata dele.", "Essa lista é o seu plano das próximas semanas."]}
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Os comandos do raio-x",
+      "sub": "Copie e rode no terminal. Troque o endereço pelo do seu site.",
+      "blocos": [
+        {"rot": "Terminal · baixar o método", "icone": "git",
+         "conteudo": "git clone https://github.com/inematds/inemaseo-metodo.git\ncd inemaseo-metodo"},
+        {"rot": "Terminal · rodar e salvar", "icone": "terminal",
+         "conteudo": "bash tools/auditoria.sh https://www.seusite.com /pagina-1/ /pagina-2/ > raio-x.txt\ncat raio-x.txt"},
+        {"rot": "Lista de achados (modelo)", "icone": "lista",
+         "conteudo": "# Raio-x de <seusite.com> em <dd/mm/aaaa>\n| achado | linha da saída | aula |\n|---|---|---|\n| <canônico vazio na /pagina-1/> | canonical: | 4 |\n| <página sem links internos> | links internos no HTML: 0 | 7 e curso 2 |"}
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {"rot": "Saída em www.inema.club", "html": "<p>Trecho do <code>auditoria.sh</code> rodado em 19/10/2026 (robots.txt encurtado):</p><pre>== Redirecionamentos\n  http://www.inema.club/ -&gt; 308 https://www.inema.club/\n  https://inema.club/ -&gt; 308 https://www.inema.club/\n  https://www.inema.club/ -&gt; 200\n== robots.txt\n  User-Agent: *\n  Allow: /\n  (…)\n== Sitemaps\n  https://www.inema.club/sitemap.xml: 83 URLs, 60 anotações hreflang\n  https://www.inema.club/courses-sitemap.xml: 100 URLs, 0 anotações hreflang\n== llms.txt: 200\n== Páginas\n-- /cursos/  [200]\n   title:     Cursos de inteligência artificial, agentes e automação | INEMA.club\n   canonical: https://www.inema.club/cursos/\n   hreflang:  hrefLang=\"en\" hrefLang=\"es\" hrefLang=\"pt-BR\" hrefLang=\"x-default\"\n   links internos no HTML: 334\n-- /conhecimento/  [200]\n   canonical: https://www.inema.club/conhecimento/\n   hreflang:\n   links internos no HTML: 58</pre>"},
+          {"rot": "O caso por trás", "html": "<p>Em 30/09/2026 (commit <code>bc50d11</code>), a página <code>/cursos/</code> virou \"só busca\" e as 310 fichas perderam o único link interno que vinha no HTML do servidor. Na tela parecia tudo certo.</p><p>A correção (<code>8229495</code>) foi um índice recolhido em <code>&lt;details&gt;</code> com todos os links, sem mudança visual. A linha \"links internos no HTML\" da <code>/cursos/</code>, acima, é o retrato depois da correção.</p>"},
+          {"rot": "Erros comuns", "html": "<ul><li><b>Olhar só no navegador</b>: o que o JavaScript monta pode não existir para o robô.</li><li><b>Auditar só a home</b>: o problema costuma estar na página de catálogo ou na nova.</li><li><b>Corrigir antes de anotar</b>: sem o retrato de antes, você não sabe se melhorou.</li></ul>"}
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: o seu raio-x",
+      "sub": "Guarde o raio-x.txt: as aulas 4 a 8 comparam com ele.",
+      "exercicios": [
+        {"id": "e1", "titulo": "E1 · Rodar e salvar", "min": "20 min",
+         "texto": "Rode a auditoria na home e em 2 páginas do seu site e salve em raio-x.txt.",
+         "pronto": "o arquivo existe e tem os blocos Redirecionamentos, robots.txt, Sitemaps e Páginas."},
+        {"id": "e2", "titulo": "E2 · Três achados", "min": "20 min",
+         "texto": "Leia a saída e preencha a lista de achados com pelo menos 3 linhas (se estiver tudo certo, anote o que conferiu).",
+         "pronto": "cada achado tem a linha da saída copiada e a aula que trata dele."}
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {"p": "Por que o raio-x usa curl e não o navegador?",
+         "opcoes": ["Porque é mais bonito.", "Porque mostra o HTML que o servidor entrega, sem rodar JavaScript, como o robô costuma ler.", "Porque o navegador não abre sites.", "Porque o curl indexa a página."],
+         "certa": 1, "explica": "O navegador roda JavaScript e monta coisas que o robô pode não ver. O raio-x mostra a versão do servidor, que é a base para o buscador.", "ref": "diagrama", "cert": true},
+        {"p": "A tela de /cursos/ estava normal, mas as fichas sumiram dos links. O que mostrou o problema?",
+         "opcoes": ["O número de visitas.", "A linha \"links internos no HTML\" do raio-x.", "O llms.txt.", "A velocidade do site."],
+         "certa": 1, "explica": "A busca no navegador montava os links com JavaScript; no HTML do servidor eles não existiam. O índice recolhido devolveu os links sem mudar o visual.", "ref": "codigo"},
+        {"p": "O raio-x muda alguma coisa no seu site?",
+         "opcoes": ["Sim, corrige o canônico.", "Sim, envia o sitemap.", "Não: é só leitura, com curl.", "Só se você tiver senha."],
+         "certa": 2, "explica": "É só leitura. Por isso dá para rodar em qualquer site público, inclusive no de um concorrente ou cliente, antes de mexer.", "ref": "diagrama"},
+        {"p": "Achou um problema no raio-x. Qual o próximo passo nesta aula?",
+         "opcoes": ["Corrigir na hora.", "Anotar com a linha da saída e a aula que trata dele.", "Rodar de novo até sumir.", "Ignorar se a home estiver boa."],
+         "certa": 1, "explica": "Primeiro o retrato completo, depois a correção. A lista de achados vira o plano das próximas aulas e a comparação de antes e depois.", "ref": "passos"}
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para levar",
+      "itens": [
+        {"t": "Só leitura", "texto": "auditoria.sh lê o HTML do servidor com curl, sem mudar nada."},
+        {"t": "A linha que mais pega", "texto": "Links internos no HTML: página sem link quase não existe para o buscador."},
+        {"t": "Saída", "texto": "raio-x.txt + lista de achados com a linha e a aula."}
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir além",
+      "links": [
+        {"t": "auditoria.sh no GitHub", "href": "https://github.com/inematds/inemaseo-metodo/blob/main/tools/auditoria.sh", "icone": "terminal"},
+        {"t": "Método inemaSEO: as 10 etapas", "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md", "icone": "lista"},
+        {"t": "WebMCP Readiness: teste do site no navegador", "href": "https://webmcp.inema.pro/", "icone": "lupa"}
+      ]
+    }
+  ]
+}

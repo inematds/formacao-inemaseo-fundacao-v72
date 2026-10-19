@@ -1,0 +1,1002 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.510
+Seu site encontrado no Google, no Bing e nas respostas das IAs, sem pagar ferramenta nenhuma.
+
+2
+00:00:05.560 --> 00:00:09.810
+Agora faça um teste: pergunte ao ChatGPT sobre o assunto que você domina.
+
+3
+00:00:09.860 --> 00:00:12.070
+Ele cita alguém. Quase nunca é você.
+
+4
+00:00:12.120 --> 00:00:14.050
+E escrever mais páginas não resolve.
+
+5
+00:00:14.100 --> 00:00:16.730
+Se a fundação do site está quebrada, nenhum conteúdo rende.
+
+6
+00:00:16.780 --> 00:00:20.590
+O que resolve é um método: 10 etapas e scripts prontos.
+
+7
+00:00:20.640 --> 00:00:22.800
+E uma regra de ouro: nada de conteúdo inventado.
+
+8
+00:00:23.144 --> 00:00:24.724
+Neste vídeo eu mostro,
+
+9
+00:00:24.724 --> 00:00:26.264
+na prática, o inemaSEO,
+
+10
+00:00:26.264 --> 00:00:28.484
+o método aberto que usamos no ecossistema
+
+11
+00:00:28.484 --> 00:00:30.444
+INEMA: o raio-x do site,
+
+12
+00:00:30.444 --> 00:00:32.484
+a fundação, a medição que separa a
+
+13
+00:00:32.484 --> 00:00:34.324
+sua marca e o trabalho repetitivo que
+
+14
+00:00:34.324 --> 00:00:35.464
+os agentes fazem por você.
+
+15
+00:00:35.464 --> 00:00:36.164
+E no fim,
+
+16
+00:00:36.164 --> 00:00:37.944
+onde estão os cursos e as ferramentas
+
+17
+00:00:37.944 --> 00:00:38.744
+para ir além.
+
+18
+00:00:38.744 --> 00:00:40.464
+O inemaSEO é um método,
+
+19
+00:00:40.464 --> 00:00:41.124
+não um truque,
+
+20
+00:00:41.124 --> 00:00:42.924
+e se apoia em três princípios.
+
+21
+00:00:42.924 --> 00:00:44.964
+Primeiro, fundação antes de conteúdo:
+
+22
+00:00:44.964 --> 00:00:46.204
+sem canônico certo,
+
+23
+00:00:46.204 --> 00:00:48.984
+sitemap e robots liberando as IAs,
+
+24
+00:00:48.984 --> 00:00:50.804
+nenhuma página nova rende.
+
+25
+00:00:50.804 --> 00:00:52.104
+Segundo, só dado real:
+
+26
+00:00:52.104 --> 00:00:54.004
+cada página se apoia num curso,
+
+27
+00:00:54.004 --> 00:00:56.364
+projeto, evento ou experimento que existe de
+
+28
+00:00:56.364 --> 00:00:56.784
+verdade.
+
+29
+00:00:56.784 --> 00:00:59.104
+O modelo de linguagem extrai e reescreve,
+
+30
+00:00:59.104 --> 00:01:01.084
+e um validador descarta o que não
+
+31
+00:01:01.084 --> 00:01:02.264
+está na fonte.
+
+32
+00:01:02.264 --> 00:01:03.744
+Terceiro, medido sem a marca:
+
+33
+00:01:03.744 --> 00:01:05.104
+o número que importa não é quem
+
+34
+00:01:05.104 --> 00:01:06.144
+já te procura pelo nome,
+
+35
+00:01:06.144 --> 00:01:07.544
+é quem não te conhecia e te
+
+36
+00:01:07.544 --> 00:01:08.064
+achou.
+
+37
+00:01:08.064 --> 00:01:09.964
+E a divisão de trabalho é clara:
+
+38
+00:01:09.964 --> 00:01:13.144
+os agentes de IA fazem o repetitivo,
+
+39
+00:01:13.144 --> 00:01:13.964
+e você decide.
+
+40
+00:01:13.964 --> 00:01:15.324
+Tudo começa com um raio-x,
+
+41
+00:01:15.324 --> 00:01:16.584
+e ele é só leitura.
+
+42
+00:01:16.584 --> 00:01:18.644
+O script de auditoria olha o site
+
+43
+00:01:18.644 --> 00:01:19.584
+como o buscador olha:
+
+44
+00:01:19.584 --> 00:01:22.264
+o HTML que o servidor entrega,
+
+45
+00:01:22.264 --> 00:01:23.644
+sem rodar JavaScript.
+
+46
+00:01:23.644 --> 00:01:25.584
+Ele mostra os redirecionamentos,
+
+47
+00:01:25.584 --> 00:01:28.364
+o robots, os sitemaps e quantas páginas
+
+48
+00:01:28.364 --> 00:01:29.344
+têm idioma marcado.
+
+49
+00:01:29.344 --> 00:01:30.244
+E, em cada página,
+
+50
+00:01:30.244 --> 00:01:31.564
+o título, o canônico,
+
+51
+00:01:31.564 --> 00:01:34.524
+o JSON-LD e quantos links internos existem
+
+52
+00:01:34.524 --> 00:01:35.384
+de verdade.
+
+53
+00:01:35.384 --> 00:01:36.804
+O achado típico é duro:
+
+54
+00:01:36.804 --> 00:01:38.604
+uma página de catálogo que virou só
+
+55
+00:01:38.604 --> 00:01:40.724
+busca no navegador e deixou centenas de
+
+56
+00:01:40.724 --> 00:01:42.057
+páginas sem nenhum link.
+
+57
+00:01:42.057 --> 00:01:42.904
+Para o Google,
+
+58
+00:01:42.904 --> 00:01:44.824
+página sem link é página que quase
+
+59
+00:01:44.824 --> 00:01:45.264
+não existe.
+
+60
+00:01:45.264 --> 00:01:47.144
+Você descobre isso em minutos,
+
+61
+00:01:47.144 --> 00:01:48.344
+antes de escrever uma linha.
+
+62
+00:01:48.344 --> 00:01:49.584
+Com o raio-x na mão,
+
+63
+00:01:49.584 --> 00:01:50.864
+você conserta a fundação.
+
+64
+00:01:50.864 --> 00:01:52.164
+Um canônico só:
+
+65
+00:01:52.164 --> 00:01:54.844
+escolha com ou sem www e
+
+66
+00:01:54.844 --> 00:01:56.324
+use o mesmo em todo lugar,
+
+67
+00:01:56.324 --> 00:01:58.704
+porque um canônico divergente basta para o
+
+68
+00:01:58.704 --> 00:02:00.604
+Google escolher outra página.
+
+69
+00:02:00.604 --> 00:02:02.584
+Sitemaps gerados do mesmo dado que gera
+
+70
+00:02:02.584 --> 00:02:04.204
+as páginas, com a data real de
+
+71
+00:02:04.204 --> 00:02:06.204
+alteração, nunca a hora do build.
+
+72
+00:02:06.204 --> 00:02:07.824
+Um robots que libera os robôs de
+
+73
+00:02:07.824 --> 00:02:08.744
+busca das IAs:
+
+74
+00:02:08.744 --> 00:02:11.144
+sem isso, o ChatGPT e o Perplexity
+
+75
+00:02:11.144 --> 00:02:12.284
+não citam o seu site.
+
+76
+00:02:12.284 --> 00:02:13.484
+Um
+
+77
+00:02:13.994 --> 00:02:15.194
+llms.txt,
+
+78
+00:02:15.204 --> 00:02:16.784
+que é o mapa do site para
+
+79
+00:02:16.784 --> 00:02:18.684
+as IAs, e um manifesto de conteúdo
+
+80
+00:02:18.684 --> 00:02:19.364
+por site.
+
+81
+00:02:19.364 --> 00:02:21.024
+E página rasa sai do índice até
+
+82
+00:02:21.024 --> 00:02:23.344
+ter corpo, porque indexar página fraca derruba
+
+83
+00:02:23.344 --> 00:02:24.904
+a avaliação do site inteiro.
+
+84
+00:02:24.904 --> 00:02:26.804
+Agora, medir do jeito certo.
+
+85
+00:02:26.804 --> 00:02:28.804
+O script semanal exporta o Search Console
+
+86
+00:02:28.804 --> 00:02:30.344
+e separa as buscas pela sua marca
+
+87
+00:02:30.344 --> 00:02:31.024
+das outras.
+
+88
+00:02:31.024 --> 00:02:33.024
+No começo, quase todo clique é de
+
+89
+00:02:33.024 --> 00:02:34.364
+quem já te procura pelo nome,
+
+90
+00:02:34.364 --> 00:02:35.224
+e isso engana.
+
+91
+00:02:35.224 --> 00:02:36.864
+O número que mostra se o SEO
+
+92
+00:02:36.864 --> 00:02:39.064
+funciona é o das consultas sem a
+
+93
+00:02:39.064 --> 00:02:40.704
+marca: gente que não te conhecia.
+
+94
+00:02:40.704 --> 00:02:42.684
+Outro script pergunta ao Google,
+
+95
+00:02:42.684 --> 00:02:43.844
+endereço por endereço,
+
+96
+00:02:43.844 --> 00:02:45.784
+se a página está indexada e qual
+
+97
+00:02:45.784 --> 00:02:47.004
+canônico ele escolheu.
+
+98
+00:02:47.004 --> 00:02:48.824
+E uma meta de conversão no analytics
+
+99
+00:02:48.824 --> 00:02:50.964
+diz qual página traz gente de verdade,
+
+100
+00:02:50.964 --> 00:02:52.124
+não só visita.
+
+101
+00:02:52.124 --> 00:02:54.204
+Tudo gratuito: Search Console,
+
+102
+00:02:54.204 --> 00:02:57.164
+Bing Webmaster e um agente de IA.
+
+103
+00:02:57.164 --> 00:02:58.924
+A etapa quatro diz ao Google quem
+
+104
+00:02:58.924 --> 00:02:59.724
+está por trás.
+
+105
+00:02:59.724 --> 00:03:01.684
+Uma pessoa e uma organização,
+
+106
+00:03:01.684 --> 00:03:04.164
+declaradas com um identificador fixo em todas
+
+107
+00:03:04.164 --> 00:03:05.604
+as páginas e subdomínios,
+
+108
+00:03:05.604 --> 00:03:07.617
+e todo o resto apontando para elas.
+
+109
+00:03:07.617 --> 00:03:08.684
+Para o buscador,
+
+110
+00:03:08.684 --> 00:03:10.184
+vira uma entidade só,
+
+111
+00:03:10.184 --> 00:03:11.824
+e isso é autoridade.
+
+112
+00:03:11.824 --> 00:03:13.644
+A etapa cinco evita que você brigue
+
+113
+00:03:13.644 --> 00:03:14.304
+com você mesmo.
+
+114
+00:03:14.304 --> 00:03:15.804
+Cada site tem o seu território:
+
+115
+00:03:15.804 --> 00:03:17.604
+o conteúdo que não envelhece no site
+
+116
+00:03:17.604 --> 00:03:19.724
+principal, a novidade com data no site
+
+117
+00:03:19.724 --> 00:03:21.284
+de notícias, o evento no site de
+
+118
+00:03:21.284 --> 00:03:21.724
+eventos.
+
+119
+00:03:21.724 --> 00:03:23.384
+E para cada intenção de busca,
+
+120
+00:03:23.384 --> 00:03:24.244
+uma página dona.
+
+121
+00:03:24.244 --> 00:03:26.404
+Duas páginas suas disputando a mesma busca
+
+122
+00:03:26.404 --> 00:03:27.444
+perdem as duas.
+
+123
+00:03:27.544 --> 00:03:29.084
+Só agora entra o conteúdo.
+
+124
+00:03:29.084 --> 00:03:30.464
+Pilares para os dois ou três temas
+
+125
+00:03:30.464 --> 00:03:32.764
+centrais e páginas de pergunta que começam
+
+126
+00:03:32.764 --> 00:03:34.434
+com uma resposta direta de quarenta a
+
+127
+00:03:34.434 --> 00:03:36.224
+sessenta palavras, que é o formato que
+
+128
+00:03:36.224 --> 00:03:38.584
+os buscadores de IA citam.
+
+129
+00:03:38.584 --> 00:03:39.764
+Para escolher o tema,
+
+130
+00:03:39.764 --> 00:03:41.744
+um score sem ferramenta paga:
+
+131
+00:03:41.744 --> 00:03:42.864
+autocomplete do Google,
+
+132
+00:03:42.864 --> 00:03:44.804
+Google Trends, impressões que você já tem
+
+133
+00:03:44.804 --> 00:03:46.024
+e a força do top dez.
+
+134
+00:03:46.024 --> 00:03:47.464
+Seis pontos ou mais é sim.
+
+135
+00:03:47.464 --> 00:03:48.884
+E um detalhe provocador:
+
+136
+00:03:48.884 --> 00:03:50.104
+se você não tem um curso,
+
+137
+00:03:50.104 --> 00:03:52.264
+projeto ou experimento real para citar,
+
+138
+00:03:52.264 --> 00:03:53.184
+perde três pontos.
+
+139
+00:03:53.184 --> 00:03:55.444
+Nas fichas, o modelo extrai a ementa
+
+140
+00:03:55.444 --> 00:03:56.004
+da página real,
+
+141
+00:03:56.004 --> 00:03:58.924
+e a trava anti-invenção confere cada título
+
+142
+00:03:58.924 --> 00:04:00.384
+e cada número na fonte.
+
+143
+00:04:00.384 --> 00:04:01.964
+O que falha é descartado.
+
+144
+00:04:01.964 --> 00:04:03.764
+Página nova sem link não aparece,
+
+145
+00:04:03.764 --> 00:04:05.564
+então a etapa sete é a escada
+
+146
+00:04:05.564 --> 00:04:07.244
+de links: publicou uma página,
+
+147
+00:04:07.244 --> 00:04:09.064
+edite duas ou três antigas do mesmo
+
+148
+00:04:09.064 --> 00:04:10.484
+tema para apontar para ela,
+
+149
+00:04:10.484 --> 00:04:11.864
+no mesmo commit.
+
+150
+00:04:11.864 --> 00:04:13.664
+Conteúdo de outros sites entra no principal
+
+151
+00:04:13.664 --> 00:04:15.764
+por páginas-hub, que leem o manifesto de
+
+152
+00:04:15.764 --> 00:04:16.584
+cada subdomínio.
+
+153
+00:04:16.584 --> 00:04:18.204
+A etapa oito usa a autoridade que
+
+154
+00:04:18.204 --> 00:04:18.824
+você já tem.
+
+155
+00:04:18.824 --> 00:04:20.864
+Se você tem dezenas de satélites,
+
+156
+00:04:20.864 --> 00:04:22.224
+como cursos no GitHub Pages,
+
+157
+00:04:22.224 --> 00:04:23.824
+landing pages e READMEs,
+
+158
+00:04:23.824 --> 00:04:25.484
+cada um deve linkar a página certa
+
+159
+00:04:25.484 --> 00:04:26.564
+do site principal.
+
+160
+00:04:26.564 --> 00:04:27.984
+O script de link de volta faz
+
+161
+00:04:27.984 --> 00:04:28.644
+isso em lote,
+
+162
+00:04:28.644 --> 00:04:30.144
+primeiro em modo de ensaio,
+
+163
+00:04:30.144 --> 00:04:32.344
+sem duplicar e pulando o repositório com
+
+164
+00:04:32.344 --> 00:04:33.384
+trabalho não salvo.
+
+165
+00:04:33.384 --> 00:04:35.664
+Etapa nove: cada notícia ganha a sua
+
+166
+00:04:35.664 --> 00:04:37.404
+própria página, em cada idioma,
+
+167
+00:04:37.404 --> 00:04:39.184
+com dados estruturados de notícia,
+
+168
+00:04:39.184 --> 00:04:40.844
+link para a fonte e para o
+
+169
+00:04:40.844 --> 00:04:41.544
+guia do tema.
+
+170
+00:04:41.544 --> 00:04:43.044
+E o arquivo nunca é podado,
+
+171
+00:04:43.044 --> 00:04:45.104
+porque endereço indexado não pode sumir.
+
+172
+00:04:45.104 --> 00:04:47.004
+Corpo mínimo só com fatos da fonte:
+
+173
+00:04:47.004 --> 00:04:49.264
+título e uma frase é página rasa.
+
+174
+00:04:49.264 --> 00:04:50.604
+Etapa dez: avisar.
+
+175
+00:04:50.604 --> 00:04:51.784
+A cada publicação,
+
+176
+00:04:51.784 --> 00:04:54.631
+o script manda as URLs que respondem
+
+177
+00:04:54.631 --> 00:04:56.084
+para o IndexNow e para o Bing.
+
+178
+00:04:56.084 --> 00:04:57.564
+E aqui está o ponto que muita
+
+179
+00:04:57.564 --> 00:05:00.064
+gente ignora: o Bing importa duas vezes,
+
+180
+00:05:00.064 --> 00:05:02.184
+porque o ChatGPT e o Copilot buscam
+
+181
+00:05:02.184 --> 00:05:02.924
+no índice dele.
+
+182
+00:05:02.924 --> 00:05:04.584
+Quem só olha o Google fica fora
+
+183
+00:05:04.584 --> 00:05:06.064
+das respostas das IAs.
+
+184
+00:05:06.064 --> 00:05:08.184
+Na prática, quem faz o trabalho pesado
+
+185
+00:05:08.184 --> 00:05:09.184
+são os agentes,
+
+186
+00:05:09.184 --> 00:05:10.964
+pelo Claude Code ou pelo Codex,
+
+187
+00:05:10.964 --> 00:05:11.964
+na sua assinatura.
+
+188
+00:05:11.964 --> 00:05:13.524
+Você escolhe o tema do mês.
+
+189
+00:05:13.524 --> 00:05:15.744
+O agente pesquisador levanta as palavras com
+
+190
+00:05:15.744 --> 00:05:17.924
+o score, e o de oportunidade separa
+
+191
+00:05:17.924 --> 00:05:19.484
+de cinco a dez com o ativo
+
+192
+00:05:19.484 --> 00:05:20.524
+real de cada uma.
+
+193
+00:05:20.524 --> 00:05:22.444
+Primeiro portão: você aprova a lista.
+
+194
+00:05:22.444 --> 00:05:23.844
+Depois vêm o briefing,
+
+195
+00:05:23.844 --> 00:05:25.964
+o redator, que lê o repositório ou
+
+196
+00:05:25.964 --> 00:05:27.044
+a transcrição do ativo real,
+
+197
+00:05:27.044 --> 00:05:28.744
+e o controle de qualidade com o
+
+198
+00:05:28.744 --> 00:05:29.524
+checklist.
+
+199
+00:05:29.524 --> 00:05:31.364
+Segundo portão: você revisa,
+
+200
+00:05:31.364 --> 00:05:33.064
+de dez a vinte minutos por página.
+
+201
+00:05:33.064 --> 00:05:35.144
+Por fim, o publicador faz o commit
+
+202
+00:05:35.144 --> 00:05:36.504
+e avisa os buscadores,
+
+203
+00:05:36.504 --> 00:05:38.744
+e o observador traz o relatório semanal
+
+204
+00:05:38.744 --> 00:05:39.944
+de volta para você.
+
+205
+00:05:39.944 --> 00:05:42.424
+SEO paga em semanas e meses,
+
+206
+00:05:42.424 --> 00:05:43.204
+não em dias.
+
+207
+00:05:43.204 --> 00:05:44.804
+Então a rotina é que faz o
+
+208
+00:05:44.804 --> 00:05:45.384
+resultado.
+
+209
+00:05:45.384 --> 00:05:46.384
+Na semana zero,
+
+210
+00:05:46.384 --> 00:05:47.764
+auditoria e fundação.
+
+211
+00:05:47.764 --> 00:05:48.724
+A cada página,
+
+212
+00:05:48.724 --> 00:05:50.444
+o checklist, a escada de links e
+
+213
+00:05:50.444 --> 00:05:50.984
+o aviso.
+
+214
+00:05:50.984 --> 00:05:53.504
+Toda semana, o Search Console:
+
+215
+00:05:53.504 --> 00:05:54.844
+consultas sem a marca,
+
+216
+00:05:54.844 --> 00:05:56.764
+páginas com impressão e sem clique,
+
+217
+00:05:56.764 --> 00:05:58.344
+que pedem um título melhor.
+
+218
+00:05:58.344 --> 00:06:01.364
+Todo mês, dez perguntas-alvo no ChatGPT e
+
+219
+00:06:01.364 --> 00:06:03.484
+no Perplexity: o seu site é citado?
+
+220
+00:06:03.484 --> 00:06:05.624
+E entre o dia trinta e o
+
+221
+00:06:05.624 --> 00:06:06.864
+sessenta, o plano B.
+
+222
+00:06:06.864 --> 00:06:08.884
+Cada sintoma tem uma resposta:
+
+223
+00:06:08.884 --> 00:06:10.644
+poucas páginas indexadas,
+
+224
+00:06:10.644 --> 00:06:11.844
+impressão sem clique,
+
+225
+00:06:11.844 --> 00:06:14.224
+posição parada ou queda depois de publicar
+
+226
+00:06:14.224 --> 00:06:15.084
+demais.
+
+227
+00:06:15.084 --> 00:06:16.864
+Parar e auditar também faz parte do
+
+228
+00:06:16.864 --> 00:06:17.284
+método.
+
+229
+00:06:17.284 --> 00:06:19.004
+O melhor primeiro passo é simples:
+
+230
+00:06:19.004 --> 00:06:21.004
+clone o repositório do inemaSEO,
+
+231
+00:06:21.004 --> 00:06:22.604
+rode o script de auditoria no seu
+
+232
+00:06:22.604 --> 00:06:24.664
+domínio e corrija a fundação antes de
+
+233
+00:06:24.664 --> 00:06:26.184
+escrever qualquer página nova.
+
+234
+00:06:26.184 --> 00:06:27.384
+O método é aberto,
+
+235
+00:06:27.384 --> 00:06:28.604
+com licença MIT,
+
+236
+00:06:28.604 --> 00:06:29.644
+guia em português,
+
+237
+00:06:29.644 --> 00:06:30.644
+inglês e espanhol,
+
+238
+00:06:30.644 --> 00:06:32.024
+e foi aplicado no portal,
+
+239
+00:06:32.024 --> 00:06:33.724
+no site de notícias e no de
+
+240
+00:06:33.724 --> 00:06:34.544
+eventos do INEMA.
+
+241
+00:06:34.544 --> 00:06:36.264
+Tudo está na área inemaSEO,
+
+242
+00:06:36.264 --> 00:06:38.184
+em eventos ponto inema ponto pro barra
+
+243
+00:06:38.184 --> 00:06:39.684
+inemaseo: o guia,
+
+244
+00:06:39.684 --> 00:06:42.684
+os scripts, o WebMCP Readiness para testar
+
+245
+00:06:42.684 --> 00:06:43.864
+se o seu site está pronto para
+
+246
+00:06:43.864 --> 00:06:46.484
+agentes, e os cursos da formação WebMCP.
+
+247
+00:06:46.484 --> 00:06:47.864
+Depois de ser encontrado,
+
+248
+00:06:47.864 --> 00:06:49.384
+o próximo passo é ser usado pelos
+
+249
+00:06:49.384 --> 00:06:49.904
+agentes.
+
+250
+00:06:49.904 --> 00:06:51.344
+Até o próximo vídeo.
+

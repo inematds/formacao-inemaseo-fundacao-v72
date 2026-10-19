@@ -1,0 +1,145 @@
+{
+  "slug": "como-acham",
+  "num": 1,
+  "menu": "Como acham",
+  "titulo": "Como Google, Bing e as IAs acham um site",
+  "titulo_curto": "Como acham o site",
+  "minutos": 14,
+  "lead": "Escrever mais páginas não resolve se o buscador não consegue ler as que você já tem. Esta aula mostra o caminho que uma página percorre até aparecer numa busca ou numa resposta de IA, os três princípios do método inemaSEO e a régua oficial do Google de 2026 para separar fundamento de moda.",
+  "objetivo": "explicar o caminho rastrear, indexar, mostrar e citar, e escolher o que fazer primeiro no seu site.",
+  "competencias": ["explicar-rastreio-e-indexacao", "separar-fundamento-de-moda", "definir-dado-proprio"],
+  "aprende": [
+    {"t": "O caminho de uma página até a busca e a resposta de IA"},
+    {"t": "Os três princípios do método inemaSEO"},
+    {"t": "O que o guia do Google de maio/2026 diz sobre IA"},
+    {"t": "Fazer o primeiro teste de perguntas no seu assunto"}
+  ],
+  "hero_alt": "Pessoa de costas numa biblioteca grande e organizada, olhando estantes compridas com fichários.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "O caminho de uma página",
+      "sub": "Quatro etapas, sempre nesta ordem. Clique em cada uma.",
+      "nos": [
+        {"icone": "lupa", "titulo": "Rastrear", "sub": "o robô lê o HTML",
+         "itens": [{"icone": "robo", "t": "Googlebot, Bingbot"}, {"icone": "robo", "t": "robôs de busca das IAs"}],
+         "detalhe": "O robô do buscador visita o endereço e lê o HTML que o servidor entrega. Ele chega à página por um link ou pelo sitemap. Página sem link e fora do sitemap quase não é visitada."},
+        {"icone": "camadas", "titulo": "Indexar", "sub": "guardar a página", "forte": true,
+         "itens": [{"icone": "check", "t": "indexada"}, {"icone": "x", "t": "descoberta, não indexada"}],
+         "detalhe": "Depois de ler, o buscador decide se guarda a página no índice. Ele pode recusar: endereço duplicado, página rasa ou canônico apontando para outro lugar. É aqui que a fundação técnica pesa."},
+        {"icone": "grafico", "titulo": "Mostrar", "sub": "aparecer na busca",
+         "itens": [{"icone": "grafico", "t": "impressão e clique"}],
+         "detalhe": "Só página indexada aparece no resultado. O Search Console e o Bing Webmaster contam quantas vezes ela foi mostrada (impressão) e clicada."},
+        {"icone": "chat", "titulo": "Citar", "sub": "a resposta de IA",
+         "itens": [{"icone": "chat", "t": "AI Overviews, AI Mode"}, {"icone": "chat", "t": "Copilot, ChatGPT, Perplexity"}],
+         "detalhe": "Os recursos de IA do Google partem do índice do Google; o Copilot, do índice do Bing. Para o ChatGPT, um estudo da Seer achou a maioria das citações entre os primeiros resultados do Bing; isso é estudo, não declaração da OpenAI."}
+      ],
+      "volta": "O que não aparece volta para o raio-x: medir e corrigir",
+      "legenda": "Não existe atalho que pule etapa: a IA cita o que os buscadores conseguem ler e guardar."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Os três princípios e a régua de 2026",
+      "sub": "Clique em cada aba.",
+      "passos": [
+        {"titulo": "Fundação antes de conteúdo", "sub": "princípio 1",
+         "texto": ["Sem canônico certo, sitemap e robots.txt decididos, nenhuma página nova rende. Por isso este curso inteiro vem antes de escrever.", "Você começa olhando o que já existe, não criando mais."],
+         "exemplo": {"rot": "No INEMA", "texto": "Em 23/09/2026, a página /cursos/ aparecia como \"Descoberta, mas não indexada\" e as páginas novas eram desconhecidas pro Google."}},
+        {"titulo": "Só dado real", "sub": "princípio 2",
+         "texto": ["Cada página se apoia num curso, projeto, evento ou experimento que existe de verdade. A IA pode reescrever e organizar; nunca inventa fato.", "É o que o próprio Google chama de conteúdo não-commodity: experiência sua, que uma IA não produziria sozinha."],
+         "exemplo": {"rot": "Teste rápido", "texto": "Se você trocar o assunto da página e o parágrafo continuar válido, ele é genérico. Reescreva com um dado seu."}},
+        {"titulo": "Medido sem a marca", "sub": "princípio 3",
+         "texto": ["Quem já te procura pelo nome não prova que o SEO funciona. O número que importa é o de quem não te conhecia e te achou.", "No começo, quase todo clique é da marca, e isso engana."],
+         "exemplo": {"rot": "Linha de base do INEMA", "texto": "Nos 28 dias de 25/08 a 21/09/2026, 639 de 647 cliques eram de marca."}},
+        {"titulo": "A régua de 2026", "sub": "guia do Google, maio",
+         "texto": ["O guia oficial do Google para recursos de IA (maio/2026) diz que não há requisito especial para aparecer em AI Overviews e AI Mode: valem as boas práticas de SEO.", "Ele também diz que não é preciso criar arquivo para IA nem schema especial. Use essa régua sempre que alguém vender um atalho."],
+         "exemplo": {"rot": "Na prática", "texto": "Fundação técnica + conteúdo com experiência própria. O resto é moda até prova em contrário."}}
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "O primeiro teste: perguntas fixas no seu assunto",
+      "sub": "Copie a planilha e as perguntas. Troque o que está entre < > pelo seu.",
+      "blocos": [
+        {"rot": "Perguntas-teste (3 para começar)", "icone": "chat",
+         "conteudo": "1. Onde aprender <seu assunto> em <sua cidade ou idioma>?\n2. Qual a melhor forma de <problema que o seu negócio resolve>?\n3. O que é <nome do seu negócio>?"},
+        {"rot": "Planilha (uma linha por resposta)", "icone": "lista",
+         "conteudo": "data;assistente;pergunta;meu site apareceu? (sim/não);quem foi citado\n<dd/mm/aaaa>;<ChatGPT>;1;não;<site citado>\n<dd/mm/aaaa>;<Perplexity>;1;não;<site citado>"}
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {"rot": "O caso do INEMA", "html": "<p>Rodada única em 10/07/2026, com 20 perguntas congeladas: o INEMA apareceu em <b>0 de 48</b> respostas neutras no Claude e em <b>0 de 4</b> no Gemini. ChatGPT e Perplexity não foram medidos.</p><p>\"O que é INEMA?\" teve 4 de 4 respostas sobre outro órgão com o mesmo nome: <b>colisão de nome</b>. A pergunta 3 da planilha existe para achar isso no seu caso.</p>"},
+          {"rot": "Como ler", "html": "<ul><li>As respostas variam de um dia para o outro: anote a data e repita igual no mês seguinte.</li><li>Zero hoje é ponto de partida, não fracasso.</li><li>A medição completa (20 a 30 perguntas, todo mês) está no curso 4.</li></ul>"}
+        ]
+      }
+    },
+    {
+      "tipo": "video",
+      "titulo": "O método inteiro em 7 minutos",
+      "sub": "O vídeo de 10/10/2026 percorre as 10 etapas. Logo abaixo, o que a pesquisa de outubro corrigiu.",
+      "chave": "inemaseo-pratica"
+    },
+    {
+      "tipo": "texto",
+      "titulo": "O que mudou desde o vídeo",
+      "sub": "Três falas do vídeo que a régua de 2026 ajusta.",
+      "paragrafos": [
+        "<b>llms.txt.</b> O vídeo chama de \"mapa do site para as IAs\". Um estudo do Ahrefs com 137 mil domínios (15/06/2026) achou 97% dos arquivos sem nenhuma requisição, e o Google diz que pode ignorá-lo. Neste curso ele é opcional e barato (aula 6).",
+        "<b>robots.txt.</b> O vídeo diz para liberar os robôs das IAs. Continua certo, mas em 2026 a decisão é por finalidade: busca, ação do usuário e treino são robôs diferentes, e bloquear treino não tira você da busca (aula 6).",
+        "<b>Resposta de 40 a 60 palavras.</b> Uma resposta direta no começo ajuda o leitor. Não há fonte que a sustente como técnica para ser citado por IA; trate como clareza."
+      ]
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: o ponto de partida",
+      "sub": "Dois exercícios curtos. Guarde as respostas: você volta a elas no curso 4.",
+      "exercicios": [
+        {"id": "e1", "titulo": "E1 · Três perguntas, dois assistentes", "min": "20 min",
+         "texto": "Escreva as 3 perguntas-teste do seu assunto e rode cada uma em dois assistentes de IA. Preencha a planilha.",
+         "pronto": "a planilha tem 6 linhas com data, assistente e se o seu site apareceu."},
+        {"id": "e2", "titulo": "E2 · O que só você pode dizer", "min": "15 min",
+         "texto": "Liste em 3 linhas o que o seu site tem de próprio: um dado, uma experiência, um caso, um produto que só você vende.",
+         "pronto": "cada linha aponta para uma página do seu site ou para algo que pode virar página."}
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {"p": "Uma página está \"descoberta, mas não indexada\". Ela pode aparecer numa resposta de IA do Google?",
+         "opcoes": ["Sim, a IA lê qualquer página publicada.", "Não: os recursos de IA do Google partem do índice, e ela ainda não está nele.", "Sim, se tiver um llms.txt.", "Só no AI Mode."],
+         "certa": 1, "explica": "O caminho é rastrear, indexar, mostrar e citar. Sem índice não há resultado nem citação. llms.txt não muda isso: o Google diz que pode ignorá-lo.", "ref": "diagrama", "cert": true},
+        {"p": "O que o guia do Google de maio/2026 diz sobre aparecer em AI Overviews?",
+         "opcoes": ["Exige um schema especial para IA.", "Exige um arquivo de texto para IA.", "Não há requisito especial: valem as boas práticas de SEO e o conteúdo não-commodity.", "Só sites grandes aparecem."],
+         "certa": 2, "explica": "O guia diz que não é preciso arquivo nem marcação especial. O que pesa no longo prazo é conteúdo com experiência própria. Quem vende atalho está vendendo moda.", "ref": "passos"},
+        {"p": "Por que o número de cliques totais engana no começo?",
+         "opcoes": ["Porque o Search Console erra a conta.", "Porque quase todo clique é de quem já procura pelo seu nome.", "Porque as IAs roubam os cliques.", "Porque cliques não importam."],
+         "certa": 1, "explica": "No INEMA, 639 de 647 cliques eram de marca. O que mostra se o SEO funciona são as buscas sem a marca, de quem não te conhecia.", "ref": "passos"},
+        {"p": "A ligação entre o ChatGPT e o índice do Bing é:",
+         "opcoes": ["Declaração oficial da OpenAI.", "Indício de um estudo da Seer, com amostra pequena; não é declaração da OpenAI.", "Mito sem nenhum dado.", "Regra do Google."],
+         "certa": 1, "explica": "O estudo achou a maioria das citações entre os primeiros do Bing. É bom motivo para cuidar do Bing, mas diga sempre de onde vem a informação.", "ref": "diagrama"}
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para levar",
+      "itens": [
+        {"t": "Caminho", "texto": "Rastrear → indexar → mostrar → citar. A IA cita o que os buscadores conseguem ler e guardar."},
+        {"t": "Princípios", "texto": "Fundação antes de conteúdo, só dado real, medido sem a marca."},
+        {"t": "Régua de 2026", "texto": "Sem requisito especial para IA. llms.txt e \"40–60 palavras\" não são alavanca de citação."}
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir além",
+      "links": [
+        {"t": "Guia do Google: otimização para recursos de IA (inglês)", "href": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide", "icone": "lupa"},
+        {"t": "Método inemaSEO: guia de uso", "href": "https://inematds.github.io/inemaseo-metodo/guia/", "icone": "lista"},
+        {"t": "Página do vídeo inemaSEO na prática", "href": "https://inematds.github.io/inemaseo-pratica/videos/", "icone": "video"},
+        {"t": "Área inemaSEO no Eventos", "href": "https://eventos.inema.pro/inemaseo/", "icone": "camadas"}
+      ]
+    }
+  ]
+}

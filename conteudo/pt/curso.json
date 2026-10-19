@@ -1,0 +1,192 @@
+{
+  "id": "formacao-inemaseo-fundacao-v72",
+  "lang": "pt-BR",
+  "url": "https://inematds.github.io/formacao-inemaseo-fundacao-v72/",
+  "nome": "inemaSEO 1 — Fundação: o raio-x e o alicerce do seu site",
+  "sub": "Formação inemaSEO · curso 1 de 6",
+  "volta": {
+    "t": "Área inemaSEO",
+    "href": "https://eventos.inema.pro/inemaseo/"
+  },
+  "lado_card": {
+    "rot": "Formação inemaSEO",
+    "t": "Curso 1 de 6",
+    "texto": "Com o alicerce de pé, o curso 2 ensina a escrever as páginas que só você pode escrever: entidade, território e dado próprio.",
+    "link": "Ir para o curso 2",
+    "href": "https://inematds.github.io/formacao-inemaseo-conteudo-v72/"
+  },
+  "rodape": "INEMA.CLUB · conteúdo aberto e gratuito · formato INEMA Learning v7.2 · <a href=\"https://eventos.inema.pro/inemaseo/\">eventos.inema.pro/inemaseo</a> · <a href=\"https://github.com/inematds/inemaseo-metodo\">método inemaSEO (MIT)</a> · <a href=\"https://inema.club/\">inema.club</a>",
+  "videos": {
+    "inemaseo-pratica": {
+      "titulo": "inemaSEO na prática: o método em 10 etapas",
+      "duracao": "6 min 51 s",
+      "mp4": "https://github.com/inematds/inemaseo-pratica/releases/download/video-v2.0.0/inemaseo-pratica-completo-16x9.mp4",
+      "vtt": "assets/vtt/inemaseo-pratica.vtt",
+      "poster": "assets/img/video-inemaseo.jpg",
+      "pagina": "https://inematds.github.io/inemaseo-pratica/videos/"
+    }
+  },
+  "inicio": {
+    "kicker": "Formação inemaSEO · curso 1 de 6 · 8 aulas",
+    "titulo": "Fundação: o raio-x e o alicerce do seu site",
+    "lead": "Antes de escrever qualquer página nova, olhe o seu site como o buscador olha. Em oito aulas você faz o raio-x só de leitura, verifica o site no Search Console e no Bing, acerta canônico, sitemap e robots.txt, tira do índice o que é raso e avisa os buscadores. Tudo de graça, com scripts abertos.",
+    "cta": "Começar pela aula 1",
+    "cta2": {
+      "t": "Ver a área inemaSEO",
+      "href": "https://eventos.inema.pro/inemaseo/"
+    },
+    "capa_alt": "Dona de uma pequena oficina de cerâmica olha com atenção a tela do notebook, sentada à mesa de trabalho.",
+    "numeros": [
+      {
+        "v": "8",
+        "t": "aulas curtas"
+      },
+      {
+        "v": "16",
+        "t": "exercícios com \"pronto quando\""
+      },
+      {
+        "v": "3",
+        "t": "scripts abertos"
+      },
+      {
+        "v": "0",
+        "t": "ferramenta paga"
+      }
+    ],
+    "aulas_titulo": "As aulas",
+    "aulas_sub": "Na ordem do trabalho: entender, olhar, verificar, acertar o endereço, o mapa e a porta, limpar o raso e avisar.",
+    "blocos": [
+      {
+        "t": "Para quem é",
+        "itens": [
+          "Dono de site ou de pequeno negócio que nunca mexeu com SEO.",
+          "Quem já tem site no ar, mas não sabe se o Google e o Bing enxergam as páginas.",
+          "Quem ouviu falar de \"aparecer nas IAs\" e quer saber o que é fundamento e o que é moda."
+        ]
+      },
+      {
+        "t": "O que você sai fazendo",
+        "itens": [
+          "Rodar um raio-x só de leitura no seu site e ler o que ele mostra.",
+          "Verificar o site no Search Console e no Bing Webmaster e enviar o sitemap.",
+          "Deixar um canônico só, sitemap com data real e robots.txt decidido por finalidade.",
+          "Tirar páginas rasas do índice e avisar os buscadores só com URLs que respondem 200."
+        ]
+      },
+      {
+        "t": "Onde este curso entra na Formação inemaSEO",
+        "itens": [
+          "<b>1 Fundação</b> (este curso): o alicerce técnico. Sem ele, nenhum conteúdo rende.",
+          "<b>2 Conteúdo</b> e <b>3 Medição</b>: as páginas que só você pode escrever e o número que importa, o das buscas sem a sua marca.",
+          "<b>4 Nas IAs</b>, <b>5 Com Agentes</b> e <b>6 Profissional</b>: painéis oficiais de IA, agentes fazendo o repetitivo e SEO como serviço.",
+          "Todos seguem o <a href=\"https://github.com/inematds/inemaseo-metodo\">método inemaSEO</a>, aberto (MIT), aplicado no portal, no site de notícias e no de eventos do INEMA."
+        ]
+      }
+    ]
+  },
+  "ui": {
+    "pular": "Pular para o conteúdo",
+    "aulas": "Aulas",
+    "concluido": "concluído",
+    "aula": "Aula",
+    "nesta_aula": "Nesta aula, você vai aprender:",
+    "objetivo": "Objetivo:",
+    "proxima_aula": "Próxima aula",
+    "aula_anterior": "Aula anterior",
+    "voltar_inicio": "Voltar ao início do curso",
+    "marcar_concluida": "Marcar aula como concluída",
+    "dg_dica": "Clique em cada bloco do diagrama para ver o que ele faz.",
+    "copiar": "Copiar",
+    "copiado": "Copiado",
+    "selo_simulacao": "Simulação: exemplo ilustrativo",
+    "selo_real": "Exemplo do repositório",
+    "pronto_quando": "Pronto quando:",
+    "fiz": "Fiz este exercício",
+    "video_pagina": "Página do vídeo com roteiro",
+    "pergunta": "Pergunta",
+    "de": "de",
+    "cert_tag": "competência",
+    "correto": "Correto",
+    "errado": "Não é essa",
+    "quiz_aguarda": "Escolha uma alternativa. A explicação aparece depois da sua tentativa.",
+    "proxima_pergunta": "Próxima pergunta",
+    "quiz_ver": "Ver resultado",
+    "quiz_fim": "Teste concluído",
+    "quiz_total": "Você acertou {a} de {n}. Acertando todas, a aula é marcada como concluída.",
+    "aparencia": "Aparência",
+    "tamanho_texto": "Tamanho do texto",
+    "tema": "Tema",
+    "tema_escuro": "Escuro",
+    "tema_papel": "Papel claro",
+    "role_dica": "Role a página: cada etapa abaixo acende a sua parte do diagrama.",
+    "pre_requisito": "requer",
+    "ver_aula": "Ver a aula",
+    "mapa_dica": "Clique num exercício para ver o que fazer e o \"pronto quando\".",
+    "etapas": "Etapas",
+    "exercicios": "exercícios",
+    "rever": "Rever:",
+    "revisar_erradas": "Revisar as erradas",
+    "refazer": "Refazer o teste",
+    "h_semana": "h por semana",
+    "data_inicio": "Data de início",
+    "ritmo": "Tempo disponível",
+    "gerar_plano": "Gerar meu plano",
+    "baixar_md": "Baixar plano.md",
+    "baixar_ics": "Baixar para o calendário (.ics)",
+    "ind_estudo": "Estudo (aulas)",
+    "ind_pratica": "Prática declarada",
+    "ind_nota": "Prática = exercícios que você marcou como feitos. A comprovação vem na prova da certificação.",
+    "estudo": {
+      "titulo": "Seu estudo",
+      "continuar": "Continuar de onde parei",
+      "comecar": "Começar pela aula 1",
+      "cta_continuar": "Continuar a aula {n}",
+      "hoje": "hoje",
+      "ontem": "ontem",
+      "ha_dias": "há {n} dias",
+      "desempenho": "Desempenho nos testes",
+      "notas": "Minhas anotações",
+      "dados": "Copiar meus dados",
+      "sem_testes": "Nenhum teste feito ainda. O teste fica no fim de cada aula.",
+      "nao_fez": "teste ainda não feito",
+      "ultimo": "Último",
+      "melhor": "Melhor",
+      "tentativas": "tentativas",
+      "tentativa": "tentativa",
+      "tudo_certo": "Acertou tudo no último teste.",
+      "rever": "Para rever",
+      "resposta": "Resposta certa:",
+      "ir_teste": "Refazer o teste",
+      "sem_notas": "Nenhuma anotação ainda. Na aula, selecione um trecho do texto e toque em Marcar ou Anotar.",
+      "so_marcado": "(só marcado)",
+      "marcar": "Marcar",
+      "anotar": "Anotar",
+      "salvar": "Salvar",
+      "apagar": "Apagar marca",
+      "fechar": "Fechar",
+      "nota_ph": "Escreva sua anotação sobre este trecho…",
+      "um_bloco": "Marque dentro de um parágrafo só.",
+      "nao_marca": "Este trecho não pode ser marcado.",
+      "dados_exp": "Seu progresso, suas anotações e as notas dos testes ficam só neste navegador. Baixe uma cópia (.json) para guardar ou para continuar em outro computador ou navegador; lá, carregue a cópia. Carregar soma com o que já existe e não apaga nada.",
+      "exportar": "Baixar cópia",
+      "importar": "Carregar cópia",
+      "import_ok": "Cópia carregada ({n} itens). Atualizando a página…",
+      "import_erro": "Arquivo não reconhecido. Nada foi alterado.",
+      "import_outro": "Esta cópia é de outro curso. Nada foi alterado.",
+      "export_ok": "Cópia baixada."
+    },
+    "conv_dica": "Escolha a sua resposta. O comentário aparece logo depois e a conversa segue conforme a escolha.",
+    "conv_voce": "Você",
+    "conv_escolha": "Sua resposta",
+    "conv_boa": "Boa escolha",
+    "conv_meio": "Dá para melhorar",
+    "conv_ruim": "Escolha fraca",
+    "conv_fim": "Fim da conversa",
+    "conv_placar": "Você fez {p} de {m} pontos possíveis.",
+    "conv_licao": "Lição:",
+    "conv_recomecar": "Recomeçar a conversa",
+    "conv_feita": "Seu melhor placar: {p} de {m} pontos."
+  },
+  "icone": "lupa"
+}

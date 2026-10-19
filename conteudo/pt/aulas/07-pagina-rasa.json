@@ -1,0 +1,124 @@
+{
+  "slug": "pagina-rasa",
+  "num": 7,
+  "menu": "Página rasa",
+  "titulo": "Página rasa sai do índice (noindex até ter corpo)",
+  "titulo_curto": "Página rasa",
+  "minutos": 15,
+  "lead": "Publicar muitas páginas parecidas e finas não dá mais chances: costuma dar o contrário. O buscador deixa de rastrear o lote e passa a desconfiar do site. Esta aula mostra como achar a página rasa, tirá-la do índice e do sitemap e trazê-la de volta só quando tiver o que dizer.",
+  "objetivo": "identificar páginas rasas e tirá-las do índice e do sitemap até terem corpo próprio.",
+  "competencias": ["identificar-pagina-rasa", "aplicar-noindex", "manter-sitemap-limpo"],
+  "aprende": [
+    {"t": "O caso real das 283 fichas que não indexavam"},
+    {"t": "Três sinais de página rasa"},
+    {"t": "noindex e fora do sitemap, juntos"},
+    {"t": "Quando a página volta"}
+  ],
+  "hero_alt": "Vendedora retira cadernos finos quase vazios de uma estante com livros grossos.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "O ciclo da página rasa",
+      "sub": "Clique em cada bloco.",
+      "nos": [
+        {"icone": "camadas", "titulo": "Lote de páginas", "sub": "parecidas e finas",
+         "detalhe": "Páginas geradas em série, com pouco texto e muito trecho repetido: fichas, variações por cidade, tags, notícias sem corpo."},
+        {"icone": "lupa", "titulo": "Testar", "sub": "três sinais", "forte": true,
+         "itens": [{"icone": "arquivo", "t": "poucas palavras próprias"}, {"icone": "copiar", "t": "texto repetido entre páginas"}, {"icone": "x", "t": "sem link interno"}],
+         "detalhe": "Conte as palavras próprias da página, compare com uma irmã e veja se alguém linka para ela. Dois sinais juntos já pedem ação."},
+        {"icone": "cadeado", "titulo": "Tirar do índice", "sub": "noindex + fora do sitemap",
+         "detalhe": "Meta robots noindex na página e remoção do sitemap, as duas coisas juntas. A página continua no ar para quem chega por link; só deixa de pedir lugar no índice."},
+        {"icone": "check", "titulo": "Voltar com corpo", "sub": "dado próprio",
+         "detalhe": "Quando a página ganha conteúdo único, com dado daquele item, ela volta: tira o noindex, entra no sitemap e você avisa os buscadores (aula 8)."}
+      ],
+      "volta": "Ganhou corpo? Volta para o índice e para o sitemap",
+      "legenda": "Indexar página rasa pesa na avaliação do site inteiro, não só dela."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "O caso das 283 fichas",
+      "sub": "O que aconteceu no INEMA e o que se aprende. Clique em cada etapa.",
+      "passos": [
+        {"titulo": "O lote", "sub": "30/08/2026",
+         "texto": ["283 fichas de cursos foram publicadas num commit só. Das 6 fichas da amostra, 5 estavam \"descobertas, não indexadas\" e nunca tinham sido rastreadas."]},
+        {"titulo": "Por quê", "sub": "três achados",
+         "texto": ["Cada ficha tinha de 170 a 240 palavras. Duas fichas sorteadas compartilhavam 47% do vocabulário, e a descrição era copiada da página do curso.", "O índice /cursos/ pesava 481 KB de HTML."],
+         "exemplo": {"rot": "Leitura", "texto": "Para o buscador, eram centenas de variações da mesma página."}},
+        {"titulo": "A regra", "sub": "método inemaSEO",
+         "texto": ["Página sem conteúdo suficiente recebe noindex e sai do sitemap até ter corpo. Rota em série só entra no sitemap com conteúdo único e dado específico daquele item.", "O enriquecimento das fichas, com dado real e trava anti-invenção, é assunto do curso 2."]},
+        {"titulo": "O sinal de alerta", "sub": "Plano B",
+         "texto": ["Queda geral depois de publicar muito é sinal de conteúdo em escala. O que fazer: parar, auditar, fundir ou remover as fracas e baixar a cadência."]}
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Marcar e conferir",
+      "sub": "A tag vai no head da página rasa. O raio-x confere.",
+      "blocos": [
+        {"rot": "HTML · no head da página rasa", "icone": "arquivo",
+         "conteudo": "<meta name=\"robots\" content=\"noindex\">"},
+        {"rot": "Terminal · conferir com o raio-x", "icone": "terminal",
+         "conteudo": "bash tools/auditoria.sh https://www.seusite.com /pagina-rasa-1/ /pagina-rasa-2/ | grep -E '^-- |robots:'"},
+        {"rot": "Lista das mais finas (modelo)", "icone": "lista",
+         "conteudo": "| página | palavras próprias | repete a irmã? | links que chegam | decisão |\n|---|---|---|---|---|\n| </pagina/> | <nº> | <sim/não> | <nº> | <manter / noindex até ter corpo / fundir> |"}
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {"rot": "Como fica no raio-x", "html": "<pre>-- /pagina-rasa-1/  [200]\n   robots:    noindex\n-- /pagina-rasa-2/  [200]\n   robots:    noindex</pre><p>A página responde 200 (continua no ar) e a linha robots mostra o noindex. Confira também que ela sumiu do sitemap.</p>"},
+          {"rot": "Erros comuns", "html": "<ul><li><b>noindex e continuar no sitemap</b>: sinais contraditórios.</li><li><b>Bloquear no robots.txt em vez de noindex</b>: o robô não consegue ler a página e não vê o noindex.</li><li><b>Apagar a página com link externo</b>: perde o link; prefira noindex ou fundir com redirecionamento.</li></ul>"}
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: limpar o raso",
+      "sub": "Comece pelas páginas geradas em série, se o seu site tiver.",
+      "exercicios": [
+        {"id": "e1", "titulo": "E1 · As 5 mais finas", "min": "30 min",
+         "texto": "Escolha as 5 páginas mais finas do site e preencha a lista: palavras próprias, se repete uma irmã e quantos links chegam nela.",
+         "pronto": "a lista tem 5 linhas e cada uma termina com uma decisão."},
+        {"id": "e2", "titulo": "E2 · noindex conferido", "min": "20 min",
+         "texto": "Nas que ficaram como \"noindex até ter corpo\", aplique a tag e tire do sitemap. Rode o raio-x nelas.",
+         "pronto": "o raio-x mostra robots: noindex nessas páginas e elas não aparecem mais no sitemap."}
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {"p": "Por que as 283 fichas do INEMA não indexavam?",
+         "opcoes": ["O site estava fora do ar.", "Eram finas e parecidas: 170 a 240 palavras e 47% do vocabulário em comum entre duas fichas.", "Faltava llms.txt.", "O Google não indexa cursos."],
+         "certa": 1, "explica": "Publicadas de uma vez, curtas e repetidas, pareciam variações da mesma página. Das 6 da amostra, 5 nunca tinham sido rastreadas.", "ref": "passos", "cert": true},
+        {"p": "O que fazer com a página rasa?",
+         "opcoes": ["Apagar sempre.", "noindex e tirar do sitemap até ter corpo.", "Bloquear no robots.txt.", "Duplicar para ter mais chances."],
+         "certa": 1, "explica": "A página continua no ar, sai do índice e do sitemap, e volta quando tiver conteúdo próprio.", "ref": "diagrama"},
+        {"p": "Por que não usar o robots.txt para tirar a página do índice?",
+         "opcoes": ["Porque o robots.txt é lento.", "Porque, bloqueada, o robô não lê a página e não vê o noindex.", "Porque o robots.txt é só para IA.", "Pode usar, dá no mesmo."],
+         "certa": 1, "explica": "O noindex precisa ser lido. Bloquear o rastreio esconde justamente a instrução.", "ref": "codigo"},
+        {"p": "O site caiu depois de publicar muito. Qual o primeiro passo do Plano B?",
+         "opcoes": ["Publicar mais rápido.", "Parar, auditar, fundir ou remover as fracas e baixar a cadência.", "Comprar links.", "Trocar de domínio."],
+         "certa": 1, "explica": "É o sintoma de conteúdo em escala. Mais volume só agrava.", "ref": "passos"}
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para levar",
+      "itens": [
+        {"t": "Três sinais", "texto": "Pouca palavra própria, texto repetido, nenhum link chegando."},
+        {"t": "Duas ações juntas", "texto": "noindex na página e fora do sitemap."},
+        {"t": "Volta", "texto": "Só com dado próprio, e aí avisa os buscadores."}
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir além",
+      "links": [
+        {"t": "Google: bloquear indexação com noindex (inglês)", "href": "https://developers.google.com/search/docs/crawling-indexing/block-indexing", "icone": "lupa"},
+        {"t": "Google: políticas de spam, conteúdo em escala (inglês)", "href": "https://developers.google.com/search/docs/essentials/spam-policies", "icone": "escudo"},
+        {"t": "Checklist de publicação do inemaSEO", "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/CHECKLIST.md", "icone": "check"}
+      ]
+    }
+  ]
+}
