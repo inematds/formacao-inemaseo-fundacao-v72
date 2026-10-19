@@ -137,7 +137,7 @@
         {
           "rot": "Registro TXT en el DNS (modelo)",
           "icone": "arquivo",
-          "conteudo": "Tipo:  TXT\nNome:  @   (el dominio raíz)\nValor: google-site-verification=<código que muestra Search Console>"
+          "conteudo": "Tipo:  TXT\nNombre:  @   (el dominio raíz)\nValor: google-site-verification=<código que muestra el Search Console>"
         },
         {
           "rot": "Anotación de la verificación",

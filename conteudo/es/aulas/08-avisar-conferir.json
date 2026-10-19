@@ -157,7 +157,7 @@
         {
           "rot": "Terminal · avisar (IndexNow, y Bing si tienes clave)",
           "icone": "terminal",
-          "conteudo": "INDEXNOW_KEY=<sua-chave> bash tools/avisar_buscadores.sh urls.txt\n\n# opcional, com a chave da API do Bing Webmaster:\nINDEXNOW_KEY=<sua-chave> BING_API_KEY=<chave-bing> BING_SITE=https://www.seusite.com/ bash tools/avisar_buscadores.sh urls.txt"
+          "conteudo": "INDEXNOW_KEY=<tu-clave> bash tools/avisar_buscadores.sh urls.txt\n\n# opcional, con la clave de la API de Bing Webmaster:\nINDEXNOW_KEY=<tu-clave> BING_API_KEY=<clave-bing> BING_SITE=https://www.seusite.com/ bash tools/avisar_buscadores.sh urls.txt"
         },
         {
           "rot": "Terminal · inspección en lote (modelo; requiere credencial de Google)",
@@ -167,7 +167,7 @@
         {
           "rot": "Registro de la verificación (modelo)",
           "icone": "lista",
-          "conteudo": "| URL | avisada em | inspecionada em | estado | canônico do Google | próximo passo |\n|---|---|---|---|---|---|\n| </pagina-nova/> | <dd/mm> | <dd/mm> | <Enviada e indexada> | <igual> | <nenhum> |"
+          "conteudo": "| URL | avisada el | inspeccionada el | estado | canónico de Google | próximo paso |\n|---|---|---|---|---|---|\n| </pagina-nova/> | <dd/mm> | <dd/mm> | <Enviada e indexada> | <igual> | <ninguno> |"
         }
       ],
       "saida": {

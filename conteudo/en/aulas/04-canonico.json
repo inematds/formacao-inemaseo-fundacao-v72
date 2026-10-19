@@ -140,7 +140,7 @@
         {
           "rot": "Table of the 4 places (template)",
           "icone": "lista",
-          "conteudo": "Versão escolhida: <https://www.seusite.com>\n| lugar | página conferida | endereço encontrado | igual? |\n|---|---|---|---|\n| canonical | </pagina/> | <...> | sim/não |\n| sitemap | <sitemap.xml> | <...> | sim/não |\n| JSON-LD (@id/url) | <home> | <...> | sim/não |\n| links do menu | <home> | <...> | sim/não |"
+          "conteudo": "Chosen version: <https://www.seusite.com>\n| place | page checked | address found | same? |\n|---|---|---|---|\n| canonical | </pagina/> | <...> | yes/no |\n| sitemap | <sitemap.xml> | <...> | yes/no |\n| JSON-LD (@id/url) | <home> | <...> | yes/no |\n| menu links | <home> | <...> | yes/no |"
         }
       ],
       "saida": {

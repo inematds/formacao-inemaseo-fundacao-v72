@@ -132,17 +132,17 @@
         {
           "rot": "Terminal · is it already verified?",
           "icone": "terminal",
-          "conteudo": "dig TXT seusite.com +short\n# procure uma linha com google-site-verification="
+          "conteudo": "dig TXT seusite.com +short\n# look for a line with google-site-verification="
         },
         {
           "rot": "TXT record in DNS (template)",
           "icone": "arquivo",
-          "conteudo": "Tipo:  TXT\nNome:  @   (o domínio raiz)\nValor: google-site-verification=<código que o Search Console mostra>"
+          "conteudo": "Type:  TXT\nName:  @   (the root domain)\nValue: google-site-verification=<code that Search Console shows>"
         },
         {
           "rot": "Verification note",
           "icone": "lista",
-          "conteudo": "Search Console: propriedade de domínio <seusite.com>, verificada em <dd/mm/aaaa>, conta <quem é dono>\nBing Webmaster: importado do Search Console em <dd/mm/aaaa>\nSitemap enviado: <https://www.seusite.com/sitemap.xml> — status <sucesso / pendente>"
+          "conteudo": "Search Console: domain property <seusite.com>, verified on <mm/dd/yyyy>, account <who owns it>\nBing Webmaster: imported from Search Console on <mm/dd/yyyy>\nSitemap submitted: <https://www.seusite.com/sitemap.xml> — status <success / pending>"
         }
       ],
       "saida": {
