@@ -3,14 +3,14 @@
   "lang": "pt-BR",
   "url": "https://inematds.github.io/formacao-inemaseo-fundacao-v72/",
   "nome": "inemaSEO 1 — Fundação: o raio-x e o alicerce do seu site",
-  "sub": "Formação inemaSEO · curso 1 de 6",
+  "sub": "Formação inemaSEO · curso 1 de 7",
   "volta": {
     "t": "Área inemaSEO",
     "href": "https://eventos.inema.pro/inemaseo/"
   },
   "lado_card": {
     "rot": "Formação inemaSEO",
-    "t": "Curso 1 de 6",
+    "t": "Curso 1 de 7",
     "texto": "Com o alicerce de pé, o curso 2 ensina a escrever as páginas que só você pode escrever: entidade, território e dado próprio.",
     "link": "Ir para o curso 2",
     "href": "https://inematds.github.io/formacao-inemaseo-conteudo-v72/"
@@ -27,7 +27,7 @@
     }
   },
   "inicio": {
-    "kicker": "Formação inemaSEO · curso 1 de 6 · 8 aulas",
+    "kicker": "Formação inemaSEO · curso 1 de 7 · 8 aulas",
     "titulo": "Fundação: o raio-x e o alicerce do seu site",
     "lead": "Antes de escrever qualquer página nova, olhe o seu site como o buscador olha. Em oito aulas você faz o raio-x só de leitura, verifica o site no Search Console e no Bing, acerta canônico, sitemap e robots.txt, tira do índice o que é raso e avisa os buscadores. Tudo de graça, com scripts abertos.",
     "cta": "Começar pela aula 1",
@@ -83,7 +83,70 @@
           "Todos seguem o <a href=\"https://github.com/inematds/inemaseo-metodo\">método inemaSEO</a>, aberto (MIT), aplicado no portal, no site de notícias e no de eventos do INEMA."
         ]
       }
-    ]
+    ],
+    "cursos": {
+      "titulo": "Os 7 cursos da formação",
+      "sub": "Do alicerce do site ao seu próprio Semrush aberto. Faça na ordem ou vá direto ao que você precisa agora.",
+      "abrir": "Abrir o curso",
+      "itens": [
+        {
+          "rot": "Curso 1 · 8 aulas",
+          "t": "Fundação: o raio-x e o alicerce do seu site",
+          "l": "Em oito aulas você faz o raio-x só de leitura, verifica o site no Search Console e no Bing, acerta canônico, sitemap e robots.txt, tira do índice o que é raso e avisa os buscadores.",
+          "href": "https://inematds.github.io/formacao-inemaseo-fundacao-v72/",
+          "href_idioma": true,
+          "img": "assets/img/cursos/fundacao.jpg"
+        },
+        {
+          "rot": "Curso 2 · 8 aulas",
+          "t": "Conteúdo: páginas que só você pode escrever",
+          "l": "Em oito aulas você declara a entidade, separa territórios, valida pauta de graça, escreve pilares e fichas com dado real, liga tudo por links e aprende o que não fazer.",
+          "href": "https://inematds.github.io/formacao-inemaseo-conteudo-v72/",
+          "href_idioma": true,
+          "img": "assets/img/cursos/conteudo.jpg"
+        },
+        {
+          "rot": "Curso 3 · 8 aulas",
+          "t": "Medição e Rotina: o número que importa é o sem marca",
+          "l": "Em oito aulas você separa a marca, lê a inspeção de URL, decide quando mexer no título, transforma consulta em pauta, testa outro idioma, liga a meta de conversão e monta a rotina com Plano B.",
+          "href": "https://inematds.github.io/formacao-inemaseo-medicao-v72/",
+          "href_idioma": true,
+          "img": "assets/img/cursos/medicao.jpg"
+        },
+        {
+          "rot": "Curso 4 · 8 aulas",
+          "t": "Nas IAs: AEO, GEO e sites usados por agentes",
+          "l": "Em oito aulas você separa fundamento de moda, lê os painéis oficiais, mede citação à mão todo mês, corrige a sua entidade, confere os robôs no log e prepara o site para agentes.",
+          "href": "https://inematds.github.io/formacao-inemaseo-ias-v72/",
+          "href_idioma": true,
+          "img": "assets/img/cursos/ias.jpg"
+        },
+        {
+          "rot": "Curso 5 · 8 aulas",
+          "t": "Com Agentes: Claude Code e Codex fazendo o trabalho repetitivo",
+          "l": "Auditar, extrair, aplicar em lote, conferir e relatar: o repetitivo do SEO cabe num agente que roda pela sua assinatura.",
+          "href": "https://inematds.github.io/formacao-inemaseo-agentes-v72/",
+          "href_idioma": true,
+          "img": "assets/img/cursos/agentes.jpg"
+        },
+        {
+          "rot": "Curso 6 · 8 aulas",
+          "t": "Profissional: vender e entregar SEO + IA como serviço de confiança",
+          "l": "Em oito aulas você aprende a vender diagnóstico, plano, acompanhamento medido e ensino, em vez de posição 1 ou 500 artigos.",
+          "href": "https://inematds.github.io/formacao-inemaseo-profissional-v72/",
+          "href_idioma": true,
+          "img": "assets/img/cursos/profissional.jpg"
+        },
+        {
+          "rot": "Curso 7 · 8 aulas",
+          "t": "Sistemas: monte o seu Semrush aberto",
+          "l": "Cinco ferramentas de terminal, abertas e grátis, que fazem para o seu site o que as suítes pagas fazem: auditoria do site inteiro, nota de prontidão para IA, histórico do Search Console, citações da IA do Bing e robôs de IA no log.",
+          "href": "https://inematds.github.io/formacao-inemaseo-sistemas-v72/",
+          "href_idioma": true,
+          "img": "assets/img/cursos/sistemas.jpg"
+        }
+      ]
+    }
   },
   "ui": {
     "pular": "Pular para o conteúdo",

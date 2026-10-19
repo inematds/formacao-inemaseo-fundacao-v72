@@ -3,14 +3,14 @@
   "lang": "en",
   "url": "https://inematds.github.io/formacao-inemaseo-fundacao-v72/en/",
   "nome": "inemaSEO 1 — Foundation: the X-ray and the groundwork of your site",
-  "sub": "inemaSEO Program · course 1 of 6",
+  "sub": "inemaSEO Program · course 1 of 7",
   "volta": {
     "t": "inemaSEO Area",
     "href": "https://eventos.inema.pro/inemaseo/"
   },
   "lado_card": {
     "rot": "inemaSEO Program",
-    "t": "Course 1 of 6",
+    "t": "Course 1 of 7",
     "texto": "With the foundation in place, course 2 teaches you to write the pages only you can write: entity, territory, and your own data.",
     "link": "Go to course 2",
     "href": "https://inematds.github.io/formacao-inemaseo-conteudo-v72/"
@@ -27,7 +27,7 @@
     }
   },
   "inicio": {
-    "kicker": "inemaSEO Program · course 1 of 6 · 8 lessons",
+    "kicker": "inemaSEO Program · course 1 of 7 · 8 lessons",
     "titulo": "Foundation: the X-ray and the groundwork of your site",
     "lead": "Before you write any new page, look at your site the way a search engine does. In eight lessons you run a read-only X-ray, verify your site in Search Console and Bing, set the canonical, sitemap, and robots.txt right, take thin pages out of the index, and notify the search engines. All free, with open scripts.",
     "cta": "Start with lesson 1",
@@ -83,7 +83,70 @@
           "All of them follow the <a href=\"https://github.com/inematds/inemaseo-metodo\">inemaSEO method</a>, open (MIT), applied on the portal, the news site, and the events site of INEMA."
         ]
       }
-    ]
+    ],
+    "cursos": {
+      "titulo": "The 7 courses in the program",
+      "sub": "From the foundation of your website to your own open Semrush. Take them in order or jump straight to what you need right now.",
+      "abrir": "Open the course",
+      "itens": [
+        {
+          "rot": "Course 1 · 8 lessons",
+          "t": "Foundation: the X-ray and the groundwork of your site",
+          "l": "In eight lessons you run a read-only X-ray, verify your site in Search Console and Bing, set the canonical, sitemap, and robots.txt right, take thin pages out of the index, and notify the search engines.",
+          "href": "https://inematds.github.io/formacao-inemaseo-fundacao-v72/",
+          "href_idioma": true,
+          "img": "assets/img/cursos/fundacao.jpg"
+        },
+        {
+          "rot": "Course 2 · 8 lessons",
+          "t": "Content: pages only you can write",
+          "l": "In eight lessons you declare your entity, separate territories, validate your content plan for free, write pillar pages and listing pages with real data, link everything together, and learn what not to do.",
+          "href": "https://inematds.github.io/formacao-inemaseo-conteudo-v72/",
+          "href_idioma": true,
+          "img": "assets/img/cursos/conteudo.jpg"
+        },
+        {
+          "rot": "Course 3 · 8 lessons",
+          "t": "Measurement and Routine: the number that matters is the non-branded one",
+          "l": "In eight lessons, you separate the brand, read URL Inspection, decide when to change a title, turn queries into a topic list, test another language, set up the conversion goal, and build the routine with a Plan B.",
+          "href": "https://inematds.github.io/formacao-inemaseo-medicao-v72/",
+          "href_idioma": true,
+          "img": "assets/img/cursos/medicao.jpg"
+        },
+        {
+          "rot": "Course 4 · 8 lessons",
+          "t": "In the AIs: AEO, GEO, and sites used by agents",
+          "l": "In eight lessons you separate fundamentals from fads, read the official dashboards, measure citations by hand every month, fix your entity, check the bots in the log, and get your site ready for agents.",
+          "href": "https://inematds.github.io/formacao-inemaseo-ias-v72/",
+          "href_idioma": true,
+          "img": "assets/img/cursos/ias.jpg"
+        },
+        {
+          "rot": "Course 5 · 8 lessons",
+          "t": "With Agents: Claude Code and Codex Doing the Repetitive Work",
+          "l": "Audit, extract, apply in batches, check, and report: the repetitive part of SEO fits in an agent that runs through your subscription.",
+          "href": "https://inematds.github.io/formacao-inemaseo-agentes-v72/",
+          "href_idioma": true,
+          "img": "assets/img/cursos/agentes.jpg"
+        },
+        {
+          "rot": "Course 6 · 8 lessons",
+          "t": "Professional: selling and delivering SEO + AI as a service people can trust",
+          "l": "In eight lessons you learn to sell diagnosis, plan, measured follow-up and teaching, instead of position 1 or 500 articles.",
+          "href": "https://inematds.github.io/formacao-inemaseo-profissional-v72/",
+          "href_idioma": true,
+          "img": "assets/img/cursos/profissional.jpg"
+        },
+        {
+          "rot": "Course 7 · 8 lessons",
+          "t": "Systems: build your own open Semrush",
+          "l": "Five open, free terminal tools that do for your site what the paid suites do: a full-site audit, an AI readiness score, Search Console history, Bing AI citations, and AI bots in the log.",
+          "href": "https://inematds.github.io/formacao-inemaseo-sistemas-v72/",
+          "href_idioma": true,
+          "img": "assets/img/cursos/sistemas-en.jpg"
+        }
+      ]
+    }
   },
   "ui": {
     "pular": "Skip to content",
