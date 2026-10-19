@@ -1,0 +1,445 @@
+{
+  "slug": "robots-por-finalidade",
+  "num": 6,
+  "menu": "Robots",
+  "titulo": "robots.txt por finalidad: búsqueda, acción del usuario y entrenamiento",
+  "titulo_curto": "robots.txt por finalidad",
+  "minutos": 18,
+  "lead": "\"Bloquear las IA\" se volvió un pedido común, y casi siempre está mal formulado. Cada empresa de IA tiene robots distintos para buscar, para abrir la página a pedido de alguien y para entrenar modelos. Bloquear uno no bloquea a los otros. Y en 2026 tu CDN puede estar decidiendo por ti.",
+  "objetivo": "decidir en el robots.txt y en el panel de la CDN qué liberar para búsqueda, para acción del usuario y para entrenamiento.",
+  "competencias": [
+    "separar-robos-por-finalidad",
+    "escrever-robots-txt",
+    "conferir-bloqueio-na-cdn",
+    "avaliar-llms-txt"
+  ],
+  "aprende": [
+    {
+      "t": "Los tres tipos de robot de IA y el efecto de bloquear cada uno"
+    },
+    {
+      "t": "Escribir el robots.txt en tres grupos"
+    },
+    {
+      "t": "Revisar el bloqueo predeterminado de la CDN"
+    },
+    {
+      "t": "Tratar el llms.txt como opcional y barato"
+    }
+  ],
+  "hero_alt": "Un portero de un edificio comercial revisa las credenciales de los visitantes en la recepción.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Quién toca la puerta y qué pasa si la cierras",
+      "sub": "Haz clic en cada bloque.",
+      "nos": [
+        {
+          "icone": "lupa",
+          "titulo": "Búsqueda",
+          "sub": "aparecer y ser citado",
+          "forte": true,
+          "itens": [
+            {
+              "icone": "robo",
+              "t": "OAI-SearchBot, Claude-SearchBot"
+            },
+            {
+              "icone": "robo",
+              "t": "PerplexityBot, Googlebot, Bingbot"
+            }
+          ],
+          "detalhe": "Arman el índice que usan las respuestas. Bloquear = desaparecer de las respuestas de búsqueda de esa IA. OpenAI dice que quien bloquea el OAI-SearchBot no aparece en las respuestas de búsqueda de ChatGPT."
+        },
+        {
+          "icone": "usuario",
+          "titulo": "Acción del usuario",
+          "sub": "a pedido de alguien",
+          "itens": [
+            {
+              "icone": "robo",
+              "t": "ChatGPT-User, Claude-User"
+            },
+            {
+              "icone": "robo",
+              "t": "Perplexity-User"
+            }
+          ],
+          "detalhe": "Visitan la página cuando una persona le pide al asistente que lea o abra esa dirección. Bloquear = el asistente no puede leer tu página ni siquiera cuando el cliente se lo pide."
+        },
+        {
+          "icone": "cerebro",
+          "titulo": "Entrenamiento",
+          "sub": "modelos futuros",
+          "itens": [
+            {
+              "icone": "robo",
+              "t": "GPTBot, ClaudeBot"
+            },
+            {
+              "icone": "robo",
+              "t": "Google-Extended"
+            }
+          ],
+          "detalhe": "Recopilan texto para entrenar modelos. Bloquear = quedar fuera del entrenamiento futuro, en general sin desaparecer de la búsqueda. Google-Extended no afecta la Búsqueda de Google."
+        },
+        {
+          "icone": "arquivo",
+          "titulo": "robots.txt",
+          "sub": "es un pedido",
+          "detalhe": "El robots.txt pide; quienes lo respetan son los robots que siguen la regla. Los cambios tardan un tiempo en surtir efecto (OpenAI habla de unas 24 horas)."
+        },
+        {
+          "icone": "escudo",
+          "titulo": "CDN / firewall",
+          "sub": "es quien impone",
+          "detalhe": "La CDN (como Cloudflare) bloquea de verdad. Desde el 15/09/2026, el plan gratuito de Cloudflare bloquea por defecto los robots de entrenamiento y los agentes en páginas con anuncios. Revisa en el panel de tu sitio qué está activado."
+        }
+      ],
+      "legenda": "Decide por finalidad, escríbelo en el robots.txt y revisa que la CDN esté de acuerdo."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Decidir en cuatro preguntas",
+      "sub": "Haz clic en cada una.",
+      "passos": [
+        {
+          "titulo": "¿Quiero que me citen?",
+          "sub": "búsqueda",
+          "texto": [
+            "Para casi cualquier negocio, sí: libera los robots de búsqueda. Por ellos tu sitio entra en las respuestas.",
+            "Bloquear la búsqueda para \"proteger el contenido\" suele ser el peor de los mundos: el texto ya fue leído y tú desapareces de las respuestas."
+          ]
+        },
+        {
+          "titulo": "¿Dejo que la IA lea a pedido?",
+          "sub": "acción del usuario",
+          "texto": [
+            "Si un cliente pega tu enlace en el asistente y pide un resumen, es este robot el que lee. Para quien vende o enseña, permitirlo suele ser lo natural."
+          ]
+        },
+        {
+          "titulo": "¿Permito el entrenamiento?",
+          "sub": "decisión tuya",
+          "texto": [
+            "Aquí no hay respuesta correcta: es una elección de negocio. Bloquear el entrenamiento no te saca de la búsqueda.",
+            "Anota el motivo en el propio robots.txt, en un comentario, para quien venga después."
+          ],
+          "exemplo": {
+            "rot": "En inema.club",
+            "texto": "El robots.txt también permite a ClaudeBot, que es de entrenamiento: INEMA es contenido abierto y eligió permitirlo."
+          }
+        },
+        {
+          "titulo": "¿La CDN está de acuerdo?",
+          "sub": "panel",
+          "texto": [
+            "Abre el panel de la CDN y busca la configuración de robots y de IA. Confirma si hay un bloqueo predeterminado activado y en qué páginas.",
+            "Si el panel bloquea lo que el robots.txt permite, manda el panel."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "El robots.txt en tres grupos y el llms.txt opcional",
+      "sub": "Adapta la decisión de entrenamiento a la tuya. Cambia la dirección del sitemap.",
+      "blocos": [
+        {
+          "rot": "robots.txt · por finalidad",
+          "icone": "arquivo",
+          "conteudo": "# robots.txt por finalidad (adaptado del templates/robots.txt de inemaSEO)\nUser-agent: *\nAllow: /\n\n# Búsqueda: aparecer y ser citado en las respuestas\nUser-agent: OAI-SearchBot\nUser-agent: Claude-SearchBot\nUser-agent: PerplexityBot\nUser-agent: Googlebot\nUser-agent: Bingbot\nAllow: /\n\n# Acción del usuario: la IA abre la página a pedido de alguien\nUser-agent: ChatGPT-User\nUser-agent: Claude-User\nUser-agent: Perplexity-User\nAllow: /\n\n# Entrenamiento: decisión tuya. Este ejemplo bloquea; bloquear el entrenamiento no te saca de la búsqueda\nUser-agent: GPTBot\nUser-agent: ClaudeBot\nUser-agent: Google-Extended\nDisallow: /\n\nSitemap: https://www.seusite.com/sitemap.xml"
+        },
+        {
+          "rot": "llms.txt · opcional (templates/llms.txt, resumido)",
+          "icone": "arquivo",
+          "conteudo": "# Tu Sitio\n\n> Una frase que diga qué es, para quién y qué entrega.\n\n## Páginas principales\n\n- [Inicio](https://www.seusite.com/)\n- [Acerca de / quién lo hace](https://www.seusite.com/sobre/)\n- [Catálogo](https://www.seusite.com/catalogo/)\n\n## Datos para máquinas\n\n- [Sitemap](https://www.seusite.com/sitemap.xml)"
+        },
+        {
+          "rot": "Anotación de la decisión",
+          "icone": "lista",
+          "conteudo": "Decisión de robots de <seusite.com> el <dd/mm/aaaa>\n- Búsqueda: permitido (motivo: <...>)\n- Acción del usuario: <permitido/bloqueado> (motivo: <...>)\n- Entrenamiento: <permitido/bloqueado> (motivo: <...>)\n- CDN: <nombre>, bloqueo predeterminado de IA <activado/desactivado>, verificado en el panel\n- llms.txt: <sí/no> (opcional)"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Por qué reorganizar el modelo",
+            "html": "<p>El <code>templates/robots.txt</code> del método pone a ClaudeBot junto con los robots de búsqueda. Según la documentación de Anthropic, ClaudeBot recopila para entrenamiento; la búsqueda es de Claude-SearchBot y la lectura a pedido es de Claude-User. El modelo de arriba separa los tres y agrega los robots de acción del usuario.</p>"
+          },
+          {
+            "rot": "llms.txt: lo que se sabe",
+            "html": "<p>Estudio de Ahrefs (15/06/2026), 137 mil dominios: entre los archivos llms.txt válidos, <b>el 97% no recibió ninguna solicitud</b>. La guía de IA de Google dice que puedes ignorarlo.</p><p>Lectura honesta: es barato y puede servir de índice para agentes de código. No es una palanca de citación y no se vende como \"entrar en ChatGPT\".</p>"
+          },
+          {
+            "rot": "Errores comunes",
+            "html": "<ul><li><b>Disallow para \"todas las IA\"</b>: te saca de las respuestas de búsqueda.</li><li><b>Creer que robots.txt es un candado</b>: quien lo impone es la CDN.</li><li><b>Olvidar la CDN</b>: el panel puede bloquear agentes que el robots.txt permite.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "simconversa",
+      "titulo": "Conversación simulada: el dueño de la posada quiere bloquear las IA",
+      "sub": "Conversación ficticia para practicar. Elige la respuesta que darías; el comentario aparece enseguida.",
+      "personagem": {
+        "nome": "Dueño de posada",
+        "papel": "sitio pequeño · reservas que llegan de la búsqueda"
+      },
+      "inicio": "abre",
+      "falas": {
+        "abre": {
+          "cliente": "Leí que las IA copian todo. Quiero bloquearlas todas en el robots.txt, de una vez. ¿Se puede hacer hoy?",
+          "opcoes": [
+            {
+              "t": "Se puede. Pongo Disallow para todos los robots de IA ahora.",
+              "vai": "fim-sumiu",
+              "nota": 0,
+              "comenta": "Atendiste el pedido y no la necesidad. Junto con el entrenamiento se fueron los robots de búsqueda, y la posada desaparece de las respuestas."
+            },
+            {
+              "t": "Antes: ¿lo que te molesta es que usen tu texto para entrenar, o que ChatGPT recomiende la posada?",
+              "vai": "finalidade",
+              "nota": 2,
+              "comenta": "Pregunta de finalidad. Entrenamiento, búsqueda y lectura a pedido son robots distintos, y la decisión cambia según la respuesta."
+            },
+            {
+              "t": "Ni sirve: robots.txt es solo una petición, quien quiere la ignora.",
+              "vai": "pedido",
+              "nota": 1,
+              "comenta": "Es cierto que robots.txt es una petición, pero desanimaste al cliente sin ayudarle a decidir nada."
+            }
+          ]
+        },
+        "pedido": {
+          "cliente": "Entonces, ¿no hay manera? ¿Qué hago, bloqueo todo en Cloudflare?",
+          "opcoes": [
+            {
+              "t": "Vamos a separar: ¿lo que molesta es el entrenamiento o que te recomienden?",
+              "vai": "finalidade",
+              "nota": 1,
+              "comenta": "Volviste al camino correcto, con una vuelta de más."
+            },
+            {
+              "t": "Eso: bloquea todo robot en Cloudflare y listo.",
+              "vai": "fim-sumiu",
+              "nota": 0,
+              "comenta": "Ahora el bloqueo es real e incluye la búsqueda. La posada desaparece de las respuestas."
+            }
+          ]
+        },
+        "finalidade": {
+          "cliente": "Que entrenen con mi texto me molesta. Pero la mitad de las reservas viene de gente que pregunta en el celular por una posada cerca del cañón.",
+          "opcoes": [
+            {
+              "t": "Entonces bloqueamos los de entrenamiento (GPTBot, ClaudeBot, Google-Extended) y permitimos los de búsqueda y los que leen a pedido.",
+              "vai": "cdn",
+              "nota": 2,
+              "comenta": "Decisión por finalidad: protege lo que te molesta y mantiene lo que trae reservas."
+            },
+            {
+              "t": "Bloquea también a Googlebot, por si acaso.",
+              "vai": "fim-sumiu",
+              "nota": 0,
+              "comenta": "Googlebot es la búsqueda de Google, incluida la base de sus funciones de IA. Por si acaso, sacaste la posada de Google."
+            },
+            {
+              "t": "Bloquea solo GPTBot y deja el resto.",
+              "vai": "cdn",
+              "nota": 1,
+              "comenta": "No arruina la búsqueda, pero deja libres otros robots de entrenamiento, al contrario de lo que pidió el cliente."
+            }
+          ]
+        },
+        "cdn": {
+          "cliente": "De acuerdo. Ah, mi sobrino puso el sitio en el Cloudflare gratuito. ¿Eso cambia algo?",
+          "opcoes": [
+            {
+              "t": "Puede cambiar: desde el 15/09/2026 el plan gratuito bloquea por defecto los robots de entrenamiento y los agentes en páginas con anuncios. Abramos el panel y revisemos.",
+              "vai": "llms",
+              "nota": 2,
+              "comenta": "Recordaste que quien lo impone es la CDN y pediste revisar el panel, en vez de suponer."
+            },
+            {
+              "t": "No cambia, el robots.txt es el que manda.",
+              "vai": "fim-cego",
+              "nota": 0,
+              "comenta": "El robots.txt pide; la CDN impone. Sin mirar el panel, no sabes qué está bloqueado."
+            }
+          ]
+        },
+        "llms": {
+          "cliente": "Una última cosa: un muchacho me ofreció un tal llms.txt que garantiza la posada en ChatGPT. ¿Vale la pena?",
+          "opcoes": [
+            {
+              "t": "Es un archivo opcional y barato. Un estudio con 137 mil dominios encontró que el 97% no tenía ninguna lectura. Puedo hacerlo, pero no garantiza citación.",
+              "vai": "fim-bom",
+              "nota": 2,
+              "comenta": "Respuesta honesta, con fuente: ni vende el archivo como atajo, ni lo prohíbe sin motivo."
+            },
+            {
+              "t": "Vale la pena, es el mapa del sitio para las IA.",
+              "vai": "fim-llms",
+              "nota": 0,
+              "comenta": "Era la explicación común hasta 2025. El dato de 2026 no sostiene la promesa."
+            },
+            {
+              "t": "No lo hagas nunca, es peligroso.",
+              "vai": "fim-bom",
+              "nota": 1,
+              "comenta": "Exagerado. Hay quien estudia el archivo como un riesgo para los agentes, pero para el dueño de la posada la cuestión es otra: no pagar por la promesa."
+            }
+          ]
+        },
+        "fim-sumiu": {
+          "fim": true,
+          "titulo": "La posada desapareció de las respuestas",
+          "texto": "El bloqueo afectó también a la búsqueda. Semanas después, quien pregunta desde el celular por una posada cerca del cañón recibe a la competencia. Bloquear por finalidad habría protegido el texto sin perder reservas."
+        },
+        "fim-cego": {
+          "fim": true,
+          "titulo": "robots.txt correcto, CDN a ciegas",
+          "texto": "El archivo quedó bien, pero nadie miró el panel de la CDN. Si el bloqueo por defecto está activado, los agentes que el robots.txt permite siguen bloqueados."
+        },
+        "fim-llms": {
+          "fim": true,
+          "titulo": "Pagó por la promesa",
+          "texto": "El archivo se hizo y se cobró como pasaporte a ChatGPT. No hay evidencia de que traiga citación; la confianza en tu trabajo cae cuando el resultado no llega."
+        },
+        "fim-bom": {
+          "fim": true,
+          "titulo": "Decidido por finalidad",
+          "texto": "Entrenamiento bloqueado, búsqueda y lectura a pedido permitidas, CDN revisada en el panel y llms.txt tratado como opcional. El dueño sabe qué se decidió y por qué."
+        }
+      },
+      "licao": "\"Bloquear las IA\" no es una decisión: son tres. Pregunta la finalidad, escribe el robots.txt en grupos y revisa el panel de la CDN."
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Práctica: la decisión en tu sitio",
+      "sub": "Usa el bloque robots.txt de tu raio-x.txt.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · robots.txt en tres grupos",
+          "min": "20 min",
+          "texto": "Reescribe tu robots.txt con los grupos búsqueda, acción del usuario y entrenamiento, con un comentario que explique el motivo de la decisión de entrenamiento. Publica y ejecuta la radiografía de nuevo.",
+          "pronto": "el bloque robots.txt de la radiografía muestra los tres grupos y el Sitemap al final."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · El panel de la CDN",
+          "min": "15 min",
+          "texto": "Abre el panel de tu CDN o hosting y revisa si hay un bloqueo de robots de IA activado. Completa la nota de la decisión.",
+          "pronto": "la nota dice cuál CDN, si el bloqueo por defecto está activado y si concuerda con el robots.txt (o \"sin CDN\")."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Pon a prueba lo que aprendiste",
+      "sub": "La explicación aparece después de tu respuesta.",
+      "perguntas": [
+        {
+          "p": "Bloqueaste GPTBot, ClaudeBot y Google-Extended. ¿Qué pasa con la búsqueda?",
+          "opcoes": [
+            "Desaparece de todas las IA.",
+            "En general nada: esos son de entrenamiento; la búsqueda usa otros robots.",
+            "Desaparece solo de Google.",
+            "El sitio se cae."
+          ],
+          "certa": 1,
+          "explica": "Son robots de entrenamiento. Búsqueda es OAI-SearchBot, Claude-SearchBot, PerplexityBot, Googlebot y Bingbot. Google-Extended no afecta la Búsqueda de Google.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "El robots.txt permite todo, pero un agente no logra leer el sitio. ¿Dónde mirar primero?",
+          "opcoes": [
+            "En el sitemap.",
+            "En el panel de la CDN: ella impone; el robots.txt solo pide.",
+            "En el llms.txt.",
+            "En Search Console."
+          ],
+          "certa": 1,
+          "explica": "Desde el 15/09/2026, el plan gratuito de Cloudflare bloquea por defecto los robots de entrenamiento y los agentes en páginas con anuncios. Revisa el panel de tu sitio.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "¿Qué decir sobre el llms.txt?",
+          "opcoes": [
+            "Garantiza citación en ChatGPT.",
+            "Es obligatorio desde 2026.",
+            "Es opcional y barato; un estudio de 137 mil dominios encontró que el 97% no tenía ninguna lectura.",
+            "Está prohibido por Google."
+          ],
+          "certa": 2,
+          "explica": "No es una palanca de citación y Google dice que puede ignorarlo. Venderlo como atajo es vender una moda.",
+          "ref": "codigo"
+        },
+        {
+          "p": "El cliente quiere \"bloquear todas las IAs\". ¿Cuál es la primera pregunta?",
+          "opcoes": [
+            "¿Qué CDN usas?",
+            "¿Qué te molesta: el entrenamiento, o que te recomienden en las respuestas?",
+            "¿Cuánto puedes pagar?",
+            "¿Quieres un llms.txt?"
+          ],
+          "certa": 1,
+          "explica": "La finalidad decide los grupos. Sin ella, bloqueas la búsqueda junto con lo demás y el cliente desaparece de las respuestas.",
+          "ref": "simconversa"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para llevarte",
+      "itens": [
+        {
+          "t": "Tres finalidades",
+          "texto": "Búsqueda, acción del usuario y entrenamiento: bloquear uno no bloquea los otros."
+        },
+        {
+          "t": "Pedido × imposición",
+          "texto": "robots.txt pide; la CDN impone. Revisa el panel."
+        },
+        {
+          "t": "La vara de 2026",
+          "texto": "llms.txt es opcional y barato, no una palanca de citación."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir más allá",
+      "links": [
+        {
+          "t": "OpenAI: robots y qué hace cada uno (inglés)",
+          "href": "https://platform.openai.com/docs/bots",
+          "icone": "robo"
+        },
+        {
+          "t": "Anthropic: robots de Claude y cómo bloquearlos (inglés)",
+          "href": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+          "icone": "robo"
+        },
+        {
+          "t": "Perplexity: robots (inglés)",
+          "href": "https://docs.perplexity.ai/guides/bots",
+          "icone": "robo"
+        },
+        {
+          "t": "Google: robots comunes y Google-Extended (inglés)",
+          "href": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers",
+          "icone": "lupa"
+        },
+        {
+          "t": "Ahrefs: estudio de llms.txt (inglés)",
+          "href": "https://ahrefs.com/blog/llmstxt-study/",
+          "icone": "grafico"
+        }
+      ]
+    }
+  ]
+}

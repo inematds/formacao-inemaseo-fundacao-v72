@@ -1,0 +1,324 @@
+{
+  "slug": "como-acham",
+  "num": 1,
+  "menu": "How they find it",
+  "titulo": "How Google, Bing, and AI find a website",
+  "titulo_curto": "How they find your site",
+  "minutos": 14,
+  "lead": "Writing more pages won't help if the search engine can't read the ones you already have. This lesson shows the path a page takes until it appears in a search or an AI answer, the three principles of the inemaSEO method, and Google's official 2026 yardstick for telling foundation from fad.",
+  "objetivo": "explain the path of crawling, indexing, showing, and citing, and choose what to do first on your site.",
+  "competencias": [
+    "explain-crawling-and-indexing",
+    "separate-foundation-from-fad",
+    "define-own-data"
+  ],
+  "aprende": [
+    {
+      "t": "The path of a page to search and AI answers"
+    },
+    {
+      "t": "The three principles of the inemaSEO method"
+    },
+    {
+      "t": "What Google's May 2026 guide says about AI"
+    },
+    {
+      "t": "Run the first question test on your topic"
+    }
+  ],
+  "hero_alt": "A person seen from behind in a large, organized library, looking at long shelves with card files.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "The path of a page",
+      "sub": "Four steps, always in this order. Click each one.",
+      "nos": [
+        {
+          "icone": "lupa",
+          "titulo": "Crawl",
+          "sub": "the bot reads the HTML",
+          "itens": [
+            {
+              "icone": "robo",
+              "t": "Googlebot, Bingbot"
+            },
+            {
+              "icone": "robo",
+              "t": "AI search bots"
+            }
+          ],
+          "detalhe": "The search engine's bot visits the address and reads the HTML the server delivers. It reaches the page through a link or the sitemap. A page with no links and outside the sitemap is almost never visited."
+        },
+        {
+          "icone": "camadas",
+          "titulo": "Index",
+          "sub": "store the page",
+          "forte": true,
+          "itens": [
+            {
+              "icone": "check",
+              "t": "indexed"
+            },
+            {
+              "icone": "x",
+              "t": "discovered, not indexed"
+            }
+          ],
+          "detalhe": "After reading, the search engine decides whether to keep the page in its index. It can refuse: duplicate address, thin page, or a canonical pointing somewhere else. This is where the technical foundation matters."
+        },
+        {
+          "icone": "grafico",
+          "titulo": "Show",
+          "sub": "appear in search",
+          "itens": [
+            {
+              "icone": "grafico",
+              "t": "impression and click"
+            }
+          ],
+          "detalhe": "Only an indexed page appears in the results. Search Console and Bing Webmaster count how many times it was shown (impression) and clicked."
+        },
+        {
+          "icone": "chat",
+          "titulo": "Cite",
+          "sub": "the AI answer",
+          "itens": [
+            {
+              "icone": "chat",
+              "t": "AI Overviews, AI Mode"
+            },
+            {
+              "icone": "chat",
+              "t": "Copilot, ChatGPT, Perplexity"
+            }
+          ],
+          "detalhe": "Google's AI features start from Google's index; Copilot, from Bing's index. For ChatGPT, a study by Seer found most citations among the top Bing results; that's a study, not a statement from OpenAI."
+        }
+      ],
+      "volta": "What doesn't show up goes back to the X-ray: measure and fix",
+      "legenda": "There's no shortcut that skips a step: AI cites what search engines can read and store."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "The three principles and the 2026 yardstick",
+      "sub": "Click each tab.",
+      "passos": [
+        {
+          "titulo": "Foundation before content",
+          "sub": "principle 1",
+          "texto": [
+            "Without the right canonical, and with the sitemap and robots.txt undecided, no new page pays off. That's why this whole course comes before writing.",
+            "You start by looking at what already exists, not by creating more."
+          ],
+          "exemplo": {
+            "rot": "At INEMA",
+            "texto": "On 09/23/2026, the /cursos/ page showed up as \"Discovered – currently not indexed\" and the new pages were unknown to Google."
+          }
+        },
+        {
+          "titulo": "Real data only",
+          "sub": "principle 2",
+          "texto": [
+            "Every page rests on a course, project, event, or experiment that actually exists. AI can rewrite and organize; it never makes up facts.",
+            "This is what Google itself calls non-commodity content: your own experience, which an AI would not produce on its own."
+          ],
+          "exemplo": {
+            "rot": "Quick test",
+            "texto": "If you swap the topic of the page and the paragraph is still valid, it's generic. Rewrite it with something of your own."
+          }
+        },
+        {
+          "titulo": "Measured without the brand",
+          "sub": "principle 3",
+          "texto": [
+            "People who already search for you by name don't prove your SEO works. The number that matters is people who didn't know you and found you.",
+            "At the start, almost every click is from the brand, and that is misleading."
+          ],
+          "exemplo": {
+            "rot": "INEMA baseline",
+            "texto": "In the 28 days from 08/25 to 09/21/2026, 639 of 647 clicks were branded."
+          }
+        },
+        {
+          "titulo": "The 2026 yardstick",
+          "sub": "Google guide, May",
+          "texto": [
+            "Google's official guide to AI features (May/2026) says there is no special requirement to appear in AI Overviews and AI Mode: standard SEO best practices apply.",
+            "It also says you don't need to create a file for AI or any special schema. Use this yardstick whenever someone sells you a shortcut."
+          ],
+          "exemplo": {
+            "rot": "In practice",
+            "texto": "Technical foundation + content with your own experience. The rest is a fad until proven otherwise."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The first test: fixed questions on your topic",
+      "sub": "Copy the spreadsheet and the questions. Replace what's between < > with your own.",
+      "blocos": [
+        {
+          "rot": "Test questions (3 to start)",
+          "icone": "chat",
+          "conteudo": "1. Where can I learn <your topic> in <your city or language>?\n2. What is the best way to <problem your business solves>?\n3. What is <your business name>?"
+        },
+        {
+          "rot": "Spreadsheet (one row per answer)",
+          "icone": "lista",
+          "conteudo": "date;assistant;question;did my site appear? (yes/no);who was cited\n<mm/dd/yyyy>;<ChatGPT>;1;no;<cited site>\n<mm/dd/yyyy>;<Perplexity>;1;no;<cited site>"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "The INEMA case",
+            "html": "<p>A single round on 07/10/2026, with 20 frozen questions: INEMA appeared in <b>0 of 48</b> neutral answers on Claude and in <b>0 of 4</b> on Gemini. ChatGPT and Perplexity were not measured.</p><p>\"What is INEMA?\" got 4 of 4 answers about a different agency with the same name: a <b>name collision</b>. Question 3 in the spreadsheet exists to catch this in your case.</p>"
+          },
+          {
+            "rot": "How to read it",
+            "html": "<ul><li>Answers vary from one day to the next: write down the date and repeat it the same way next month.</li><li>Zero today is a starting point, not a failure.</li><li>The full measurement (20 to 30 questions, every month) is in course 4.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "video",
+      "titulo": "The whole method in 7 minutes",
+      "sub": "The 10/10/2026 video walks through all 10 steps. Right below, what the October research corrected.",
+      "chave": "inemaseo-pratica"
+    },
+    {
+      "tipo": "texto",
+      "titulo": "What has changed since the video",
+      "sub": "Three statements from the video that the 2026 yardstick adjusts.",
+      "paragrafos": [
+        "<b>llms.txt.</b> The video calls it a \"site map for AIs\". An Ahrefs study of 137 thousand domains (06/15/2026) found 97% of the files had no requests at all, and Google says it may ignore it. In this course it is optional and cheap (lesson 6).",
+        "<b>robots.txt.</b> The video says to allow the AI bots. That is still right, but in 2026 the decision is by purpose: search, user action, and training are different bots, and blocking training doesn't take you out of search (lesson 6).",
+        "<b>40-to-60-word answer.</b> A direct answer at the start helps the reader. No source backs it as a technique for being cited by AI; treat it as clarity."
+      ]
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: the starting point",
+      "sub": "Two short exercises. Keep your answers: you will come back to them in course 4.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Three questions, two assistants",
+          "min": "20 min",
+          "texto": "Write the 3 test questions for your topic and run each one on two AI assistants. Fill in the spreadsheet.",
+          "pronto": "the spreadsheet has 6 rows with the date, the assistant, and whether your site appeared."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · What only you can say",
+          "min": "15 min",
+          "texto": "List in 3 lines what your site has of its own: a data point, an experience, a case, a product only you sell.",
+          "pronto": "each line points to a page on your site or to something that could become a page."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after you answer.",
+      "perguntas": [
+        {
+          "p": "A page is \"discovered, but not indexed.\" Can it show up in a Google AI answer?",
+          "opcoes": [
+            "Yes, AI reads any published page.",
+            "No: Google's AI features start from the index, and the page isn't in it yet.",
+            "Yes, if it has an llms.txt.",
+            "Only in AI Mode."
+          ],
+          "certa": 1,
+          "explica": "The path is crawl, index, show, and cite. Without the index there is no result and no citation. llms.txt doesn't change that: Google says it may ignore it.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "What does Google's May 2026 guide say about appearing in AI Overviews?",
+          "opcoes": [
+            "It requires a special schema for AI.",
+            "It requires a text file for AI.",
+            "There's no special requirement: SEO best practices and non-commodity content apply.",
+            "Only big sites appear."
+          ],
+          "certa": 2,
+          "explica": "The guide says you don't need a special file or markup. What counts in the long run is content with your own experience. Anyone selling a shortcut is selling a fad.",
+          "ref": "passos"
+        },
+        {
+          "p": "Why does the total number of clicks mislead you at the start?",
+          "opcoes": [
+            "Because Search Console gets the math wrong.",
+            "Because almost every click comes from people already searching for your name.",
+            "Because AI steals the clicks.",
+            "Because clicks don't matter."
+          ],
+          "certa": 1,
+          "explica": "At INEMA, 639 of 647 clicks were branded. What shows whether SEO is working is non-branded searches, from people who didn't know you.",
+          "ref": "passos"
+        },
+        {
+          "p": "The link between ChatGPT and the Bing index is:",
+          "opcoes": [
+            "An official OpenAI statement.",
+            "A hint from a Seer study with a small sample; it's not an OpenAI statement.",
+            "A myth with no data at all.",
+            "A Google rule."
+          ],
+          "certa": 1,
+          "explica": "The study found most citations among Bing's top results. That's a good reason to look after Bing, but always say where the information comes from.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Takeaways",
+      "itens": [
+        {
+          "t": "Path",
+          "texto": "Crawl → index → show → cite. AI cites what search engines can read and store."
+        },
+        {
+          "t": "Principles",
+          "texto": "Foundation before content, only real data, measured without the brand."
+        },
+        {
+          "t": "2026 yardstick",
+          "texto": "No special requirement for AI. llms.txt and \"40–60 words\" are not citation levers."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "Google guide: optimizing for AI features (English)",
+          "href": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+          "icone": "lupa"
+        },
+        {
+          "t": "inemaSEO method: usage guide",
+          "href": "https://inematds.github.io/inemaseo-metodo/guia/",
+          "icone": "lista"
+        },
+        {
+          "t": "inemaSEO in practice video page",
+          "href": "https://inematds.github.io/inemaseo-pratica/videos/",
+          "icone": "video"
+        },
+        {
+          "t": "inemaSEO Area in Eventos",
+          "href": "https://eventos.inema.pro/inemaseo/",
+          "icone": "camadas"
+        }
+      ]
+    }
+  ]
+}

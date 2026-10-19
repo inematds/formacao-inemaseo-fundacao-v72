@@ -1,0 +1,195 @@
+{
+  "id": "formacao-inemaseo-fundacao-v72",
+  "lang": "es",
+  "url": "https://inematds.github.io/formacao-inemaseo-fundacao-v72/es/",
+  "nome": "inemaSEO 1 — Fundación: la radiografía y el cimiento de tu sitio",
+  "sub": "Formación inemaSEO · curso 1 de 6",
+  "volta": {
+    "t": "Área inemaSEO",
+    "href": "https://eventos.inema.pro/inemaseo/"
+  },
+  "lado_card": {
+    "rot": "Formación inemaSEO",
+    "t": "Curso 1 de 6",
+    "texto": "Con el cimiento listo, el curso 2 te enseña a escribir las páginas que solo tú puedes escribir: entidad, territorio y datos propios.",
+    "link": "Ir al curso 2",
+    "href": "https://inematds.github.io/formacao-inemaseo-conteudo-v72/"
+  },
+  "rodape": "INEMA.CLUB · contenido abierto y gratuito · formato INEMA Learning v7.2 · <a href=\"https://eventos.inema.pro/inemaseo/\">eventos.inema.pro/inemaseo</a> · <a href=\"https://github.com/inematds/inemaseo-metodo\">método inemaSEO (MIT)</a> · <a href=\"https://inema.club/\">inema.club</a>",
+  "videos": {
+    "inemaseo-pratica": {
+      "titulo": "inemaSEO en la práctica: el método en 10 etapas",
+      "duracao": "6 min 51 s",
+      "mp4": "https://github.com/inematds/inemaseo-pratica/releases/download/video-v2.0.0/inemaseo-pratica-completo-16x9.mp4",
+      "vtt": "assets/vtt/inemaseo-pratica.vtt",
+      "poster": "assets/img/video-inemaseo.jpg",
+      "pagina": "https://inematds.github.io/inemaseo-pratica/videos/"
+    }
+  },
+  "inicio": {
+    "kicker": "Formación inemaSEO · curso 1 de 6 · 8 clases",
+    "titulo": "Fundación: la radiografía y el cimiento de tu sitio",
+    "lead": "Antes de escribir cualquier página nueva, mira tu sitio como lo mira el buscador. En ocho clases haces la radiografía de solo lectura, verificas el sitio en Search Console y en Bing, ajustas canónico, sitemap y robots.txt, sacas del índice lo que es delgado y avisas a los buscadores. Todo gratis, con scripts abiertos.",
+    "cta": "Empezar por la clase 1",
+    "cta2": {
+      "t": "Ver el Área inemaSEO",
+      "href": "https://eventos.inema.pro/inemaseo/"
+    },
+    "capa_alt": "La dueña de un pequeño taller de cerámica mira con atención la pantalla del portátil, sentada a su mesa de trabajo.",
+    "numeros": [
+      {
+        "v": "8",
+        "t": "clases cortas"
+      },
+      {
+        "v": "16",
+        "t": "ejercicios con \"listo cuando\""
+      },
+      {
+        "v": "3",
+        "t": "scripts abiertos"
+      },
+      {
+        "v": "0",
+        "t": "herramienta de pago"
+      }
+    ],
+    "aulas_titulo": "Las clases",
+    "aulas_sub": "En el orden del trabajo: entender, mirar, verificar, ajustar la dirección, el mapa y la puerta, limpiar lo delgado y avisar.",
+    "blocos": [
+      {
+        "t": "Para quién es",
+        "itens": [
+          "Dueño de un sitio o de un pequeño negocio que nunca ha trabajado con SEO.",
+          "Quien ya tiene un sitio en línea, pero no sabe si Google y Bing ven sus páginas.",
+          "Quien ha oído hablar de \"aparecer en las IA\" y quiere saber qué es fundamento y qué es moda."
+        ]
+      },
+      {
+        "t": "Lo que sabrás hacer al terminar",
+        "itens": [
+          "Ejecutar una radiografía de solo lectura en tu sitio y leer lo que muestra.",
+          "Verificar el sitio en Search Console y en Bing Webmaster y enviar el sitemap.",
+          "Dejar un solo canónico, un sitemap con fecha real y un robots.txt decidido por finalidad.",
+          "Sacar las páginas delgadas del índice y avisar a los buscadores solo con URLs que responden 200."
+        ]
+      },
+      {
+        "t": "Dónde encaja este curso en la Formación inemaSEO",
+        "itens": [
+          "<b>1 Fundación</b> (este curso): el cimiento técnico. Sin él, ningún contenido rinde.",
+          "<b>2 Contenido</b> y <b>3 Medición</b>: las páginas que solo tú puedes escribir y el número que importa, el de las búsquedas sin tu marca.",
+          "<b>4 En las IA</b>, <b>5 Con Agentes</b> y <b>6 Profesional</b>: paneles oficiales de IA, agentes haciendo lo repetitivo y SEO como servicio.",
+          "Todos siguen el <a href=\"https://github.com/inematds/inemaseo-metodo\">método inemaSEO</a>, abierto (MIT), aplicado en el portal, en el sitio de noticias y en el de eventos de INEMA."
+        ]
+      }
+    ]
+  },
+  "ui": {
+    "pular": "Saltar al contenido",
+    "aulas": "Clases",
+    "concluido": "completado",
+    "aula": "Clase",
+    "nesta_aula": "En esta clase vas a aprender:",
+    "objetivo": "Objetivo:",
+    "proxima_aula": "Siguiente clase",
+    "aula_anterior": "Clase anterior",
+    "voltar_inicio": "Volver al inicio del curso",
+    "marcar_concluida": "Marcar la lección como completada",
+    "dg_dica": "Haz clic en cada bloque del diagrama para ver qué hace.",
+    "copiar": "Copiar",
+    "copiado": "Copiado",
+    "selo_simulacao": "Simulación: ejemplo ilustrativo",
+    "selo_real": "Ejemplo del repositorio",
+    "pronto_quando": "Listo cuando:",
+    "fiz": "Hice este ejercicio",
+    "video_pagina": "Página del video con guion",
+    "pergunta": "Pregunta",
+    "de": "de",
+    "cert_tag": "competencia",
+    "correto": "Correcto",
+    "errado": "Esa no es",
+    "quiz_aguarda": "Elige una alternativa. La explicación aparece después de tu intento.",
+    "proxima_pergunta": "Siguiente pregunta",
+    "quiz_ver": "Ver resultado",
+    "quiz_fim": "Prueba terminada",
+    "quiz_total": "Acertaste {a} de {n}. Si aciertas todas, la lección se marca como completada.",
+    "aparencia": "Apariencia",
+    "tamanho_texto": "Tamaño del texto",
+    "tema": "Tema",
+    "tema_escuro": "Oscuro",
+    "tema_papel": "Papel claro",
+    "role_dica": "Desplázate por la página: cada etapa de abajo enciende su parte del diagrama.",
+    "pre_requisito": "requiere",
+    "ver_aula": "Ver la lección",
+    "mapa_dica": "Haz clic en un ejercicio para ver qué hacer y el \"listo cuando\".",
+    "etapas": "Etapas",
+    "exercicios": "ejercicios",
+    "rever": "Repasar:",
+    "revisar_erradas": "Repasar las incorrectas",
+    "refazer": "Rehacer la prueba",
+    "h_semana": "h por semana",
+    "data_inicio": "Fecha de inicio",
+    "ritmo": "Tiempo disponible",
+    "gerar_plano": "Generar mi plan",
+    "baixar_md": "Descargar plan.md",
+    "baixar_ics": "Descargar para el calendario (.ics)",
+    "ind_estudo": "Estudio (lecciones)",
+    "ind_pratica": "Práctica declarada",
+    "ind_nota": "Práctica = ejercicios que marcaste como hechos. La comprobación viene en el examen de la certificación.",
+    "estudo": {
+      "titulo": "Tu estudio",
+      "continuar": "Continuar donde lo dejé",
+      "comecar": "Empezar por la clase 1",
+      "cta_continuar": "Continuar la lección {n}",
+      "hoje": "hoy",
+      "ontem": "ayer",
+      "ha_dias": "hace {n} días",
+      "desempenho": "Desempeño en los tests",
+      "notas": "Mis anotaciones",
+      "dados": "Copiar mis datos",
+      "sem_testes": "Aún no has hecho ningún test. El test está al final de cada clase.",
+      "nao_fez": "test aún no realizado",
+      "ultimo": "Último",
+      "melhor": "Mejor",
+      "tentativas": "intentos",
+      "tentativa": "intento",
+      "tudo_certo": "Acertaste todo en el último test.",
+      "rever": "Para repasar",
+      "resposta": "Respuesta correcta:",
+      "ir_teste": "Rehacer la prueba",
+      "sem_notas": "Aún no hay anotaciones. En la clase, selecciona un fragmento del texto y toca Marcar o Anotar.",
+      "so_marcado": "(solo marcado)",
+      "marcar": "Marcar",
+      "anotar": "Anotar",
+      "salvar": "Guardar",
+      "apagar": "Borrar marca",
+      "fechar": "Cerrar",
+      "nota_ph": "Escribe tu anotación sobre este fragmento…",
+      "um_bloco": "Marca dentro de un solo párrafo.",
+      "nao_marca": "Este fragmento no se puede marcar.",
+      "dados_exp": "Tu progreso, tus anotaciones y las notas de los tests se quedan solo en este navegador. Descarga una copia (.json) para guardarla o para continuar en otra computadora u otro navegador; allí, carga la copia. Cargar se suma a lo que ya existe y no borra nada.",
+      "exportar": "Descargar copia",
+      "importar": "Cargar copia",
+      "import_ok": "Copia cargada ({n} elementos). Actualizando la página…",
+      "import_erro": "Archivo no reconocido. No se cambió nada.",
+      "import_outro": "Esta copia es de otro curso. No se cambió nada.",
+      "export_ok": "Copia descargada."
+    },
+    "conv_dica": "Elige tu respuesta. El comentario aparece justo después y la conversación sigue según tu elección.",
+    "conv_voce": "Tú",
+    "conv_escolha": "Tu respuesta",
+    "conv_boa": "Buena elección",
+    "conv_meio": "Se puede mejorar",
+    "conv_ruim": "Elección débil",
+    "conv_fim": "Fin de la conversación",
+    "conv_placar": "Hiciste {p} de {m} puntos posibles.",
+    "conv_licao": "Lección:",
+    "conv_recomecar": "Reiniciar la conversación",
+    "conv_feita": "Tu mejor puntaje: {p} de {m} puntos.",
+    "comecar": "Empezar la clase",
+    "nesta_vai": "En esta clase vas a",
+    "trocar_tema": "Cambiar tema claro/oscuro"
+  },
+  "icone": "lupa"
+}

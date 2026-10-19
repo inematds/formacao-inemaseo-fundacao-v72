@@ -1,0 +1,272 @@
+{
+  "slug": "pagina-rasa",
+  "num": 7,
+  "menu": "Página delgada",
+  "titulo": "La página delgada sale del índice (noindex hasta que tenga contenido)",
+  "titulo_curto": "Página delgada",
+  "minutos": 15,
+  "lead": "Publicar muchas páginas parecidas y delgadas no te da más oportunidades: suele pasar lo contrario. El buscador deja de rastrear el lote y empieza a desconfiar del sitio. Esta clase muestra cómo encontrar la página delgada, sacarla del índice y del sitemap y traerla de vuelta solo cuando tenga algo que decir.",
+  "objetivo": "identificar páginas delgadas y sacarlas del índice y del sitemap hasta que tengan contenido propio.",
+  "competencias": [
+    "identificar-pagina-rasa",
+    "aplicar-noindex",
+    "manter-sitemap-limpo"
+  ],
+  "aprende": [
+    {
+      "t": "El caso real de las 283 fichas que no se indexaban"
+    },
+    {
+      "t": "Tres señales de página delgada"
+    },
+    {
+      "t": "noindex y fuera del sitemap, juntos"
+    },
+    {
+      "t": "Cuándo vuelve la página"
+    }
+  ],
+  "hero_alt": "Una vendedora retira cuadernos delgados casi vacíos de un estante con libros gruesos.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "El ciclo de la página delgada",
+      "sub": "Haz clic en cada bloque.",
+      "nos": [
+        {
+          "icone": "camadas",
+          "titulo": "Lote de páginas",
+          "sub": "parecidas y delgadas",
+          "detalhe": "Páginas generadas en serie, con poco texto y mucho fragmento repetido: fichas, variaciones por ciudad, etiquetas, noticias sin contenido."
+        },
+        {
+          "icone": "lupa",
+          "titulo": "Probar",
+          "sub": "tres señales",
+          "forte": true,
+          "itens": [
+            {
+              "icone": "arquivo",
+              "t": "pocas palabras propias"
+            },
+            {
+              "icone": "copiar",
+              "t": "texto repetido entre páginas"
+            },
+            {
+              "icone": "x",
+              "t": "sin enlace interno"
+            }
+          ],
+          "detalhe": "Cuenta las palabras propias de la página, compárala con una hermana y mira si alguien enlaza a ella. Dos señales juntas ya piden acción."
+        },
+        {
+          "icone": "cadeado",
+          "titulo": "Sacar del índice",
+          "sub": "noindex + fuera del sitemap",
+          "detalhe": "Meta robots noindex en la página y eliminación del sitemap, las dos cosas juntas. La página sigue en línea para quien llega por un enlace; solo deja de pedir lugar en el índice."
+        },
+        {
+          "icone": "check",
+          "titulo": "Volver con cuerpo",
+          "sub": "dato propio",
+          "detalhe": "Cuando la página gana contenido único, con datos de ese ítem, vuelve: se quita el noindex, entra al sitemap y avisas a los buscadores (clase 8)."
+        }
+      ],
+      "volta": "¿Ganó cuerpo? Vuelve al índice y al sitemap",
+      "legenda": "Indexar una página delgada pesa en la evaluación de todo el sitio, no solo de ella."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "El caso de las 283 fichas",
+      "sub": "Lo que pasó en INEMA y lo que se aprende. Haz clic en cada etapa.",
+      "passos": [
+        {
+          "titulo": "El lote",
+          "sub": "30/08/2026",
+          "texto": [
+            "283 fichas de cursos se publicaron en un solo commit. De las 6 fichas de la muestra, 5 estaban \"descubiertas, sin indexar\" y nunca habían sido rastreadas."
+          ]
+        },
+        {
+          "titulo": "Por qué",
+          "sub": "tres hallazgos",
+          "texto": [
+            "Cada ficha tenía entre 170 y 240 palabras. Dos fichas sorteadas compartían el 47% del vocabulario, y la descripción estaba copiada de la página del curso.",
+            "El índice /cursos/ pesaba 481 KB de HTML."
+          ],
+          "exemplo": {
+            "rot": "Lectura",
+            "texto": "Para el buscador, eran cientos de variaciones de la misma página."
+          }
+        },
+        {
+          "titulo": "La regla",
+          "sub": "método inemaSEO",
+          "texto": [
+            "Una página sin contenido suficiente recibe noindex y sale del sitemap hasta tener cuerpo. Una ruta en serie solo entra al sitemap con contenido único y datos específicos de ese ítem.",
+            "El enriquecimiento de las fichas, con datos reales y un freno contra la invención, es tema del curso 2."
+          ]
+        },
+        {
+          "titulo": "La señal de alerta",
+          "sub": "Plan B",
+          "texto": [
+            "Una caída general después de publicar mucho es señal de contenido en escala. Qué hacer: parar, auditar, fusionar o eliminar las débiles y bajar la cadencia."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Marcar y comprobar",
+      "sub": "La etiqueta va en el head de la página delgada. La radiografía lo comprueba.",
+      "blocos": [
+        {
+          "rot": "HTML · en el head de la página delgada",
+          "icone": "arquivo",
+          "conteudo": "<meta name=\"robots\" content=\"noindex\">"
+        },
+        {
+          "rot": "Terminal · comprobar con la radiografía",
+          "icone": "terminal",
+          "conteudo": "bash tools/auditoria.sh https://www.seusite.com /pagina-rasa-1/ /pagina-rasa-2/ | grep -E '^-- |robots:'"
+        },
+        {
+          "rot": "Lista de las más delgadas (modelo)",
+          "icone": "lista",
+          "conteudo": "| página | palabras propias | ¿repite a la hermana? | links que llegan | decisión |\n|---|---|---|---|---|\n| </pagina/> | <nº> | <sí/no> | <nº> | <mantener / noindex hasta tener cuerpo / fusionar> |"
+        }
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {
+            "rot": "Cómo se ve en la radiografía",
+            "html": "<pre>-- /pagina-rasa-1/  [200]\n   robots:    noindex\n-- /pagina-rasa-2/  [200]\n   robots:    noindex</pre><p>La página responde 200 (sigue en línea) y la línea robots muestra el noindex. Comprueba también que haya desaparecido del sitemap.</p>"
+          },
+          {
+            "rot": "Errores comunes",
+            "html": "<ul><li><b>noindex y seguir en el sitemap</b>: señales contradictorias.</li><li><b>Bloquear en robots.txt en vez de usar noindex</b>: el robot no puede leer la página y no ve el noindex.</li><li><b>Borrar la página que tiene un link externo</b>: pierdes el link; mejor usa noindex o fusiónala con una redirección.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Práctica: limpiar lo delgado",
+      "sub": "Empieza por las páginas generadas en serie, si tu sitio las tiene.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Las 5 más delgadas",
+          "min": "30 min",
+          "texto": "Elige las 5 páginas más delgadas del sitio y completa la lista: palabras propias, si repite a una hermana y cuántos links llegan a ella.",
+          "pronto": "la lista tiene 5 líneas y cada una termina con una decisión."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · noindex comprobado",
+          "min": "20 min",
+          "texto": "En las que quedaron como \"noindex hasta tener cuerpo\", aplica la etiqueta y quítalas del sitemap. Ejecuta la radiografía en ellas.",
+          "pronto": "la radiografía muestra robots: noindex en esas páginas y ya no aparecen en el sitemap."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Pon a prueba lo que aprendiste",
+      "sub": "La explicación aparece después de tu respuesta.",
+      "perguntas": [
+        {
+          "p": "¿Por qué las 283 fichas de INEMA no se indexaban?",
+          "opcoes": [
+            "El sitio estaba fuera de línea.",
+            "Eran delgadas y parecidas: de 170 a 240 palabras y 47% del vocabulario en común entre dos fichas.",
+            "Faltaba llms.txt.",
+            "Google no indexa cursos."
+          ],
+          "certa": 1,
+          "explica": "Publicadas de una vez, cortas y repetidas, parecían variaciones de la misma página. De las 6 de la muestra, 5 nunca habían sido rastreadas.",
+          "ref": "passos",
+          "cert": true
+        },
+        {
+          "p": "¿Qué hacer con la página delgada?",
+          "opcoes": [
+            "Borrarla siempre.",
+            "noindex y sacarla del sitemap hasta que tenga cuerpo.",
+            "Bloquearla en el robots.txt.",
+            "Duplicarla para tener más oportunidades."
+          ],
+          "certa": 1,
+          "explica": "La página sigue en línea, sale del índice y del sitemap, y vuelve cuando tenga contenido propio.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "¿Por qué no usar el robots.txt para sacar la página del índice?",
+          "opcoes": [
+            "Porque el robots.txt es lento.",
+            "Porque, si está bloqueada, el robot no lee la página y no ve el noindex.",
+            "Porque el robots.txt es solo para IA.",
+            "Puedes usarlo, da lo mismo."
+          ],
+          "certa": 1,
+          "explica": "El noindex tiene que ser leído. Bloquear el rastreo oculta justamente la instrucción.",
+          "ref": "codigo"
+        },
+        {
+          "p": "El sitio cayó después de publicar mucho. ¿Cuál es el primer paso del Plan B?",
+          "opcoes": [
+            "Publicar más rápido.",
+            "Parar, auditar, fusionar o eliminar las débiles y bajar la cadencia.",
+            "Comprar enlaces.",
+            "Cambiar de dominio."
+          ],
+          "certa": 1,
+          "explica": "Es el síntoma de contenido en escala. Más volumen solo lo empeora.",
+          "ref": "passos"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para llevarte",
+      "itens": [
+        {
+          "t": "Tres señales",
+          "texto": "Pocas palabras propias, texto repetido, ningún enlace que llegue."
+        },
+        {
+          "t": "Dos acciones juntas",
+          "texto": "noindex en la página y fuera del sitemap."
+        },
+        {
+          "t": "Vuelve",
+          "texto": "Solo con datos propios, y entonces avisas a los buscadores."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir más allá",
+      "links": [
+        {
+          "t": "Google: bloquear la indexación con noindex (inglés)",
+          "href": "https://developers.google.com/search/docs/crawling-indexing/block-indexing",
+          "icone": "lupa"
+        },
+        {
+          "t": "Google: políticas de spam, contenido en escala (inglés)",
+          "href": "https://developers.google.com/search/docs/essentials/spam-policies",
+          "icone": "escudo"
+        },
+        {
+          "t": "Checklist de publicación de inemaSEO",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/CHECKLIST.md",
+          "icone": "check"
+        }
+      ]
+    }
+  ]
+}

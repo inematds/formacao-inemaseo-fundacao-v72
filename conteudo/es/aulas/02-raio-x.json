@@ -1,0 +1,291 @@
+{
+  "slug": "raio-x",
+  "num": 2,
+  "menu": "Radiografía",
+  "titulo": "Radiografía de solo lectura: el HTML que entrega el servidor",
+  "titulo_curto": "Radiografía del sitio",
+  "minutos": 16,
+  "lead": "El buscador no ve tu sitio como lo ves tú en el navegador: lee el HTML que entrega el servidor, casi siempre sin ejecutar JavaScript. Un script de 40 líneas hace esa lectura por ti, sin cambiar nada en el sitio, y te muestra en minutos lo que ningún panel bonito te muestra.",
+  "objetivo": "ejecutar el auditoria.sh en tu sitio y leer cada línea de la salida como la lee el buscador.",
+  "competencias": [
+    "rodar-auditoria-tecnica",
+    "ler-html-do-servidor",
+    "achar-pagina-sem-link"
+  ],
+  "aprende": [
+    {
+      "t": "Descargar el método inemaSEO y ejecutar la auditoría"
+    },
+    {
+      "t": "Leer redirecciones, robots.txt, sitemaps y páginas"
+    },
+    {
+      "t": "Encontrar una página sin enlace interno en el HTML"
+    },
+    {
+      "t": "Convertir la salida en una lista de hallazgos"
+    }
+  ],
+  "hero_alt": "Un técnico examina una radiografía frente a un panel de luz blanca.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Qué mira la radiografía",
+      "sub": "Solo lectura: el script usa curl y no cambia nada. Haz clic en cada bloque.",
+      "nos": [
+        {
+          "icone": "nuvem",
+          "titulo": "Tu sitio",
+          "sub": "la dirección principal",
+          "detalhe": "Tú pasas la dirección principal y, si quieres, algunas páginas. Empieza por la home y por dos páginas que importan para el negocio."
+        },
+        {
+          "icone": "terminal",
+          "titulo": "curl",
+          "sub": "sin ejecutar JavaScript",
+          "detalhe": "El script descarga cada dirección como lo haría un robot: el HTML que entrega el servidor. Si un enlace solo aparece después de que corre el JavaScript, no aparece aquí, y el buscador puede no verlo."
+        },
+        {
+          "icone": "seta",
+          "titulo": "Redirecciones",
+          "sub": "http, con y sin www",
+          "detalhe": "Prueba las tres variaciones de la dirección. Lo correcto es que todas lleven a la misma versión (clase 4)."
+        },
+        {
+          "icone": "arquivo",
+          "titulo": "robots.txt y sitemaps",
+          "sub": "y el llms.txt",
+          "detalhe": "Muestra el robots.txt completo, cuenta las URLs de cada sitemap listado en él y cuántas tienen hreflang, y dice si existe llms.txt (opcional, clase 6)."
+        },
+        {
+          "icone": "lista",
+          "titulo": "Cada página",
+          "sub": "7 líneas",
+          "forte": true,
+          "itens": [
+            {
+              "icone": "check",
+              "t": "status, title, canonical"
+            },
+            {
+              "icone": "check",
+              "t": "hreflang, robots, JSON-LD"
+            },
+            {
+              "icone": "check",
+              "t": "enlaces internos en el HTML"
+            }
+          ],
+          "detalhe": "Para cada página: código HTTP, título, canónico, idiomas declarados, meta robots, tipos de JSON-LD y cuántos enlaces internos hay en el HTML. La última línea es la que más detecta problemas escondidos."
+        }
+      ],
+      "legenda": "Lo ejecutaste, lo guardaste, lo leíste. Nada cambia en el sitio; la radiografía es la foto antes de tocar nada."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "De la descarga a la lista de hallazgos",
+      "sub": "Haz clic en cada etapa.",
+      "passos": [
+        {
+          "titulo": "Descargar",
+          "sub": "el método es abierto",
+          "texto": [
+            "inemaSEO es público, con licencia MIT. Necesitas una terminal con bash y curl: Mac y Linux ya los tienen; en Windows, usa WSL o Git Bash.",
+            "Clona el repositorio y entra en la carpeta."
+          ],
+          "exemplo": {
+            "rot": "Dónde está",
+            "texto": "github.com/inematds/inemaseo-metodo, carpeta tools/."
+          }
+        },
+        {
+          "titulo": "Ejecutar",
+          "sub": "home + 2 páginas",
+          "texto": [
+            "Pasa la dirección principal y las rutas de las páginas, separadas por espacio. Guarda la salida en un archivo para comparar después.",
+            "Toma menos de un minuto en un sitio pequeño."
+          ],
+          "exemplo": {
+            "rot": "Consejo",
+            "texto": "Elige una página de producto o servicio y una página nueva, que todavía no hayas visto en Google."
+          }
+        },
+        {
+          "titulo": "Leer",
+          "sub": "línea por línea",
+          "texto": [
+            "¿Canónico vacío o distinto de la dirección? ¿Enlaces internos cerca de cero? ¿Meta robots con noindex en una página importante? Cada uno se convierte en un hallazgo.",
+            "No corrijas nada todavía: solo anota."
+          ],
+          "exemplo": {
+            "rot": "Hallazgo típico",
+            "texto": "Página de catálogo que pasó a ser \"solo búsqueda\" en el navegador y dejó cientos de páginas sin ningún enlace en el HTML."
+          }
+        },
+        {
+          "titulo": "Anotar",
+          "sub": "hallazgo + línea + lección",
+          "texto": [
+            "Para cada hallazgo, copia la línea de la salida que lo muestra y la lección de este curso que trata sobre él.",
+            "Esa lista es tu plan de las próximas semanas."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Los comandos de la radiografía",
+      "sub": "Copia y ejecuta en la terminal. Cambia la dirección por la de tu sitio.",
+      "blocos": [
+        {
+          "rot": "Terminal · descargar el método",
+          "icone": "git",
+          "conteudo": "git clone https://github.com/inematds/inemaseo-metodo.git\ncd inemaseo-metodo"
+        },
+        {
+          "rot": "Terminal · ejecutar y guardar",
+          "icone": "terminal",
+          "conteudo": "bash tools/auditoria.sh https://www.seusite.com /pagina-1/ /pagina-2/ > raio-x.txt\ncat raio-x.txt"
+        },
+        {
+          "rot": "Lista de hallazgos (modelo)",
+          "icone": "lista",
+          "conteudo": "# Radiografía de <seusite.com> el <dd/mm/aaaa>\n| hallazgo | línea de la salida | lección |\n|---|---|---|\n| <canónico vacío en /pagina-1/> | canonical: | 4 |\n| <página sin enlaces internos> | links internos no HTML: 0 | 7 y curso 2 |"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Salida en www.inema.club",
+            "html": "<p>Fragmento de <code>auditoria.sh</code> ejecutado el 19/10/2026 (robots.txt acortado):</p><pre>== Redirecionamentos\n  http://www.inema.club/ -&gt; 308 https://www.inema.club/\n  https://inema.club/ -&gt; 308 https://www.inema.club/\n  https://www.inema.club/ -&gt; 200\n== robots.txt\n  User-Agent: *\n  Allow: /\n  (…)\n== Sitemaps\n  https://www.inema.club/sitemap.xml: 83 URLs, 60 anotações hreflang\n  https://www.inema.club/courses-sitemap.xml: 100 URLs, 0 anotações hreflang\n== llms.txt: 200\n== Páginas\n-- /cursos/  [200]\n   title:     Cursos de inteligência artificial, agentes e automação | INEMA.club\n   canonical: https://www.inema.club/cursos/\n   hreflang:  hrefLang=\"en\" hrefLang=\"es\" hrefLang=\"pt-BR\" hrefLang=\"x-default\"\n   links internos no HTML: 334\n-- /conhecimento/  [200]\n   canonical: https://www.inema.club/conhecimento/\n   hreflang:\n   links internos no HTML: 58</pre>"
+          },
+          {
+            "rot": "El caso detrás",
+            "html": "<p>El 30/09/2026 (commit <code>bc50d11</code>), la página <code>/cursos/</code> pasó a ser \"solo búsqueda\" y las 310 fichas perdieron el único enlace interno que venía en el HTML del servidor. En pantalla parecía todo bien.</p><p>La corrección (<code>8229495</code>) fue un índice recogido en <code>&lt;details&gt;</code> con todos los enlaces, sin cambio visual. La línea \"links internos no HTML\" de <code>/cursos/</code>, arriba, es el retrato después de la corrección.</p>"
+          },
+          {
+            "rot": "Errores comunes",
+            "html": "<ul><li><b>Mirar solo en el navegador</b>: lo que arma el JavaScript puede no existir para el robot.</li><li><b>Auditar solo la home</b>: el problema suele estar en la página de catálogo o en la nueva.</li><li><b>Corregir antes de anotar</b>: sin el retrato de antes, no sabes si mejoró.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Práctica: tu radiografía",
+      "sub": "Guarda el raio-x.txt: las lecciones 4 a 8 se comparan con él.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Ejecutar y guardar",
+          "min": "20 min",
+          "texto": "Ejecuta la auditoría en la home y en 2 páginas de tu sitio y guárdala en raio-x.txt.",
+          "pronto": "el archivo existe y tiene los bloques Redirecionamentos, robots.txt, Sitemaps y Páginas."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Tres hallazgos",
+          "min": "20 min",
+          "texto": "Lee la salida y completa la lista de hallazgos con al menos 3 líneas (si todo está bien, anota lo que revisaste).",
+          "pronto": "cada hallazgo tiene la línea de la salida copiada y la lección que trata sobre él."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Pon a prueba lo que aprendiste",
+      "sub": "La explicación aparece después de tu respuesta.",
+      "perguntas": [
+        {
+          "p": "¿Por qué la radiografía usa curl y no el navegador?",
+          "opcoes": [
+            "Porque es más bonito.",
+            "Porque muestra el HTML que entrega el servidor, sin ejecutar JavaScript, como suele leerlo el robot.",
+            "Porque el navegador no abre sitios.",
+            "Porque curl indexa la página."
+          ],
+          "certa": 1,
+          "explica": "El navegador ejecuta JavaScript y arma cosas que el robot puede no ver. La radiografía muestra la versión del servidor, que es la base para el buscador.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "La pantalla de /cursos/ estaba normal, pero las fichas desaparecieron de los enlaces. ¿Qué mostró el problema?",
+          "opcoes": [
+            "El número de visitas.",
+            "La línea \"links internos no HTML\" de la radiografía.",
+            "El llms.txt.",
+            "La velocidad del sitio."
+          ],
+          "certa": 1,
+          "explica": "La búsqueda en el navegador armaba los enlaces con JavaScript; en el HTML del servidor no existían. El índice recogido devolvió los enlaces sin cambiar lo visual.",
+          "ref": "codigo"
+        },
+        {
+          "p": "¿La radiografía cambia algo en tu sitio?",
+          "opcoes": [
+            "Sí, corrige el canónico.",
+            "Sí, envía el sitemap.",
+            "No: es solo lectura, con curl.",
+            "Solo si tienes contraseña."
+          ],
+          "certa": 2,
+          "explica": "Es solo lectura. Por eso se puede ejecutar en cualquier sitio público, incluso en el de un competidor o cliente, antes de tocar nada.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "Encontraste un problema en la radiografía. ¿Cuál es el siguiente paso en esta clase?",
+          "opcoes": [
+            "Corregirlo de inmediato.",
+            "Anotarlo con la línea de la salida y la clase que trata ese tema.",
+            "Ejecutar de nuevo hasta que desaparezca.",
+            "Ignorarlo si la home está bien."
+          ],
+          "certa": 1,
+          "explica": "Primero el retrato completo, después la corrección. La lista de hallazgos se convierte en el plan de las próximas clases y en la comparación de antes y después.",
+          "ref": "passos"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para llevarte",
+      "itens": [
+        {
+          "t": "Solo lectura",
+          "texto": "auditoria.sh lee el HTML del servidor con curl, sin cambiar nada."
+        },
+        {
+          "t": "La línea que más pesa",
+          "texto": "Enlaces internos en el HTML: una página sin enlaces casi no existe para el buscador."
+        },
+        {
+          "t": "Salida",
+          "texto": "raio-x.txt + lista de hallazgos con la línea y la clase."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir más allá",
+      "links": [
+        {
+          "t": "auditoria.sh en GitHub",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/tools/auditoria.sh",
+          "icone": "terminal"
+        },
+        {
+          "t": "Método inemaSEO: las 10 etapas",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md",
+          "icone": "lista"
+        },
+        {
+          "t": "WebMCP Readiness: prueba del sitio en el navegador",
+          "href": "https://webmcp.inema.pro/",
+          "icone": "lupa"
+        }
+      ]
+    }
+  ]
+}

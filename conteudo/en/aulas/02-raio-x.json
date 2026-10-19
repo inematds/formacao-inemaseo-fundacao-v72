@@ -1,0 +1,291 @@
+{
+  "slug": "raio-x",
+  "num": 2,
+  "menu": "X-ray",
+  "titulo": "Read-only X-ray: the HTML the server delivers",
+  "titulo_curto": "Site X-ray",
+  "minutos": 16,
+  "lead": "A search engine doesn't see your site the way you see it in the browser: it reads the HTML the server delivers, almost always without running JavaScript. A 40-line script does that reading for you, without changing anything on the site, and in minutes it shows what no pretty dashboard will.",
+  "objetivo": "run auditoria.sh on your site and read each line of the output the way a search engine reads it.",
+  "competencias": [
+    "rodar-auditoria-tecnica",
+    "ler-html-do-servidor",
+    "achar-pagina-sem-link"
+  ],
+  "aprende": [
+    {
+      "t": "Download the inemaSEO method and run the audit"
+    },
+    {
+      "t": "Read redirects, robots.txt, sitemaps, and pages"
+    },
+    {
+      "t": "Find a page with no internal link in the HTML"
+    },
+    {
+      "t": "Turn the output into a list of findings"
+    }
+  ],
+  "hero_alt": "A technician examines an X-ray against a white light panel.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "What the X-ray looks at",
+      "sub": "Read-only: the script uses curl and changes nothing. Tap each block.",
+      "nos": [
+        {
+          "icone": "nuvem",
+          "titulo": "Your site",
+          "sub": "the main address",
+          "detalhe": "You give it the main address and, if you want, a few pages. Start with the home page and two pages that matter to your business."
+        },
+        {
+          "icone": "terminal",
+          "titulo": "curl",
+          "sub": "without running JavaScript",
+          "detalhe": "The script downloads each address the way a robot would: the HTML the server sends. If a link only shows up after JavaScript runs, it won't show up here, and the search engine may not see it either."
+        },
+        {
+          "icone": "seta",
+          "titulo": "Redirects",
+          "sub": "http, with and without www",
+          "detalhe": "Tests the three variations of the address. The right result is all of them leading to the same version (lesson 4)."
+        },
+        {
+          "icone": "arquivo",
+          "titulo": "robots.txt and sitemaps",
+          "sub": "and llms.txt",
+          "detalhe": "Shows the whole robots.txt, counts the URLs in each sitemap listed there and how many have hreflang, and tells you whether an llms.txt exists (optional, lesson 6)."
+        },
+        {
+          "icone": "lista",
+          "titulo": "Each page",
+          "sub": "7 lines",
+          "forte": true,
+          "itens": [
+            {
+              "icone": "check",
+              "t": "status, title, canonical"
+            },
+            {
+              "icone": "check",
+              "t": "hreflang, robots, JSON-LD"
+            },
+            {
+              "icone": "check",
+              "t": "internal links in the HTML"
+            }
+          ],
+          "detalhe": "For each page: HTTP code, title, canonical, declared languages, meta robots, JSON-LD types, and how many internal links exist in the HTML. The last line is the one that catches the most hidden problems."
+        }
+      ],
+      "legenda": "It ran, saved, read. Nothing changes on the site; the X-ray is the picture before you touch anything."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "From download to list of findings",
+      "sub": "Tap each step.",
+      "passos": [
+        {
+          "titulo": "Download",
+          "sub": "the method is open",
+          "texto": [
+            "inemaSEO is public, under the MIT license. You need a terminal with bash and curl: Mac and Linux already have them; on Windows, use WSL or Git Bash.",
+            "Clone the repository and go into the folder."
+          ],
+          "exemplo": {
+            "rot": "Where it is",
+            "texto": "github.com/inematds/inemaseo-metodo, tools/ folder."
+          }
+        },
+        {
+          "titulo": "Run",
+          "sub": "home + 2 pages",
+          "texto": [
+            "Pass the main address and the page paths, separated by spaces. Save the output to a file so you can compare it later.",
+            "It takes less than a minute on a small site."
+          ],
+          "exemplo": {
+            "rot": "Tip",
+            "texto": "Choose a product or service page and a new page that you haven't seen on Google yet."
+          }
+        },
+        {
+          "titulo": "Read",
+          "sub": "line by line",
+          "texto": [
+            "Canonical empty or different from the address? Internal links near zero? Meta robots with noindex on an important page? Each one becomes a finding.",
+            "Don't fix anything yet: just take notes."
+          ],
+          "exemplo": {
+            "rot": "Typical finding",
+            "texto": "A catalog page that became \"search only\" in the browser and left hundreds of pages with no links in the HTML."
+          }
+        },
+        {
+          "titulo": "Note",
+          "sub": "finding + line + lesson",
+          "texto": [
+            "For each finding, copy the line of output that shows it and the lesson in this course that covers it.",
+            "That list is your plan for the next few weeks."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The X-ray commands",
+      "sub": "Copy and run in the terminal. Replace the address with your own site's.",
+      "blocos": [
+        {
+          "rot": "Terminal · download the method",
+          "icone": "git",
+          "conteudo": "git clone https://github.com/inematds/inemaseo-metodo.git\ncd inemaseo-metodo"
+        },
+        {
+          "rot": "Terminal · run and save",
+          "icone": "terminal",
+          "conteudo": "bash tools/auditoria.sh https://www.seusite.com /pagina-1/ /pagina-2/ > raio-x.txt\ncat raio-x.txt"
+        },
+        {
+          "rot": "List of findings (template)",
+          "icone": "lista",
+          "conteudo": "# X-ray of <yoursite.com> on <mm/dd/yyyy>\n| finding | output line | lesson |\n|---|---|---|\n| <empty canonical on /pagina-1/> | canonical: | 4 |\n| <page with no internal links> | links internos no HTML: 0 | 7 and course 2 |"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Output on www.inema.club",
+            "html": "<p>Excerpt of <code>auditoria.sh</code> run on 10/19/2026 (robots.txt shortened):</p><pre>== Redirecionamentos\n  http://www.inema.club/ -&gt; 308 https://www.inema.club/\n  https://inema.club/ -&gt; 308 https://www.inema.club/\n  https://www.inema.club/ -&gt; 200\n== robots.txt\n  User-Agent: *\n  Allow: /\n  (…)\n== Sitemaps\n  https://www.inema.club/sitemap.xml: 83 URLs, 60 anotações hreflang\n  https://www.inema.club/courses-sitemap.xml: 100 URLs, 0 anotações hreflang\n== llms.txt: 200\n== Páginas\n-- /cursos/  [200]\n   title:     Cursos de inteligência artificial, agentes e automação | INEMA.club\n   canonical: https://www.inema.club/cursos/\n   hreflang:  hrefLang=\"en\" hrefLang=\"es\" hrefLang=\"pt-BR\" hrefLang=\"x-default\"\n   links internos no HTML: 334\n-- /conhecimento/  [200]\n   canonical: https://www.inema.club/conhecimento/\n   hreflang:\n   links internos no HTML: 58</pre>"
+          },
+          {
+            "rot": "The case behind it",
+            "html": "<p>On 09/30/2026 (commit <code>bc50d11</code>), the <code>/cursos/</code> page became \"search only\" and the 310 course cards lost the only internal link that came in the server's HTML. On screen, everything looked fine.</p><p>The fix (<code>8229495</code>) was a collapsed index inside <code>&lt;details&gt;</code> with all the links, with no visual change. The \"links internos no HTML\" line for <code>/cursos/</code>, above, is the snapshot after the fix.</p>"
+          },
+          {
+            "rot": "Common mistakes",
+            "html": "<ul><li><b>Looking only in the browser</b>: what JavaScript builds may not exist for the bot.</li><li><b>Auditing only the home page</b>: the problem is usually on the catalog page or the new one.</li><li><b>Fixing before writing it down</b>: without the \"before\" snapshot, you can't tell if it got better.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: your X-ray",
+      "sub": "Keep raio-x.txt: lessons 4 to 8 compare against it.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Run and save",
+          "min": "20 min",
+          "texto": "Run the audit on the home page and 2 pages of your site, and save it to raio-x.txt.",
+          "pronto": "the file exists and has the Redirecionamentos, robots.txt, Sitemaps, and Páginas blocks."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Three findings",
+          "min": "20 min",
+          "texto": "Read the output and fill in the list of findings with at least 3 lines (if everything is fine, write down what you checked).",
+          "pronto": "each finding has the output line copied and the lesson that covers it."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after you answer.",
+      "perguntas": [
+        {
+          "p": "Why does the X-ray use curl and not the browser?",
+          "opcoes": [
+            "Because it looks nicer.",
+            "Because it shows the HTML the server delivers, without running JavaScript, the way the bot usually reads it.",
+            "Because the browser doesn't open websites.",
+            "Because curl indexes the page."
+          ],
+          "certa": 1,
+          "explica": "The browser runs JavaScript and builds things the bot may not see. The X-ray shows the server's version, which is the basis for the search engine.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "The /cursos/ screen looked normal, but the course cards disappeared from the links. What showed the problem?",
+          "opcoes": [
+            "The number of visits.",
+            "The \"links internos no HTML\" line of the X-ray.",
+            "The llms.txt.",
+            "The site's speed."
+          ],
+          "certa": 1,
+          "explica": "The browser search built the links with JavaScript; in the server's HTML they did not exist. The collapsed index brought the links back without changing the look.",
+          "ref": "codigo"
+        },
+        {
+          "p": "Does the X-ray change anything on your site?",
+          "opcoes": [
+            "Yes, it fixes the canonical.",
+            "Yes, it submits the sitemap.",
+            "No: it's read-only, using curl.",
+            "Only if you have a password."
+          ],
+          "certa": 2,
+          "explica": "It's read-only. That's why you can run it on any public site, including a competitor's or a client's, before you change anything.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "You found a problem in the X-ray. What's the next step in this lesson?",
+          "opcoes": [
+            "Fix it right away.",
+            "Write it down with the output line and the lesson that covers it.",
+            "Run it again until it goes away.",
+            "Ignore it if the home page looks fine."
+          ],
+          "certa": 1,
+          "explica": "First the full picture, then the fix. The list of findings becomes the plan for the next lessons and the before-and-after comparison.",
+          "ref": "passos"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Takeaways",
+      "itens": [
+        {
+          "t": "Read-only",
+          "texto": "auditoria.sh reads the HTML from the server with curl and changes nothing."
+        },
+        {
+          "t": "The line that catches the most",
+          "texto": "Internal links in the HTML: a page with no links barely exists to the search engine."
+        },
+        {
+          "t": "Output",
+          "texto": "raio-x.txt + list of findings with the line and the lesson."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "auditoria.sh on GitHub",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/tools/auditoria.sh",
+          "icone": "terminal"
+        },
+        {
+          "t": "inemaSEO Method: the 10 steps",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md",
+          "icone": "lista"
+        },
+        {
+          "t": "WebMCP Readiness: test your site in the browser",
+          "href": "https://webmcp.inema.pro/",
+          "icone": "lupa"
+        }
+      ]
+    }
+  ]
+}

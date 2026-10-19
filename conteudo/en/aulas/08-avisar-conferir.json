@@ -1,0 +1,420 @@
+{
+  "slug": "avisar-conferir",
+  "num": 8,
+  "menu": "Notify",
+  "titulo": "Notify the search engines and check indexing",
+  "titulo_curto": "Notify and check",
+  "minutos": 18,
+  "lead": "With the foundation ready, every publication closes with two steps: notify the search engines that the URL exists and, a few days later, check whether it made it into the index. Notifying a broken URL burns trust; not checking leaves an important page forgotten. At the end, you build the dated plan for the whole course.",
+  "objetivo": "notify IndexNow and Bing only with URLs that return 200, and check indexing in URL Inspection.",
+  "competencias": [
+    "avisar-indexnow-e-bing",
+    "conferir-status-antes-de-avisar",
+    "inspecionar-indexacao",
+    "planejar-rotina-de-fundacao"
+  ],
+  "aprende": [
+    {
+      "t": "Publish the IndexNow key"
+    },
+    {
+      "t": "Notify only with URLs that return 200"
+    },
+    {
+      "t": "Read the URL Inspection statuses"
+    },
+    {
+      "t": "Build the dated foundation plan"
+    }
+  ],
+  "hero_alt": "A mail carrier delivers envelopes to a mailbox and checks the clipboard.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "From commit to indexed page",
+      "sub": "Tap each block.",
+      "nos": [
+        {
+          "icone": "enviar",
+          "titulo": "Publish",
+          "sub": "new or changed page",
+          "detalhe": "The page went live or really changed. Put the URLs in a list, one per line, all from the same domain."
+        },
+        {
+          "icone": "check",
+          "titulo": "Check for 200",
+          "sub": "before you notify",
+          "forte": true,
+          "detalhe": "The script tests each URL. If any doesn't return 200, it stops and shows you which one. Notifying about a 404 burns the search engine's trust."
+        },
+        {
+          "icone": "megafone",
+          "titulo": "IndexNow + Bing",
+          "sub": "one submission",
+          "itens": [
+            {
+              "icone": "nuvem",
+              "t": "IndexNow: Bing, Yandex, Seznam, Naver"
+            },
+            {
+              "icone": "nuvem",
+              "t": "Bing Webmaster (optional)"
+            }
+          ],
+          "detalhe": "IndexNow notifies the participating search engines all at once. Google doesn't participate: for Google, the sitemap and URL Inspection are what count. Bing matters twice: it feeds Copilot and, according to a Seer study (not an OpenAI statement), a good share of what ChatGPT cites."
+        },
+        {
+          "icone": "lupa",
+          "titulo": "Inspect",
+          "sub": "days later",
+          "itens": [
+            {
+              "icone": "check",
+              "t": "Submitted and indexed"
+            },
+            {
+              "icone": "relogio",
+              "t": "Discovered – currently not indexed"
+            },
+            {
+              "icone": "x",
+              "t": "Google doesn't recognize the URL"
+            }
+          ],
+          "detalhe": "In Search Console's URL Inspection, you can see whether the page got in, when it was crawled, and which canonical Google chose. If Google's canonical is a different one, go back to lesson 4."
+        },
+        {
+          "icone": "calendario",
+          "titulo": "Routine",
+          "sub": "every time you publish",
+          "detalhe": "Published, checked for 200, notified, inspected the following week. Key page that didn't get in: internal links, body content, and an indexing request in the dashboard."
+        }
+      ],
+      "volta": "Didn't get in? Go back to the X-ray: canonical, internal link, body content",
+      "legenda": "Notifying is cheap; notifying wrongly is expensive. That's why the 200 check comes first."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Notify and check without stumbling",
+      "sub": "Tap each step.",
+      "passos": [
+        {
+          "titulo": "The key",
+          "sub": "IndexNow",
+          "texto": [
+            "Create a key of 32 or more hexadecimal characters (numbers and letters from a to f) and publish it at https://seusite.com/[sua-chave].txt, with only the key inside.",
+            "It isn't a secret: it's public by design, and it proves the site is yours."
+          ],
+          "exemplo": {
+            "rot": "At INEMA (10/02/2026)",
+            "texto": "The news site's first submission came back 403 SiteVerificationNotCompleted: the key had just been published. Resubmitting after about 4 minutes fixed it."
+          }
+        },
+        {
+          "titulo": "The list",
+          "sub": "urls.txt",
+          "texto": [
+            "One URL per line, all from the same domain, only what's new or changed.",
+            "Don't resubmit the whole site every time something changes."
+          ]
+        },
+        {
+          "titulo": "The submission",
+          "sub": "avisar_buscadores.sh",
+          "texto": [
+            "Run the script with the key in the INDEXNOW_KEY variable. With BING_API_KEY, it also uses the Bing Webmaster API (optional).",
+            "The expected response is HTTP 200 or 202."
+          ],
+          "exemplo": {
+            "rot": "At INEMA",
+            "texto": "09/24/2026: 109 URLs through IndexNow, response 202. 10/02: 90 URLs through Bing and IndexNow, response 200."
+          }
+        },
+        {
+          "titulo": "The check",
+          "sub": "URL Inspection",
+          "texto": [
+            "A week later, inspect the key URLs in Search Console. Write down the status of each one.",
+            "The gsc_inspecionar.py script does the same in batch, but it needs a Google credential; start with the dashboard."
+          ],
+          "exemplo": {
+            "rot": "At INEMA",
+            "texto": "On 10/05/2026, 12 of 14 key URLs were indexed; on 10/13, 13 of 14. Only /eventos/ was missing, \"unknown to Google\"."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The files and the commands",
+      "sub": "Replace what's between < > with your own. The Bing key is optional.",
+      "blocos": [
+        {
+          "rot": "urls.txt (one per line)",
+          "icone": "arquivo",
+          "conteudo": "https://www.seusite.com/\nhttps://www.seusite.com/pagina-nova/\nhttps://www.seusite.com/pagina-mudada/"
+        },
+        {
+          "rot": "Terminal · notify (IndexNow, and Bing if you have a key)",
+          "icone": "terminal",
+          "conteudo": "INDEXNOW_KEY=<sua-chave> bash tools/avisar_buscadores.sh urls.txt\n\n# optional, with the Bing Webmaster API key:\nINDEXNOW_KEY=<sua-chave> BING_API_KEY=<chave-bing> BING_SITE=https://www.seusite.com/ bash tools/avisar_buscadores.sh urls.txt"
+        },
+        {
+          "rot": "Terminal · batch inspection (template; needs a Google credential)",
+          "icone": "terminal",
+          "conteudo": "# requires authenticated gcloud and GSC_QUOTA_PROJ set\npython3 tools/gsc_inspecionar.py sc-domain:seusite.com https://www.seusite.com/pagina/"
+        },
+        {
+          "rot": "Check log (template)",
+          "icone": "lista",
+          "conteudo": "| URL | notified on | inspected on | status | Google canonical | next step |\n|---|---|---|---|---|---|\n| </pagina-nova/> | <dd/mm> | <dd/mm> | <Submitted and indexed> | <same> | <none> |"
+        }
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {
+            "rot": "Notification output",
+            "html": "<pre>IndexNow: HTTP 202</pre><p>If a URL doesn't respond with 200, the script stops before sending:</p><pre>NÃO 200 (404): https://www.seusite.com/pagina-errada/\ncorrija as URLs acima antes de avisar</pre>"
+          },
+          {
+            "rot": "Inspection output",
+            "html": "<pre>https://www.seusite.com/pagina/\n   Enviada e indexada | rastreio 2026-10-13 | canônico Google https://www.seusite.com/pagina/</pre><p>Status, the date of the last crawl, and the canonical that Google chose.</p>"
+          },
+          {
+            "rot": "Common mistakes",
+            "html": "<ul><li><b>Notifying before the deploy finishes</b>: the URL still returns a 404.</li><li><b>Waiting for IndexNow to reach Google</b>: Google doesn't take part; use the sitemap and URL Inspection.</li><li><b>Promising that IndexNow \"gets you into ChatGPT\"</b>: it notifies search engines, but it doesn't guarantee a citation.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: your first notification and your first check",
+      "sub": "E2 asks for a few days between notifying and inspecting.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Key and first notification",
+          "min": "30 min",
+          "texto": "Publish your IndexNow key on your site, build the urls.txt file with 3 to 5 URLs, and run avisar_buscadores.sh.",
+          "pronto": "the script responded IndexNow: HTTP 200 or 202 and no URL was rejected for not responding with 200."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Five URLs inspected",
+          "min": "25 min",
+          "dias": 7,
+          "texto": "A week later, inspect your 5 most important URLs in Search Console and fill in the log.",
+          "pronto": "the log has 5 rows with status, crawl date, and Google's canonical; the ones that aren't indexed have a next step."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after you answer.",
+      "perguntas": [
+        {
+          "p": "Why does the script check for a 200 before notifying?",
+          "opcoes": [
+            "To be slower.",
+            "Because notifying a URL that doesn't respond (404) burns the search engine's trust.",
+            "Because IndexNow requires it.",
+            "To count visits."
+          ],
+          "certa": 1,
+          "explica": "Only what responds with 200 goes into the notification. If any URL fails, the script stops and shows you which one to fix.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "Does IndexNow notify Google?",
+          "opcoes": [
+            "Yes, it's from Google.",
+            "No: Google doesn't take part; for Google, the sitemap and URL Inspection are what count.",
+            "Only in AI Mode.",
+            "Only with the Bing key."
+          ],
+          "certa": 1,
+          "explica": "IndexNow notifies Bing and other participants. For Google, submit a sitemap and use URL Inspection in Search Console.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "The first submission came back 403 SiteVerificationNotCompleted. What should you do?",
+          "opcoes": [
+            "Switch keys.",
+            "Give up on IndexNow.",
+            "Check that the key file responds, then resend after a few minutes.",
+            "Send it by email."
+          ],
+          "certa": 2,
+          "explica": "At INEMA, the newly published key returned 403; resending after about 4 minutes fixed it.",
+          "ref": "passos"
+        },
+        {
+          "p": "The inspection shows a Google canonical that's different from yours. Where should you go back to?",
+          "opcoes": [
+            "Lesson 4: one canonical only.",
+            "Lesson 6: robots.txt.",
+            "Buy a tool.",
+            "Ignore it."
+          ],
+          "certa": 0,
+          "explica": "Google chose a different URL as the official one. Check the canonical, sitemap, JSON-LD, and links: somewhere, they disagree.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "mapa",
+      "titulo": "The foundation map",
+      "sub": "Four steps and the exercises for each one. Click an exercise to see its \"done when\".",
+      "degraus": [
+        {
+          "aula": "raio-x",
+          "icone": "lupa",
+          "quando": "Week 1",
+          "titulo": "Look",
+          "sub": "read-only X-ray",
+          "saida": "raio-x.txt and a list of findings.",
+          "passo": "Before you touch anything, take the picture. The list of findings becomes your plan for the following weeks."
+        },
+        {
+          "aula": "search-console-bing",
+          "icone": "grafico",
+          "quando": "Week 1",
+          "titulo": "Dashboards",
+          "sub": "Search Console and Bing",
+          "saida": "Site verified and sitemap submitted in both.",
+          "passo": "Requires the X-ray. Check your DNS before creating an account; the reports start to fill up in a few days."
+        },
+        {
+          "aula": "robots-por-finalidade",
+          "icone": "escudo",
+          "quando": "Weeks 2 and 3",
+          "titulo": "Foundation",
+          "sub": "canonical, sitemap, robots, thin page (lessons 4 to 7)",
+          "saida": "One address, a true sitemap, bots decided, thin pages out of the index.",
+          "passo": "Requires the dashboards. These are lessons 4 to 7; the map shows the exercises from lesson 6, and the plan below lists them all."
+        },
+        {
+          "aula": "avisar-conferir",
+          "icone": "megafone",
+          "quando": "Week 4",
+          "titulo": "Notify",
+          "sub": "IndexNow, Bing, and inspection",
+          "saida": "First notice sent and 5 key URLs checked.",
+          "passo": "Requires the foundation: sending notices before fixing the canonical is inviting the search engine to see the mess."
+        }
+      ],
+      "resultado": {
+        "titulo": "By the end of the course",
+        "texto": "Your site, read the way a search engine reads it, verified in both dashboards, with a technical foundation and a routine for notifying and checking.",
+        "total": "16 exercises"
+      },
+      "rolagem_fim": {
+        "titulo": "The whole foundation",
+        "texto": "Look, verify, fix the foundation, and notify. Only move up a step when the \"done when\" of the previous one is true."
+      },
+      "legenda": "After the foundation comes course 2: the pages only you can write."
+    },
+    {
+      "tipo": "gerador",
+      "titulo": "Generate your plan with dates",
+      "sub": "Pick a start date and how much time you have each week. The plan respects the exercise that asks for a week of waiting.",
+      "curso": "inemaSEO 1 · Foundation",
+      "horas_padrao": 3,
+      "degraus": [
+        {
+          "titulo": "Lesson 1 · How people find your site",
+          "aula": "como-acham"
+        },
+        {
+          "titulo": "Lesson 2 · X-ray",
+          "aula": "raio-x"
+        },
+        {
+          "titulo": "Lesson 3 · Search Console and Bing",
+          "aula": "search-console-bing"
+        },
+        {
+          "titulo": "Lesson 4 · One canonical only",
+          "aula": "canonico"
+        },
+        {
+          "titulo": "Lesson 5 · Sitemap and hreflang",
+          "aula": "sitemaps-hreflang"
+        },
+        {
+          "titulo": "Lesson 6 · robots.txt by purpose",
+          "aula": "robots-por-finalidade"
+        },
+        {
+          "titulo": "Lesson 7 · Thin page",
+          "aula": "pagina-rasa"
+        },
+        {
+          "titulo": "Lesson 8 · Notify and check",
+          "aula": "avisar-conferir"
+        }
+      ],
+      "txt": {
+        "titulo": "Plan — inemaSEO 1 · Foundation",
+        "inicio": "Start",
+        "ritmo": "Pace",
+        "termino": "Expected finish",
+        "ate": "by",
+        "pronto": "done when",
+        "semanas": "weeks",
+        "travou": "## What got stuck and what I decided",
+        "h": "h per week",
+        "exs": "exercises"
+      }
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Takeaways",
+      "itens": [
+        {
+          "t": "200 first",
+          "texto": "Only notify a URL that returns 200."
+        },
+        {
+          "t": "Two paths",
+          "texto": "IndexNow and Bing for Bing and partners; sitemap and inspection for Google."
+        },
+        {
+          "t": "2026 yardstick",
+          "texto": "Bing matters for Copilot and, per a Seer study, for ChatGPT. A notice is not a guarantee of citation."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "IndexNow: documentation (English)",
+          "href": "https://www.indexnow.org/",
+          "icone": "megafone"
+        },
+        {
+          "t": "avisar_buscadores.sh on GitHub",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/tools/avisar_buscadores.sh",
+          "icone": "terminal"
+        },
+        {
+          "t": "inemaSEO Area in Eventos",
+          "href": "https://eventos.inema.pro/inemaseo/",
+          "icone": "camadas"
+        },
+        {
+          "t": "Next: inemaSEO 2 · Content",
+          "href": "https://inematds.github.io/formacao-inemaseo-conteudo-v72/",
+          "icone": "seta"
+        }
+      ]
+    }
+  ]
+}

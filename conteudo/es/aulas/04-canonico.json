@@ -1,0 +1,272 @@
+{
+  "slug": "canonico",
+  "num": 4,
+  "menu": "Canónico",
+  "titulo": "Un solo canónico: www o sin www",
+  "titulo_curto": "Un solo canónico",
+  "minutos": 13,
+  "lead": "Para ti, seusite.com y www.seusite.com son el mismo sitio. Para el buscador, pueden ser dos. Cuando el canónico, el sitemap y los enlaces no coinciden, Google elige por su cuenta qué dirección guardar, y a veces elige la equivocada. Esta lección cierra esa puerta.",
+  "objetivo": "elegir www o sin www y hacer que canonical, sitemap, JSON-LD y enlaces usen la misma dirección.",
+  "competencias": [
+    "escolher-url-canonica",
+    "conferir-redirecionamento-301",
+    "achar-canonico-divergente"
+  ],
+  "aprende": [
+    {
+      "t": "Qué es el canónico y por qué decide qué URL vale"
+    },
+    {
+      "t": "Redirigir las variaciones a una sola"
+    },
+    {
+      "t": "Revisar los 4 lugares donde aparece la dirección"
+    },
+    {
+      "t": "El caso real del canónico sin www"
+    }
+  ],
+  "hero_alt": "Dos letreros de calle sin texto frente a una casa; un hombre en una escalera arregla uno de ellos.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Del dirección escrita a la dirección que vale",
+      "sub": "Haz clic en cada bloque.",
+      "nos": [
+        {
+          "icone": "seta",
+          "titulo": "Variaciones",
+          "sub": "http, con y sin www",
+          "detalhe": "El mismo contenido puede responder en http://, https://seusite.com y https://www.seusite.com. Sin una regla, son tres direcciones compitiendo."
+        },
+        {
+          "icone": "seta",
+          "titulo": "Redirigir",
+          "sub": "301 o 308",
+          "detalhe": "Elige una versión y haz que las otras redirijan a ella de forma permanente (301 o 308). La radiografía de la clase 2 lo muestra en el bloque Redirecionamentos."
+        },
+        {
+          "icone": "alvo",
+          "titulo": "Canónico elegido",
+          "sub": "una URL por página",
+          "forte": true,
+          "detalhe": "La etiqueta link rel=\"canonical\" le dice al buscador cuál dirección es la oficial de esa página. Debe apuntar a la versión elegida, con https y con (o sin) www, igual en todo el sitio."
+        },
+        {
+          "icone": "check",
+          "titulo": "Revisar en 4 lugares",
+          "sub": "todo igual",
+          "itens": [
+            {
+              "icone": "arquivo",
+              "t": "canonical"
+            },
+            {
+              "icone": "arquivo",
+              "t": "sitemap"
+            },
+            {
+              "icone": "arquivo",
+              "t": "JSON-LD (@id, url)"
+            },
+            {
+              "icone": "arquivo",
+              "t": "enlaces internos"
+            }
+          ],
+          "detalhe": "Canonical, sitemap, JSON-LD y enlaces internos usan la misma dirección. Basta un canónico distinto en una parte del sitio para que Google elija otra URL."
+        }
+      ],
+      "legenda": "No importa si es con o sin www. Importa que sea una sola elección, en todas partes."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Acertar con la dirección",
+      "sub": "Haz clic en cada etapa.",
+      "passos": [
+        {
+          "titulo": "Elegir",
+          "sub": "una vez",
+          "texto": [
+            "Mira qué versión muestra más Search Console y cuál usan los enlaces externos. Quédate con esa.",
+            "Cambiar después sale caro: elige una vez y anótalo."
+          ]
+        },
+        {
+          "titulo": "Redirigir",
+          "sub": "en el hosting",
+          "texto": [
+            "La regla de redirección va en el hosting, en el servidor o en la CDN. Pídele a tu proveedor una redirección permanente de la versión que no vale hacia la que sí vale.",
+            "Revisa con la radiografía: las tres variaciones deben terminar en la misma dirección con 200."
+          ]
+        },
+        {
+          "titulo": "Revisar la página",
+          "sub": "canonical",
+          "texto": [
+            "En la radiografía, la línea canonical de cada página debe mostrar la dirección elegida. Vacía o distinta es un hallazgo.",
+            "Ten cuidado con las partes del sitio generadas por otro sistema (blog, base de conocimiento, tienda): es donde el canónico suele diferir."
+          ]
+        },
+        {
+          "titulo": "Revisar el resto",
+          "sub": "sitemap, JSON-LD, enlaces",
+          "texto": [
+            "Abre el sitemap y mira si las URL usan la misma versión. Haz lo mismo en el JSON-LD y en los enlaces del menú y del pie de página.",
+            "Si una parte del HTML se genera con un script, corrígela en el generador; si no, la corrección desaparece en el próximo build."
+          ],
+          "exemplo": {
+            "rot": "En INEMA (02/10/2026)",
+            "texto": "El canónico de /conhecimento/ estaba sin www, mientras que el sitemap del portal usaba www. La corrección se hizo en el repositorio y en el generador, con un aviso para no deshacerla."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Revisar desde la terminal",
+      "sub": "Los mismos comandos que usa la radiografía, uno por uno.",
+      "blocos": [
+        {
+          "rot": "Terminal · adónde va cada variación",
+          "icone": "terminal",
+          "conteudo": "for u in http://www.seusite.com/ https://seusite.com/ https://www.seusite.com/; do\n  echo \"$u -> $(curl -4 -m 20 -s -o /dev/null -w '%{http_code} %{redirect_url}' \"$u\")\"\ndone"
+        },
+        {
+          "rot": "Terminal · el canónico de una página",
+          "icone": "terminal",
+          "conteudo": "curl -4 -m 20 -s https://www.seusite.com/pagina/ | grep -oE 'rel=\"canonical\" href=\"[^\"]*\"'"
+        },
+        {
+          "rot": "Tabla de los 4 lugares (modelo)",
+          "icone": "lista",
+          "conteudo": "Versión elegida: <https://www.seusite.com>\n| lugar | página revisada | dirección encontrada | ¿igual? |\n|---|---|---|---|\n| canonical | </pagina/> | <...> | sí/no |\n| sitemap | <sitemap.xml> | <...> | sí/no |\n| JSON-LD (@id/url) | <home> | <...> | sí/no |\n| enlaces del menú | <home> | <...> | sí/no |"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Cómo queda bien",
+            "html": "<p>Redirecciones de www.inema.club en la radiografía del 19/10/2026:</p><pre>http://www.inema.club/ -&gt; 308 https://www.inema.club/\nhttps://inema.club/ -&gt; 308 https://www.inema.club/\nhttps://www.inema.club/ -&gt; 200</pre><p>Las dos variaciones redirigen de forma permanente a la versión con www, que responde 200.</p>"
+          },
+          {
+            "rot": "Errores comunes",
+            "html": "<ul><li><b>Redirección temporal (302)</b> en lugar de la permanente.</li><li><b>Canónico apuntando a la home</b> en todas las páginas: el buscador entiende que solo vale la home.</li><li><b>Corregir el HTML generado</b> y no el generador: el error vuelve en el próximo build.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Práctica: una sola dirección",
+      "sub": "Usa el raio-x.txt de la clase 2 como punto de partida.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Las tres variaciones",
+          "min": "15 min",
+          "texto": "Ejecuta el bucle de curl (o la radiografía de nuevo) y mira a dónde va cada variación de la dirección.",
+          "pronto": "las tres variaciones terminan en la misma dirección, con 200 al final; si no, la solicitud de corrección se hizo al hosting."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Los cuatro lugares",
+          "min": "25 min",
+          "texto": "Completa la tabla de los 4 lugares para la home y para una página interna.",
+          "pronto": "la tabla está completa y toda fila dice \"sí\", o cada \"no\" tiene la corrección anotada."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Pon a prueba lo que aprendiste",
+      "sub": "La explicación aparece después de tu respuesta.",
+      "perguntas": [
+        {
+          "p": "¿Cuál es la elección correcta: con www o sin www?",
+          "opcoes": [
+            "Siempre con www.",
+            "Siempre sin www.",
+            "Da lo mismo, siempre que sea una sola en todos lados.",
+            "Las dos, para tener más páginas."
+          ],
+          "certa": 2,
+          "explica": "El buscador no prefiere una versión. El problema es tener dos: canonical, sitemap, JSON-LD y enlaces tienen que coincidir.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "El /conhecimento/ de INEMA tenía canónico sin www y el sitemap con www. El riesgo era:",
+          "opcoes": [
+            "Ninguno, Google lo entiende.",
+            "Que Google elija otra URL como oficial.",
+            "Que el sitio se caiga.",
+            "Perder el Search Console."
+          ],
+          "certa": 1,
+          "explica": "Las señales divergentes dejan la decisión en manos de Google. Basta un canónico divergente en un subsistema para que elija otra URL.",
+          "ref": "passos"
+        },
+        {
+          "p": "La página la genera un script. ¿Dónde se corrige el canónico?",
+          "opcoes": [
+            "En el HTML publicado.",
+            "En el generador.",
+            "En el sitemap.",
+            "En el robots.txt."
+          ],
+          "certa": 1,
+          "explica": "Si corriges solo el HTML, el próximo build lo deshace. En el caso de INEMA, se corrigió el generador y se le añadió una advertencia.",
+          "ref": "passos"
+        },
+        {
+          "p": "¿Qué código de redirección usar entre las variaciones?",
+          "opcoes": [
+            "302 (temporal).",
+            "301 o 308 (permanente).",
+            "404.",
+            "200 en las dos."
+          ],
+          "certa": 1,
+          "explica": "Una redirección permanente dice que la dirección antigua ya no vale. 200 en las dos versiones es justamente el contenido duplicado.",
+          "ref": "codigo"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para llevarte",
+      "itens": [
+        {
+          "t": "Una versión",
+          "texto": "Con o sin www, da lo mismo; dos, nunca."
+        },
+        {
+          "t": "Cuatro lugares",
+          "texto": "canonical, sitemap, JSON-LD y enlaces, todos iguales."
+        },
+        {
+          "t": "Generador",
+          "texto": "El HTML generado se corrige en la fuente, no en el archivo publicado."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir más allá",
+      "links": [
+        {
+          "t": "Google: cómo consolidar URLs duplicadas (inglés)",
+          "href": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+          "icone": "lupa"
+        },
+        {
+          "t": "Método inemaSEO, etapa 2: fundación técnica",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md",
+          "icone": "lista"
+        }
+      ]
+    }
+  ]
+}

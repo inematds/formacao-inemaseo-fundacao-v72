@@ -1,0 +1,445 @@
+{
+  "slug": "robots-por-finalidade",
+  "num": 6,
+  "menu": "Robots",
+  "titulo": "robots.txt by purpose: search, user action, and training",
+  "titulo_curto": "robots.txt by purpose",
+  "minutos": 18,
+  "lead": "\"Block the AIs\" has become a common request, and it is almost always worded wrong. Each AI company has different robots for searching, for opening a page at someone's request, and for training models. Blocking one does not block the others. And in 2026 your CDN may be deciding for you.",
+  "objetivo": "decide in robots.txt and in the CDN dashboard what to allow for search, for user action, and for training.",
+  "competencias": [
+    "separar-robos-por-finalidade",
+    "escrever-robots-txt",
+    "conferir-bloqueio-na-cdn",
+    "avaliar-llms-txt"
+  ],
+  "aprende": [
+    {
+      "t": "The three types of AI robot and what happens when you block each one"
+    },
+    {
+      "t": "Write the robots.txt in three groups"
+    },
+    {
+      "t": "Check your CDN's default blocking"
+    },
+    {
+      "t": "Treat llms.txt as a cheap, optional extra"
+    }
+  ],
+  "hero_alt": "A doorman at a commercial building checks visitors' badges at the front desk.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Who knocks on the door and what happens if you close it",
+      "sub": "Tap each block.",
+      "nos": [
+        {
+          "icone": "lupa",
+          "titulo": "Search",
+          "sub": "show up and get cited",
+          "forte": true,
+          "itens": [
+            {
+              "icone": "robo",
+              "t": "OAI-SearchBot, Claude-SearchBot"
+            },
+            {
+              "icone": "robo",
+              "t": "PerplexityBot, Googlebot, Bingbot"
+            }
+          ],
+          "detalhe": "They build the index that answers draw on. Block = you disappear from that AI's search answers. OpenAI says that if you block OAI-SearchBot, you won't appear in ChatGPT search answers."
+        },
+        {
+          "icone": "usuario",
+          "titulo": "User action",
+          "sub": "at someone's request",
+          "itens": [
+            {
+              "icone": "robo",
+              "t": "ChatGPT-User, Claude-User"
+            },
+            {
+              "icone": "robo",
+              "t": "Perplexity-User"
+            }
+          ],
+          "detalhe": "They visit the page when a person asks the assistant to read or open that address. Block = the assistant can't read your page, even when your customer asks it to."
+        },
+        {
+          "icone": "cerebro",
+          "titulo": "Training",
+          "sub": "future models",
+          "itens": [
+            {
+              "icone": "robo",
+              "t": "GPTBot, ClaudeBot"
+            },
+            {
+              "icone": "robo",
+              "t": "Google-Extended"
+            }
+          ],
+          "detalhe": "They collect text to train models. Block = you stay out of future training, usually without disappearing from search. Google-Extended does not affect Google Search."
+        },
+        {
+          "icone": "arquivo",
+          "titulo": "robots.txt",
+          "sub": "is a request",
+          "detalhe": "robots.txt asks; the robots that follow the rule are the ones that respect it. Changes take a while to take effect (OpenAI says about 24 hours)."
+        },
+        {
+          "icone": "escudo",
+          "titulo": "CDN / firewall",
+          "sub": "is what enforces",
+          "detalhe": "A CDN (like Cloudflare) really does block. Since 09/15/2026, Cloudflare's free plan blocks training robots and agents by default on pages with ads. Check your site's dashboard to see what is turned on."
+        }
+      ],
+      "legenda": "Decide by purpose, write it in robots.txt, and check that your CDN agrees."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Decide with four questions",
+      "sub": "Click on each one.",
+      "passos": [
+        {
+          "titulo": "Do I want to be cited?",
+          "sub": "search",
+          "texto": [
+            "For almost every business, yes: allow the search robots. They are how your site gets into the answers.",
+            "Blocking search to \"protect your content\" is usually the worst of both worlds: the text has already been read, and you disappear from the answers."
+          ]
+        },
+        {
+          "titulo": "Do I let the AI read on request?",
+          "sub": "user action",
+          "texto": [
+            "If a customer pastes your link into the assistant and asks for a summary, this is the bot that reads it. Allowing it is usually the natural choice if you sell or teach."
+          ]
+        },
+        {
+          "titulo": "Do I allow training?",
+          "sub": "your call",
+          "texto": [
+            "There's no right answer here. It's a business choice. Blocking training does not take you out of search.",
+            "Write down the reason in the robots.txt itself, as a comment, for whoever comes next."
+          ],
+          "exemplo": {
+            "rot": "On inema.club",
+            "texto": "The robots.txt also allows ClaudeBot, which is a training bot: INEMA is open content and chose to allow it."
+          }
+        },
+        {
+          "titulo": "Does the CDN agree?",
+          "sub": "dashboard",
+          "texto": [
+            "Open the CDN dashboard and look for the bot and AI settings. Check whether a default block is turned on, and on which pages.",
+            "If the dashboard blocks what the robots.txt allows, the dashboard wins."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The robots.txt in three groups, and the optional llms.txt",
+      "sub": "Adapt the training decision to yours. Change the sitemap address.",
+      "blocos": [
+        {
+          "rot": "robots.txt · by purpose",
+          "icone": "arquivo",
+          "conteudo": "# robots.txt by purpose (adapted from the inemaSEO templates/robots.txt)\nUser-agent: *\nAllow: /\n\n# Search: show up and get cited in answers\nUser-agent: OAI-SearchBot\nUser-agent: Claude-SearchBot\nUser-agent: PerplexityBot\nUser-agent: Googlebot\nUser-agent: Bingbot\nAllow: /\n\n# User action: the AI opens the page at someone's request\nUser-agent: ChatGPT-User\nUser-agent: Claude-User\nUser-agent: Perplexity-User\nAllow: /\n\n# Training: your call. This example blocks; blocking training does not take you out of search\nUser-agent: GPTBot\nUser-agent: ClaudeBot\nUser-agent: Google-Extended\nDisallow: /\n\nSitemap: https://www.seusite.com/sitemap.xml"
+        },
+        {
+          "rot": "llms.txt · optional (templates/llms.txt, abridged)",
+          "icone": "arquivo",
+          "conteudo": "# Your Site\n\n> One sentence saying what it is, who it is for, and what it delivers.\n\n## Main pages\n\n- [Home](https://www.seusite.com/)\n- [About / who runs it](https://www.seusite.com/sobre/)\n- [Catalog](https://www.seusite.com/catalogo/)\n\n## Data for machines\n\n- [Sitemap](https://www.seusite.com/sitemap.xml)"
+        },
+        {
+          "rot": "Decision note",
+          "icone": "lista",
+          "conteudo": "Bot decision for <seusite.com> on <mm/dd/yyyy>\n- Search: allowed (reason: <...>)\n- User action: <allowed/blocked> (reason: <...>)\n- Training: <allowed/blocked> (reason: <...>)\n- CDN: <name>, default AI block <on/off>, checked in the dashboard\n- llms.txt: <yes/no> (optional)"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Why the model was reorganized",
+            "html": "<p>The method's <code>templates/robots.txt</code> puts ClaudeBot together with the search bots. According to Anthropic's documentation, ClaudeBot collects data for training; search belongs to Claude-SearchBot, and reading on request belongs to Claude-User. The model above separates the three and adds the user action bots.</p>"
+          },
+          {
+            "rot": "llms.txt: what we know",
+            "html": "<p>Ahrefs study (15/06/2026), 137 thousand domains: among valid llms.txt files, <b>97% received no requests at all</b>. Google's AI guide says you can ignore it.</p><p>Honest take: it's cheap and can work as an index for coding agents. It is not a citation lever, and it should not be sold as \"get into ChatGPT\".</p>"
+          },
+          {
+            "rot": "Common mistakes",
+            "html": "<ul><li><b>Disallow for \"all AIs\"</b>: takes you out of search answers.</li><li><b>Thinking robots.txt is a lock</b>: the CDN is what enforces it.</li><li><b>Forgetting the CDN</b>: the dashboard may block agents that the robots.txt allows.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "simconversa",
+      "titulo": "Simulated conversation: the inn owner wants to block the AIs",
+      "sub": "Made-up conversation for practice. Pick the answer you would give; the comment appears right after.",
+      "personagem": {
+        "nome": "Inn owner",
+        "papel": "small site · bookings come from search"
+      },
+      "inicio": "abre",
+      "falas": {
+        "abre": {
+          "cliente": "I read that the AIs copy everything. I want to block them all in robots.txt, at once. Can we do it today?",
+          "opcoes": [
+            {
+              "t": "Sure. I'll put Disallow for all AI bots now.",
+              "vai": "fim-sumiu",
+              "nota": 0,
+              "comenta": "You did what was asked, not what was needed. The search bots went along with the training bots, and the inn disappears from the answers."
+            },
+            {
+              "t": "First: what bothers you is them using your text for training, or is it ChatGPT recommending the inn?",
+              "vai": "finalidade",
+              "nota": 2,
+              "comenta": "A question about purpose. Training, search, and reading on request are different bots, and the decision changes depending on the answer."
+            },
+            {
+              "t": "It's pointless: robots.txt is just a request, and anyone who wants to can ignore it.",
+              "vai": "pedido",
+              "nota": 1,
+              "comenta": "It's true that robots.txt is a request, but you discouraged the customer without helping them decide anything."
+            }
+          ]
+        },
+        "pedido": {
+          "cliente": "So there's no way? What do I do, block everything on Cloudflare?",
+          "opcoes": [
+            {
+              "t": "Let's separate this: what bothers you is the training, or being recommended?",
+              "vai": "finalidade",
+              "nota": 1,
+              "comenta": "Back on the right track, with one extra lap."
+            },
+            {
+              "t": "Right: block every bot on Cloudflare and that's it.",
+              "vai": "fim-sumiu",
+              "nota": 0,
+              "comenta": "Now the block is real, and it includes search. The inn disappears from the answers."
+            }
+          ]
+        },
+        "finalidade": {
+          "cliente": "Training on my text bothers me. But half of the bookings come from people asking on their phones for an inn near the canyon.",
+          "opcoes": [
+            {
+              "t": "Then we block the training bots (GPTBot, ClaudeBot, Google-Extended) and allow the search bots and the ones that read on request.",
+              "vai": "cdn",
+              "nota": 2,
+              "comenta": "A decision by purpose: it protects what bothers you and keeps what brings bookings."
+            },
+            {
+              "t": "Block Googlebot too, just to be safe.",
+              "vai": "fim-sumiu",
+              "nota": 0,
+              "comenta": "Googlebot is Google's search crawler, including the base for its AI features. Just to be safe, you took the inn off Google."
+            },
+            {
+              "t": "Block only GPTBot and leave the rest.",
+              "vai": "cdn",
+              "nota": 1,
+              "comenta": "It doesn't hurt your search visibility, but it leaves other training bots allowed, contrary to what the client asked for."
+            }
+          ]
+        },
+        "cdn": {
+          "cliente": "Agreed. Oh, my nephew put the site on the free Cloudflare plan. Does that change anything?",
+          "opcoes": [
+            {
+              "t": "It might: since 09/15/2026 the free plan blocks training bots and agents by default on pages with ads. Let's open the dashboard and check.",
+              "vai": "llms",
+              "nota": 2,
+              "comenta": "You remembered that the CDN is what enforces the rules, and you asked to check the dashboard instead of guessing."
+            },
+            {
+              "t": "It doesn't change anything, robots.txt is what rules.",
+              "vai": "fim-cego",
+              "nota": 0,
+              "comenta": "robots.txt asks; the CDN enforces. Without looking at the dashboard, you don't know what is blocked."
+            }
+          ]
+        },
+        "llms": {
+          "cliente": "One last thing: a guy offered me something called llms.txt that guarantees the inn shows up in ChatGPT. Is it worth it?",
+          "opcoes": [
+            {
+              "t": "It's an optional, cheap file. A study of 137,000 domains found 97% of them with no reads at all. I can do it, but it doesn't guarantee citation.",
+              "vai": "fim-bom",
+              "nota": 2,
+              "comenta": "An honest answer, with a source: it neither sells the file as a shortcut nor bans it for no reason."
+            },
+            {
+              "t": "It's worth it, it's the site map for AIs.",
+              "vai": "fim-llms",
+              "nota": 0,
+              "comenta": "That was the common explanation until 2025. The 2026 data doesn't support the promise."
+            },
+            {
+              "t": "Never do it, it's dangerous.",
+              "vai": "fim-bom",
+              "nota": 1,
+              "comenta": "An exaggeration. Some people study the file as a risk for agents, but for the inn owner the issue is a different one: don't pay for the promise."
+            }
+          ]
+        },
+        "fim-sumiu": {
+          "fim": true,
+          "titulo": "The inn vanished from the answers",
+          "texto": "The block caught search too. Weeks later, anyone asking their phone for an inn near the canyon gets the competitors. Blocking by purpose would have protected the text without losing bookings."
+        },
+        "fim-cego": {
+          "fim": true,
+          "titulo": "robots.txt right, CDN in the dark",
+          "texto": "The file came out fine, but no one looked at the CDN dashboard. If the default block is on, agents that robots.txt allows are still turned away."
+        },
+        "fim-llms": {
+          "fim": true,
+          "titulo": "Paid for the promise",
+          "texto": "The file was made and billed as a passport to ChatGPT. There is no evidence it brings citations; trust in your work drops when the result doesn't come."
+        },
+        "fim-bom": {
+          "fim": true,
+          "titulo": "Decided by purpose",
+          "texto": "Training blocked, search and on-request reading allowed, CDN checked in the dashboard, and llms.txt treated as optional. The owner knows what was decided and why."
+        }
+      },
+      "licao": "\"Block the AIs\" isn't one decision: it's three. Ask about the purpose, write robots.txt in groups, and check the CDN dashboard."
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: the decision on your site",
+      "sub": "Use the robots.txt block from your raio-x.txt.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · robots.txt in three groups",
+          "min": "20 min",
+          "texto": "Rewrite your robots.txt with the search, user action, and training groups, with a comment saying the reason for the training decision. Publish it and run the X-ray again.",
+          "pronto": "the robots.txt block in the X-ray shows the three groups and the Sitemap at the end."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · The CDN dashboard",
+          "min": "15 min",
+          "texto": "Open your CDN or hosting dashboard and check whether AI bot blocking is turned on. Fill in the decision note.",
+          "pronto": "the note says which CDN, whether the default block is on, and whether it agrees with robots.txt (or \"no CDN\")."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after you answer.",
+      "perguntas": [
+        {
+          "p": "You blocked GPTBot, ClaudeBot, and Google-Extended. What happens to search?",
+          "opcoes": [
+            "You disappear from all AIs.",
+            "Usually nothing: those are training bots; search uses other bots.",
+            "You disappear only from Google.",
+            "The site goes offline."
+          ],
+          "certa": 1,
+          "explica": "Those are training bots. Search is OAI-SearchBot, Claude-SearchBot, PerplexityBot, Googlebot, and Bingbot. Google-Extended doesn't affect Google Search.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "robots.txt allows everything, but an agent can't read the site. Where do you look first?",
+          "opcoes": [
+            "In the sitemap.",
+            "In the CDN dashboard: it enforces; robots.txt only asks.",
+            "In llms.txt.",
+            "In Search Console."
+          ],
+          "certa": 1,
+          "explica": "Since 09/15/2026, Cloudflare's free plan blocks training bots and agents by default on pages with ads. Check your site's dashboard.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "What should you say about llms.txt?",
+          "opcoes": [
+            "It guarantees citation in ChatGPT.",
+            "It has been mandatory since 2026.",
+            "It is optional and cheap; a study of 137 thousand domains found 97% with no reads at all.",
+            "It is banned by Google."
+          ],
+          "certa": 2,
+          "explica": "It is not a citation lever, and Google says it may ignore it. Selling it as a shortcut is selling a fad.",
+          "ref": "codigo"
+        },
+        {
+          "p": "The client wants to \"block all AIs.\" What is the first question?",
+          "opcoes": [
+            "Which CDN do you use?",
+            "What bothers you: training, or being recommended in the answers?",
+            "How much can you pay?",
+            "Do you want an llms.txt?"
+          ],
+          "certa": 1,
+          "explica": "The purpose decides the groups. Without it, you block search too, and the client disappears from the answers.",
+          "ref": "simconversa"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Takeaways",
+      "itens": [
+        {
+          "t": "Three purposes",
+          "texto": "Search, user action, and training: blocking one does not block the others."
+        },
+        {
+          "t": "Request × enforcement",
+          "texto": "robots.txt asks; the CDN enforces. Check the dashboard."
+        },
+        {
+          "t": "2026 yardstick",
+          "texto": "llms.txt is optional and cheap, not a citation lever."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "OpenAI: bots and what each one does (English)",
+          "href": "https://platform.openai.com/docs/bots",
+          "icone": "robo"
+        },
+        {
+          "t": "Anthropic: Claude's bots and how to block them (English)",
+          "href": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+          "icone": "robo"
+        },
+        {
+          "t": "Perplexity: bots (English)",
+          "href": "https://docs.perplexity.ai/guides/bots",
+          "icone": "robo"
+        },
+        {
+          "t": "Google: common crawlers and Google-Extended (English)",
+          "href": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers",
+          "icone": "lupa"
+        },
+        {
+          "t": "Ahrefs: llms.txt study (English)",
+          "href": "https://ahrefs.com/blog/llmstxt-study/",
+          "icone": "grafico"
+        }
+      ]
+    }
+  ]
+}

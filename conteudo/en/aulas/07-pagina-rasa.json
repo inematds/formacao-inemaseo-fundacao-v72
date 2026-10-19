@@ -1,0 +1,272 @@
+{
+  "slug": "pagina-rasa",
+  "num": 7,
+  "menu": "Thin page",
+  "titulo": "A thin page leaves the index (noindex until it has a body)",
+  "titulo_curto": "Thin page",
+  "minutos": 15,
+  "lead": "Publishing many similar, thin pages does not give you more chances. It usually does the opposite. The search engine stops crawling the batch and starts to distrust the site. This lesson shows you how to find a thin page, take it out of the index and the sitemap, and bring it back only when it has something to say.",
+  "objetivo": "identify thin pages and take them out of the index and the sitemap until they have a body of their own.",
+  "competencias": [
+    "identificar-pagina-rasa",
+    "aplicar-noindex",
+    "manter-sitemap-limpo"
+  ],
+  "aprende": [
+    {
+      "t": "The real case of the 283 listings that would not index"
+    },
+    {
+      "t": "Three signs of a thin page"
+    },
+    {
+      "t": "noindex and out of the sitemap, together"
+    },
+    {
+      "t": "When the page comes back"
+    }
+  ],
+  "hero_alt": "A saleswoman removes thin, nearly empty notebooks from a shelf of thick books.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "The thin page cycle",
+      "sub": "Tap each block.",
+      "nos": [
+        {
+          "icone": "camadas",
+          "titulo": "Batch of pages",
+          "sub": "similar and thin",
+          "detalhe": "Pages generated in a series, with little text and a lot of repeated passages: listings, city variations, tags, news with no body."
+        },
+        {
+          "icone": "lupa",
+          "titulo": "Test",
+          "sub": "three signs",
+          "forte": true,
+          "itens": [
+            {
+              "icone": "arquivo",
+              "t": "few words of their own"
+            },
+            {
+              "icone": "copiar",
+              "t": "text repeated across pages"
+            },
+            {
+              "icone": "x",
+              "t": "no internal link"
+            }
+          ],
+          "detalhe": "Count the page's own words, compare it with a sibling page, and see whether anyone links to it. Two signs together already call for action."
+        },
+        {
+          "icone": "cadeado",
+          "titulo": "Take it out of the index",
+          "sub": "noindex + out of the sitemap",
+          "detalhe": "Meta robots noindex on the page and removal from the sitemap, both together. The page stays live for people who arrive by link; it just stops asking for a place in the index."
+        },
+        {
+          "icone": "check",
+          "titulo": "Bring it back with a body",
+          "sub": "your own data",
+          "detalhe": "When the page gets unique content, with data about that specific item, it comes back: remove the noindex, add it to the sitemap, and let the search engines know (lesson 8)."
+        }
+      ],
+      "volta": "Did it gain a body? Put it back in the index and the sitemap",
+      "legenda": "Indexing a thin page weighs on how the whole site is judged, not just that page."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "The case of the 283 listings",
+      "sub": "What happened at INEMA and what you can learn from it. Tap each step.",
+      "passos": [
+        {
+          "titulo": "The batch",
+          "sub": "30/08/2026",
+          "texto": [
+            "283 course listings were published in a single commit. Of the 6 listings in the sample, 5 were \"discovered, not indexed\" and had never been crawled."
+          ]
+        },
+        {
+          "titulo": "Why",
+          "sub": "three findings",
+          "texto": [
+            "Each listing had 170 to 240 words. Two randomly picked listings shared 47% of their vocabulary, and the description was copied from the course page.",
+            "The /cursos/ index page was 481 KB of HTML."
+          ],
+          "exemplo": {
+            "rot": "Takeaway",
+            "texto": "To a search engine, these were hundreds of variations of the same page."
+          }
+        },
+        {
+          "titulo": "The rule",
+          "sub": "inemaSEO method",
+          "texto": [
+            "A page without enough content gets noindex and stays out of the sitemap until it has a body. A page in a series only goes into the sitemap with unique content and data specific to that item.",
+            "Enriching the listings, with real data and an anti-invention lock, is the topic of course 2."
+          ]
+        },
+        {
+          "titulo": "The warning sign",
+          "sub": "Plan B",
+          "texto": [
+            "A site-wide drop after publishing a lot is a sign of content at scale. What to do: stop, audit, merge or remove the weak pages, and slow down your pace."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Mark and check",
+      "sub": "The tag goes in the head of the thin page. The X-ray checks it.",
+      "blocos": [
+        {
+          "rot": "HTML · in the head of the thin page",
+          "icone": "arquivo",
+          "conteudo": "<meta name=\"robots\" content=\"noindex\">"
+        },
+        {
+          "rot": "Terminal · check with the X-ray",
+          "icone": "terminal",
+          "conteudo": "bash tools/auditoria.sh https://www.seusite.com /pagina-rasa-1/ /pagina-rasa-2/ | grep -E '^-- |robots:'"
+        },
+        {
+          "rot": "List of the thinnest pages (template)",
+          "icone": "lista",
+          "conteudo": "| page | own words | repeats its sibling? | incoming links | decision |\n|---|---|---|---|---|\n| </pagina/> | <nº> | <yes/no> | <nº> | <keep / noindex until it has a body / merge> |"
+        }
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {
+            "rot": "What it looks like in the X-ray",
+            "html": "<pre>-- /pagina-rasa-1/  [200]\n   robots:    noindex\n-- /pagina-rasa-2/  [200]\n   robots:    noindex</pre><p>The page returns 200 (it stays online) and the robots line shows the noindex. Also check that it has dropped out of the sitemap.</p>"
+          },
+          {
+            "rot": "Common mistakes",
+            "html": "<ul><li><b>noindex and staying in the sitemap</b>: contradictory signals.</li><li><b>Blocking in robots.txt instead of noindex</b>: the crawler can't read the page and never sees the noindex.</li><li><b>Deleting a page that has an external link</b>: you lose the link; prefer noindex or merge it with a redirect.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: clean up the thin pages",
+      "sub": "Start with the pages generated in a series, if your site has any.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · The 5 thinnest",
+          "min": "30 min",
+          "texto": "Pick the 5 thinnest pages on your site and fill in the list: own words, whether it repeats a sibling, and how many links point to it.",
+          "pronto": "the list has 5 rows and each one ends with a decision."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · noindex checked",
+          "min": "20 min",
+          "texto": "For the ones you marked \"noindex until it has a body,\" apply the tag and remove them from the sitemap. Run the X-ray on them.",
+          "pronto": "the X-ray shows robots: noindex on those pages and they no longer appear in the sitemap."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after you answer.",
+      "perguntas": [
+        {
+          "p": "Why were the INEMA 283 listings not getting indexed?",
+          "opcoes": [
+            "The site was down.",
+            "They were thin and alike: 170 to 240 words and 47% shared vocabulary between two listings.",
+            "It was missing llms.txt.",
+            "Google does not index courses."
+          ],
+          "certa": 1,
+          "explica": "Published all at once, short and repetitive, they looked like variations of the same page. Of the 6 in the sample, 5 had never been crawled.",
+          "ref": "passos",
+          "cert": true
+        },
+        {
+          "p": "What should you do with the thin page?",
+          "opcoes": [
+            "Always delete it.",
+            "noindex and remove it from the sitemap until it has substance.",
+            "Block it in robots.txt.",
+            "Duplicate it to get more chances."
+          ],
+          "certa": 1,
+          "explica": "The page stays live, leaves the index and the sitemap, and comes back once it has content of its own.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "Why not use robots.txt to remove the page from the index?",
+          "opcoes": [
+            "Because robots.txt is slow.",
+            "Because when it's blocked, the crawler can't read the page and never sees the noindex.",
+            "Because robots.txt is only for AI.",
+            "You can use it, it's the same thing."
+          ],
+          "certa": 1,
+          "explica": "The noindex has to be read. Blocking the crawl hides the very instruction.",
+          "ref": "codigo"
+        },
+        {
+          "p": "The site dropped after you published a lot. What is the first step of Plan B?",
+          "opcoes": [
+            "Publish faster.",
+            "Stop, audit, merge or remove the weak ones, and slow down the pace.",
+            "Buy links.",
+            "Switch domains."
+          ],
+          "certa": 1,
+          "explica": "It's the symptom of content at scale. More volume only makes it worse.",
+          "ref": "passos"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Takeaways",
+      "itens": [
+        {
+          "t": "Three signals",
+          "texto": "Few original words, repeated text, no links coming in."
+        },
+        {
+          "t": "Two actions together",
+          "texto": "noindex on the page and out of the sitemap."
+        },
+        {
+          "t": "Return",
+          "texto": "Only with your own data, and then you notify the search engines."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "Google: block indexing with noindex (English)",
+          "href": "https://developers.google.com/search/docs/crawling-indexing/block-indexing",
+          "icone": "lupa"
+        },
+        {
+          "t": "Google: spam policies, scaled content (English)",
+          "href": "https://developers.google.com/search/docs/essentials/spam-policies",
+          "icone": "escudo"
+        },
+        {
+          "t": "inemaSEO publishing checklist",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/CHECKLIST.md",
+          "icone": "check"
+        }
+      ]
+    }
+  ]
+}

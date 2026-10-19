@@ -1,0 +1,420 @@
+{
+  "slug": "avisar-conferir",
+  "num": 8,
+  "menu": "Avisar",
+  "titulo": "Avisar a los buscadores y comprobar la indexación",
+  "titulo_curto": "Avisar y comprobar",
+  "minutos": 18,
+  "lead": "Con el cimiento listo, cada publicación se cierra con dos gestos: avisar a los buscadores que la URL existe y, días después, comprobar si entró en el índice. Avisar una URL rota quema la confianza; no comprobar deja olvidada una página importante. Al final, armas el plan con fechas del curso completo.",
+  "objetivo": "avisar a IndexNow y Bing solo con URLs que respondan 200 y comprobar la indexación en la inspección de URL.",
+  "competencias": [
+    "avisar-indexnow-e-bing",
+    "conferir-status-antes-de-avisar",
+    "inspecionar-indexacao",
+    "planejar-rotina-de-fundacao"
+  ],
+  "aprende": [
+    {
+      "t": "Publicar la clave de IndexNow"
+    },
+    {
+      "t": "Avisar solo con URLs que respondan 200"
+    },
+    {
+      "t": "Leer los estados de la inspección de URL"
+    },
+    {
+      "t": "Armar el plan con fechas de la fundación"
+    }
+  ],
+  "hero_alt": "Un cartero entrega sobres en un buzón y revisa su portapapeles.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Del commit a la página indexada",
+      "sub": "Haz clic en cada bloque.",
+      "nos": [
+        {
+          "icone": "enviar",
+          "titulo": "Publicar",
+          "sub": "página nueva o modificada",
+          "detalhe": "La página salió al aire o cambió de verdad. Junta las URLs en una lista, una por línea, todas del mismo dominio."
+        },
+        {
+          "icone": "check",
+          "titulo": "Comprobar 200",
+          "sub": "antes de avisar",
+          "forte": true,
+          "detalhe": "El script prueba cada URL. Si alguna no responde 200, se detiene y te muestra cuál. Avisar de un 404 quema la confianza del buscador."
+        },
+        {
+          "icone": "megafone",
+          "titulo": "IndexNow + Bing",
+          "sub": "un envío",
+          "itens": [
+            {
+              "icone": "nuvem",
+              "t": "IndexNow: Bing, Yandex, Seznam, Naver"
+            },
+            {
+              "icone": "nuvem",
+              "t": "Bing Webmaster (opcional)"
+            }
+          ],
+          "detalhe": "IndexNow avisa de una vez a los buscadores participantes. Google no participa: para él valen el sitemap y la inspección de URL. Bing cuenta dos veces: alimenta a Copilot y, según un estudio de Seer (no una declaración de OpenAI), buena parte de lo que cita ChatGPT."
+        },
+        {
+          "icone": "lupa",
+          "titulo": "Inspeccionar",
+          "sub": "días después",
+          "itens": [
+            {
+              "icone": "check",
+              "t": "Enviada e indexada"
+            },
+            {
+              "icone": "relogio",
+              "t": "Descubierta, sin indexar"
+            },
+            {
+              "icone": "x",
+              "t": "Google desconoce esta URL"
+            }
+          ],
+          "detalhe": "En la inspección de URL de Search Console ves si la página entró, cuándo fue rastreada y qué canónico eligió Google. Si el canónico de Google es otro, vuelve a la lección 4."
+        },
+        {
+          "icone": "calendario",
+          "titulo": "Rutina",
+          "sub": "cada publicación",
+          "detalhe": "Publicaste, comprobaste el 200, avisaste, inspeccionaste a la semana siguiente. Si una página clave no entró: enlaces internos, cuerpo y solicitud de indexación en el panel."
+        }
+      ],
+      "volta": "¿No entró? Vuelve a la radiografía: canónico, enlace interno, cuerpo",
+      "legenda": "Avisar es barato; avisar mal sale caro. Por eso el 200 va primero."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Avisar y comprobar sin tropezar",
+      "sub": "Haz clic en cada etapa.",
+      "passos": [
+        {
+          "titulo": "La clave",
+          "sub": "IndexNow",
+          "texto": [
+            "Crea una clave de 32 o más caracteres hexadecimales (números y letras de la a a la f) y publícala en https://seusite.com/[sua-chave].txt, con solo la clave dentro.",
+            "No es un secreto: es pública por diseño, prueba que el sitio es tuyo."
+          ],
+          "exemplo": {
+            "rot": "En INEMA (02/10/2026)",
+            "texto": "El primer envío del sitio de noticias volvió con 403 SiteVerificationNotCompleted: la clave acababa de publicarse. Reenviar pasados unos 4 minutos lo resolvió."
+          }
+        },
+        {
+          "titulo": "La lista",
+          "sub": "urls.txt",
+          "texto": [
+            "Una URL por línea, todas del mismo dominio, solo lo que es nuevo o cambió.",
+            "No reenvíes el sitio entero con cada cambio."
+          ]
+        },
+        {
+          "titulo": "El envío",
+          "sub": "avisar_buscadores.sh",
+          "texto": [
+            "Ejecuta el script con la clave en la variable INDEXNOW_KEY. Con BING_API_KEY, también usa la API de Bing Webmaster (opcional).",
+            "La respuesta esperada es HTTP 200 o 202."
+          ],
+          "exemplo": {
+            "rot": "En INEMA",
+            "texto": "24/09/2026: 109 URLs por IndexNow, respuesta 202. 02/10: 90 URLs por Bing e IndexNow, respuesta 200."
+          }
+        },
+        {
+          "titulo": "La comprobación",
+          "sub": "inspección de URL",
+          "texto": [
+            "Una semana después, inspecciona las URLs clave en Search Console. Anota el estado de cada una.",
+            "El script gsc_inspecionar.py hace lo mismo en lote, pero necesita credencial de Google; empieza por el panel."
+          ],
+          "exemplo": {
+            "rot": "En INEMA",
+            "texto": "El 05/10/2026, 12 de 14 URLs clave estaban indexadas; el 13/10, 13 de 14. Faltaba /eventos/, \"desconocida para Google\"."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Los archivos y los comandos",
+      "sub": "Cambia lo que está entre < > por lo tuyo. La clave de Bing es opcional.",
+      "blocos": [
+        {
+          "rot": "urls.txt (una por línea)",
+          "icone": "arquivo",
+          "conteudo": "https://www.seusite.com/\nhttps://www.seusite.com/pagina-nova/\nhttps://www.seusite.com/pagina-mudada/"
+        },
+        {
+          "rot": "Terminal · avisar (IndexNow, y Bing si tienes clave)",
+          "icone": "terminal",
+          "conteudo": "INDEXNOW_KEY=<sua-chave> bash tools/avisar_buscadores.sh urls.txt\n\n# opcional, com a chave da API do Bing Webmaster:\nINDEXNOW_KEY=<sua-chave> BING_API_KEY=<chave-bing> BING_SITE=https://www.seusite.com/ bash tools/avisar_buscadores.sh urls.txt"
+        },
+        {
+          "rot": "Terminal · inspección en lote (modelo; requiere credencial de Google)",
+          "icone": "terminal",
+          "conteudo": "# requer gcloud autenticado e GSC_QUOTA_PROJ definido\npython3 tools/gsc_inspecionar.py sc-domain:seusite.com https://www.seusite.com/pagina/"
+        },
+        {
+          "rot": "Registro de la verificación (modelo)",
+          "icone": "lista",
+          "conteudo": "| URL | avisada em | inspecionada em | estado | canônico do Google | próximo passo |\n|---|---|---|---|---|---|\n| </pagina-nova/> | <dd/mm> | <dd/mm> | <Enviada e indexada> | <igual> | <nenhum> |"
+        }
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {
+            "rot": "Salida del aviso",
+            "html": "<pre>IndexNow: HTTP 202</pre><p>Si una URL no responde 200, el script se detiene antes de enviar:</p><pre>NÃO 200 (404): https://www.seusite.com/pagina-errada/\ncorrija as URLs acima antes de avisar</pre>"
+          },
+          {
+            "rot": "Salida de la inspección",
+            "html": "<pre>https://www.seusite.com/pagina/\n   Enviada e indexada | rastreio 2026-10-13 | canônico Google https://www.seusite.com/pagina/</pre><p>Estado, fecha del último rastreo y el canónico que eligió Google.</p>"
+          },
+          {
+            "rot": "Errores comunes",
+            "html": "<ul><li><b>Avisar antes de que termine el deploy</b>: la URL todavía da 404.</li><li><b>Esperar que IndexNow llegue a Google</b>: Google no participa; usa sitemap e inspección.</li><li><b>Prometer que IndexNow \"te mete en ChatGPT\"</b>: avisa a los buscadores, no garantiza una cita.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Práctica: el primer aviso y la primera verificación",
+      "sub": "El E2 pide unos días entre avisar e inspeccionar.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Clave y primer aviso",
+          "min": "30 min",
+          "texto": "Publica la clave de IndexNow en tu sitio, arma el urls.txt con 3 a 5 URLs y ejecuta el avisar_buscadores.sh.",
+          "pronto": "el script respondió IndexNow: HTTP 200 o 202 y ninguna URL fue rechazada por no responder 200."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Cinco URLs inspeccionadas",
+          "min": "25 min",
+          "dias": 7,
+          "texto": "Una semana después, inspecciona en Search Console las 5 URLs más importantes y completa el registro.",
+          "pronto": "el registro tiene 5 filas con estado, fecha de rastreo y canónico de Google; las que no están indexadas tienen próximo paso."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Pon a prueba lo que aprendiste",
+      "sub": "La explicación aparece después de tu respuesta.",
+      "perguntas": [
+        {
+          "p": "¿Por qué el script verifica el 200 antes de avisar?",
+          "opcoes": [
+            "Para ir más lento.",
+            "Porque avisar una URL que no responde (404) quema la confianza del buscador.",
+            "Porque IndexNow lo exige.",
+            "Para contar las visitas."
+          ],
+          "certa": 1,
+          "explica": "Solo va al aviso lo que responde 200. Si alguna URL falla, el script se detiene y muestra cuál corregir.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "¿IndexNow avisa a Google?",
+          "opcoes": [
+            "Sí, es de Google.",
+            "No: Google no participa; para él valen el sitemap y la inspección de URL.",
+            "Solo en AI Mode.",
+            "Solo con la clave de Bing."
+          ],
+          "certa": 1,
+          "explica": "IndexNow avisa a Bing y a otros participantes. En Google, sitemap enviado e inspección de URL en Search Console.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "El primer envío devolvió 403 SiteVerificationNotCompleted. ¿Qué hacer?",
+          "opcoes": [
+            "Cambiar de clave.",
+            "Abandonar IndexNow.",
+            "Comprobar que el archivo de la clave responde y reenviar después de unos minutos.",
+            "Mandarlo por correo."
+          ],
+          "certa": 2,
+          "explica": "En INEMA, la clave recién publicada dio 403; reenviar después de unos 4 minutos lo resolvió.",
+          "ref": "passos"
+        },
+        {
+          "p": "La inspección muestra un canónico de Google distinto del tuyo. ¿A dónde volver?",
+          "opcoes": [
+            "Clase 4: un solo canónico.",
+            "Clase 6: robots.txt.",
+            "Comprar una herramienta.",
+            "Ignorar."
+          ],
+          "certa": 0,
+          "explica": "Google eligió otra URL como oficial. Revisa canonical, sitemap, JSON-LD y enlaces: en algún lugar hay una discrepancia.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "mapa",
+      "titulo": "El mapa de la fundación",
+      "sub": "Cuatro niveles y los ejercicios de cada uno. Haz clic en un ejercicio para ver el \"listo cuando\".",
+      "degraus": [
+        {
+          "aula": "raio-x",
+          "icone": "lupa",
+          "quando": "Semana 1",
+          "titulo": "Mirar",
+          "sub": "radiografía de solo lectura",
+          "saida": "raio-x.txt y lista de hallazgos.",
+          "passo": "Antes de tocar nada, el retrato. La lista de hallazgos se convierte en el plan de las semanas siguientes."
+        },
+        {
+          "aula": "search-console-bing",
+          "icone": "grafico",
+          "quando": "Semana 1",
+          "titulo": "Paneles",
+          "sub": "Search Console y Bing",
+          "saida": "Sitio verificado y sitemap enviado en los dos.",
+          "passo": "Requiere la radiografía. Revisa el DNS antes de crear la cuenta; los informes empiezan a llenarse en unos días."
+        },
+        {
+          "aula": "robots-por-finalidade",
+          "icone": "escudo",
+          "quando": "Semanas 2 y 3",
+          "titulo": "Cimiento",
+          "sub": "canónico, sitemap, robots, página delgada (clases 4 a 7)",
+          "saida": "Una dirección, un sitemap verdadero, robots decididos, lo delgado fuera del índice.",
+          "passo": "Requiere los paneles. Son las clases 4 a 7; el mapa muestra los ejercicios de la clase 6, y el plan de abajo los lista todos."
+        },
+        {
+          "aula": "avisar-conferir",
+          "icone": "megafone",
+          "quando": "Semana 4",
+          "titulo": "Avisar",
+          "sub": "IndexNow, Bing e inspección",
+          "saida": "Primer aviso hecho y 5 URLs clave revisadas.",
+          "passo": "Requiere el cimiento: avisar antes de arreglar el canónico es llamar al buscador para que vea el desorden."
+        }
+      ],
+      "resultado": {
+        "titulo": "Al final del curso",
+        "texto": "Sitio leído como lo lee el buscador, verificado en los dos paneles, con cimiento técnico y rutina de aviso y revisión.",
+        "total": "16 ejercicios"
+      },
+      "rolagem_fim": {
+        "titulo": "La fundación completa",
+        "texto": "Mirar, verificar, arreglar el cimiento y avisar. Solo sube de nivel cuando el \"listo cuando\" del anterior sea verdad."
+      },
+      "legenda": "Después de la fundación viene el curso 2: las páginas que solo tú puedes escribir."
+    },
+    {
+      "tipo": "gerador",
+      "titulo": "Genera tu plan con fechas",
+      "sub": "Elige la fecha de inicio y cuánto tiempo tienes por semana. El plan respeta el ejercicio que pide una semana de espera.",
+      "curso": "inemaSEO 1 · Fundación",
+      "horas_padrao": 3,
+      "degraus": [
+        {
+          "titulo": "Clase 1 · Cómo encuentran el sitio",
+          "aula": "como-acham"
+        },
+        {
+          "titulo": "Clase 2 · Radiografía",
+          "aula": "raio-x"
+        },
+        {
+          "titulo": "Clase 3 · Search Console y Bing",
+          "aula": "search-console-bing"
+        },
+        {
+          "titulo": "Clase 4 · Un solo canónico",
+          "aula": "canonico"
+        },
+        {
+          "titulo": "Clase 5 · Sitemap y hreflang",
+          "aula": "sitemaps-hreflang"
+        },
+        {
+          "titulo": "Clase 6 · robots.txt por finalidad",
+          "aula": "robots-por-finalidade"
+        },
+        {
+          "titulo": "Clase 7 · Página delgada",
+          "aula": "pagina-rasa"
+        },
+        {
+          "titulo": "Clase 8 · Avisar y revisar",
+          "aula": "avisar-conferir"
+        }
+      ],
+      "txt": {
+        "titulo": "Plan — inemaSEO 1 · Fundación",
+        "inicio": "Inicio",
+        "ritmo": "Ritmo",
+        "termino": "Término previsto",
+        "ate": "hasta",
+        "pronto": "listo cuando",
+        "semanas": "semanas",
+        "travou": "## Qué se trabó y qué decidí",
+        "h": "h por semana",
+        "exs": "ejercicios"
+      }
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para llevarte",
+      "itens": [
+        {
+          "t": "200 antes",
+          "texto": "Avisa solo las URLs que responden 200."
+        },
+        {
+          "t": "Dos caminos",
+          "texto": "IndexNow y Bing para Bing y socios; sitemap e inspección para Google."
+        },
+        {
+          "t": "La vara de 2026",
+          "texto": "Bing importa para Copilot y, según un estudio de Seer, para ChatGPT. Un aviso no garantiza una cita."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir más allá",
+      "links": [
+        {
+          "t": "IndexNow: documentación (inglés)",
+          "href": "https://www.indexnow.org/",
+          "icone": "megafone"
+        },
+        {
+          "t": "avisar_buscadores.sh en GitHub",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/tools/avisar_buscadores.sh",
+          "icone": "terminal"
+        },
+        {
+          "t": "Área inemaSEO en Eventos",
+          "href": "https://eventos.inema.pro/inemaseo/",
+          "icone": "camadas"
+        },
+        {
+          "t": "Siguiente: inemaSEO 2 · Contenido",
+          "href": "https://inematds.github.io/formacao-inemaseo-conteudo-v72/",
+          "icone": "seta"
+        }
+      ]
+    }
+  ]
+}

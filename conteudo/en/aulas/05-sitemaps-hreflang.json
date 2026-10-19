@@ -1,0 +1,272 @@
+{
+  "slug": "sitemaps-hreflang",
+  "num": 5,
+  "menu": "Sitemap",
+  "titulo": "Sitemaps with real dates and hreflang",
+  "titulo_curto": "Sitemap and hreflang",
+  "minutos": 15,
+  "lead": "The sitemap is the list of pages you hand to the search engine. It only helps if it tells the truth: the pages that exist and the date each one actually changed. If your site has versions in other languages, hreflang says which is which, and that opens up a whole market.",
+  "objetivo": "generate the sitemap from the same data as the pages, with the real change date and reciprocal hreflang when there is a translation.",
+  "competencias": [
+    "gerar-sitemap-do-dado",
+    "usar-lastmod-real",
+    "declarar-hreflang-reciproco"
+  ],
+  "aprende": [
+    {
+      "t": "Why the sitemap comes from the same data that builds the pages"
+    },
+    {
+      "t": "The real change date, never the build time"
+    },
+    {
+      "t": "Two-way hreflang, on every page"
+    },
+    {
+      "t": "The case of INEMA's Spanish page"
+    }
+  ],
+  "hero_alt": "An open paper map on a wooden table, with pins connected by string.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "One data source, two outputs",
+      "sub": "Tap each block.",
+      "nos": [
+        {
+          "icone": "memoria",
+          "titulo": "The data",
+          "sub": "catalog, posts, pages",
+          "detalhe": "The list of what exists on the site: a database, a JSON file, the posts folder. Your pages and your sitemap both come from it."
+        },
+        {
+          "icone": "arquivo",
+          "titulo": "Pages",
+          "sub": "what the reader sees",
+          "detalhe": "Each item in the data becomes a page. If an item leaves the data, the page goes offline and leaves the sitemap at the same time."
+        },
+        {
+          "icone": "lista",
+          "titulo": "Sitemap",
+          "sub": "the list for the search engine",
+          "forte": true,
+          "itens": [
+            {
+              "icone": "check",
+              "t": "only URLs that return 200"
+            },
+            {
+              "icone": "calendario",
+              "t": "lastmod = change date"
+            }
+          ],
+          "detalhe": "Because it's generated from the same data, it never lists a page that doesn't exist. The lastmod is the date the content changed; using the build time teaches the search engine to ignore the date."
+        },
+        {
+          "icone": "camadas",
+          "titulo": "hreflang",
+          "sub": "PT · EN · ES",
+          "detalhe": "If a page has a translation, each version points to all the others and to itself, and they all point back. Put it on each page, not in the layout, or the markup leaks onto routes with no translation."
+        }
+      ],
+      "legenda": "A hand-written sitemap goes out of date on day one. A sitemap generated from the data doesn't lie."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Build it and check it",
+      "sub": "Tap each step.",
+      "passos": [
+        {
+          "titulo": "Find the generator",
+          "sub": "who creates the sitemap?",
+          "texto": [
+            "Many website platforms generate the sitemap on their own. Find out where it's generated and what data it comes from.",
+            "If the sitemap was written by hand, replacing it is the first thing to do."
+          ]
+        },
+        {
+          "titulo": "Real date",
+          "sub": "lastmod",
+          "texto": [
+            "Open the sitemap and look at three URLs. Does the date match the last real change to that page?",
+            "If every date is today, the generator is using the build time."
+          ],
+          "exemplo": {
+            "rot": "On the INEMA portal",
+            "texto": "The generator takes the date from the catalog, with the comment \"never use the build time\" in the code."
+          }
+        },
+        {
+          "titulo": "hreflang",
+          "sub": "two-way",
+          "texto": [
+            "For each translated page: the PT version points to EN and ES, and each one points back. Include x-default.",
+            "It can go in each page's HTML or in the sitemap. The X-ray shows both: the page's hreflang line and the count in the sitemap."
+          ]
+        },
+        {
+          "titulo": "Why it's worth it",
+          "sub": "another language, another market",
+          "texto": [
+            "In Spanish, the competition is usually smaller. Translate only the text; structure, images, and code are reused."
+          ],
+          "exemplo": {
+            "rot": "At INEMA",
+            "texto": "The page /es/aprender-inteligencia-artificial/ was indexed on 10/03/2026. The following week it already had 5 to 10 impressions on each Spanish query, in positions 29 to 61."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "What it looks like and how to check",
+      "sub": "The sitemap format with hreflang, the generator pattern, and the check command.",
+      "blocos": [
+        {
+          "rot": "sitemap.xml · one URL with translations",
+          "icone": "arquivo",
+          "conteudo": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:xhtml=\"http://www.w3.org/1999/xhtml\">\n<url>\n<loc>https://www.seusite.com/</loc>\n<xhtml:link rel=\"alternate\" hreflang=\"pt-BR\" href=\"https://www.seusite.com/\" />\n<xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.seusite.com/en/\" />\n<xhtml:link rel=\"alternate\" hreflang=\"es\" href=\"https://www.seusite.com/es/\" />\n<xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.seusite.com/\" />\n<lastmod><yyyy-mm-dd of the last change></lastmod>\n</url>\n</urlset>"
+        },
+        {
+          "rot": "Next.js · app/sitemap.ts (portal standard, abridged)",
+          "icone": "arquivo",
+          "conteudo": "// the date comes from the data; never the build time\nconst languages = { 'pt-BR': `${SITE_URL}/`, en: `${SITE_URL}/en/`, es: `${SITE_URL}/es/`, 'x-default': `${SITE_URL}/` }\nreturn ['/', '/en/', '/es/'].map(path => ({\n  url: `${SITE_URL}${path}`,\n  lastModified: latest,\n  alternates: { languages },\n}))"
+        },
+        {
+          "rot": "Terminal · sitemap URLs and hreflang",
+          "icone": "terminal",
+          "conteudo": "x=$(curl -4 -m 20 -s https://www.seusite.com/sitemap.xml)\necho \"$(echo \"$x\" | grep -c '<loc>') URLs, $(echo \"$x\" | grep -c 'hreflang') hreflang annotations\"\necho \"$x\" | grep -oE '<lastmod>[^<]*' | sort | uniq -c | sort -rn | head"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "The inema.club sitemap",
+            "html": "<p>First URL in the www.inema.club sitemap on 10/19/2026:</p><pre>&lt;loc&gt;https://www.inema.club/&lt;/loc&gt;\n&lt;xhtml:link rel=\"alternate\" hreflang=\"pt-BR\" href=\"https://www.inema.club/\" /&gt;\n&lt;xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://www.inema.club/en/\" /&gt;\n&lt;xhtml:link rel=\"alternate\" hreflang=\"es\" href=\"https://www.inema.club/es/\" /&gt;\n&lt;xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.inema.club/\" /&gt;\n&lt;lastmod&gt;2026-10-19&lt;/lastmod&gt;</pre><p>The home page changes when the catalog changes, so its date is the catalog's date.</p>"
+          },
+          {
+            "rot": "How to read the count",
+            "html": "<ul><li><b>All dates the same</b> in the last line of the command: probably the build time.</li><li><b>0 hreflang annotations</b> in a sitemap: normal if those pages have no translation; a problem if they do.</li><li><b>More URLs in the sitemap than pages on the site</b>: the sitemap isn't generated from the data.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: a sitemap that tells the truth",
+      "sub": "Use the Sitemaps blocks from your raio-x.txt.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Three dates",
+          "min": "20 min",
+          "texto": "Pick 3 URLs from your sitemap and compare each lastmod with the date of that page's last real change.",
+          "pronto": "the 3 dates match, or you noted where the generator gets the date and what to change."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · hreflang round trip",
+          "min": "20 min",
+          "texto": "If your site has translations, open a page in each language and check that each one lists all the versions. With no translation, write \"not applicable\" and the language that would make sense.",
+          "pronto": "the round trip was checked across the versions, or the \"not applicable\" is noted with the reason."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after you answer.",
+      "perguntas": [
+        {
+          "p": "All the URLs in your sitemap have today's date. What does that suggest?",
+          "opcoes": [
+            "That the site is very up to date.",
+            "That the generator probably uses the build time, and the date loses its value.",
+            "That Google will crawl everything today.",
+            "Nothing."
+          ],
+          "certa": 1,
+          "explica": "lastmod must be the date the content changed. A date that changes without the content changing teaches the search engine not to trust it.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "Where does hreflang go?",
+          "opcoes": [
+            "In the global layout, just once.",
+            "On each page (or in the sitemap), with a round trip between the versions.",
+            "Only on the home page.",
+            "In robots.txt."
+          ],
+          "certa": 1,
+          "explica": "In the layout, it leaks onto pages with no translation. The rule is reciprocal, page by page.",
+          "ref": "passos"
+        },
+        {
+          "p": "Why generate the sitemap from the same data as the pages?",
+          "opcoes": [
+            "To make it bigger.",
+            "So it never lists a page that doesn't exist or forgets one that does.",
+            "Because Google requires it.",
+            "To hide pages."
+          ],
+          "certa": 1,
+          "explica": "Same source, same list. A hand-made sitemap goes stale and starts listing 404s or forgetting new pages.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "What does the INEMA Spanish page case show?",
+          "opcoes": [
+            "That translating changes nothing.",
+            "That an ES page indexed on 10/03 already had impressions on ES queries the following week.",
+            "That Spanish has more competition.",
+            "That you need another domain."
+          ],
+          "certa": 1,
+          "explica": "It was 5 to 10 impressions per query, at positions 29 to 61: a start, not a win, but in a market where there was nothing before.",
+          "ref": "passos"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Takeaways",
+      "itens": [
+        {
+          "t": "From the data",
+          "texto": "Pages and sitemap come from the same list."
+        },
+        {
+          "t": "Real date",
+          "texto": "lastmod = content change, never the build."
+        },
+        {
+          "t": "hreflang",
+          "texto": "Reciprocal, with x-default, on each page."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "Google: sitemaps (English)",
+          "href": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview",
+          "icone": "lupa"
+        },
+        {
+          "t": "Google: localized versions and hreflang (English)",
+          "href": "https://developers.google.com/search/docs/specialty/international/localized-versions",
+          "icone": "camadas"
+        },
+        {
+          "t": "inemaSEO Method: multilingual",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md",
+          "icone": "lista"
+        }
+      ]
+    }
+  ]
+}
